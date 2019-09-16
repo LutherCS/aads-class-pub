@@ -1,0 +1,30 @@
+title = "Public test cases"
+
+[meta]
+author = "Roman Yasinovskyy"
+date = 2019
+module = "exercises.trees"
+
+[case_public]
+
+    [case_public.success]
+
+        [case_public.success.a]
+        data = ["BAC", "BCA"]
+        expected = "ABC"
+
+        [case_public.success.b]
+        data = ["DBEAFCG", "DEBFGCA"]
+        expected = "ABDECFG"
+
+        [case_public.success.c]
+        data = ["SC630", "S603C"]
+        expected = "CS360"
+
+        [case_public.success.d]
+        data = ["LOWSKVGEAN", "LWSKOEGNAV"]
+        expected = "VOLKSWAGEN"
+
+        [case_public.success.e]
+        data = ["YMPASTHIZNUDE", "APMYZIHTSNDEU"]
+        expected = "UNSYMPATHIZED"
