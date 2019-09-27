@@ -9,7 +9,7 @@ if [ $# == 0 ]; then
 fi
 
 if [ $FORMAT == "html" ]; then
-    pandoc $INPUT_FILE variables.yaml -o "${INPUT_FILE%.*}.$FORMAT" -s -i --slide-level=3 -t revealjs 
+    pandoc $INPUT_FILE variables.yaml -o "${INPUT_FILE%.*}.$FORMAT" --mathjax -s -i --slide-level=3 -t revealjs 
 elif [ $FORMAT == "pdf" ]; then
     # pandoc $INPUT_FILE variables.yaml -s --latex-engine=xelatex --variable mainfont="FreeSerif" --variable sansfont="FreeSans" --variable monofont="FreeMono" -o "${INPUT_FILE%.*}.$FORMAT"
     pandoc $INPUT_FILE variables.yaml -o "${INPUT_FILE%.*}.$FORMAT" -s --pdf-engine=xelatex 

@@ -109,3 +109,6 @@ Got questions?
 ## References
 
 * [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+* [cpython/heapq.py at 3.7 · python/cpython](https://github.com/python/cpython/blob/3.7/Lib/heapq.py)
+* [Algorithm Repository](http://algorist.com/problems/Priority_Queues.html)
+* [Binary heap - Wikipedia](https://en.wikipedia.org/wiki/Binary_heap)
