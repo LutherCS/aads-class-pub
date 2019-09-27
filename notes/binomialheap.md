@@ -34,12 +34,6 @@ A binomial tree of order $k\ge0$ with root $R$ is the tree $B_k$ defined as foll
 * $B_k$, a binomial tree of order $k$, contains $2^k$ nodes
 * Number of nodes at level $d$ in a tree of order $k$ is ${{k}\choose{d}} = \frac{k!}{d!(k-d)!}$, the binomial coefficient
 
-::: notes
-
-Binomial theorem was discovered (proof not published) by Isaac Newton in 1676, proved incorrectly by Lenhard Euler in 1774, and proved for the first time by Karl Friedrich Gauss in 1812.
-
-:::
-
 ### Binomial tree of order 4 (view 1)
 
 ![Binomial tree $B_4$](images/binomial_tree_4a.jpg)
@@ -114,3 +108,4 @@ Got questions?
 * [A data structure for manipulating priority queues](https://www.cl.cam.ac.uk/teaching/1011/AlgorithII/1978-Vuillemin-queues.pdf)
 * [Binomial heap - Wikipedia](https://en.wikipedia.org/wiki/Binomial_heap)
 * [Bruno R. Preiss's books with source](https://www3.cs.stonybrook.edu/~algorith/implement/brpreiss/implement.shtml)
+* [binomial theorem | Formula & Definition | Britannica.com](https://www.britannica.com/science/binomial-theorem)
