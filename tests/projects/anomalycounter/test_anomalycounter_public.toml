@@ -1,1 +1,30 @@
+title = "Public test cases"
 
+[meta]
+author = "Roman Yasinovskyy"
+date = 2019
+module = "projects.anomalycounter"
+
+[case_public]
+
+    [case_public.success]
+
+        [case_public.success.a]
+        data = "anomalycounter1.in"
+        expected = 5
+
+        [case_public.success.b]
+        data = "anomalycounter2.in"
+        expected = 1
+
+        [case_public.success.c]
+        data = "anomalycounter3.in"
+        expected = 0
+
+        [case_public.success.d]
+        data = "anomalycounter4.in"
+        expected = 1
+
+        [case_public.success.5]
+        data = "anomalycounter5.in"
+        expected = 11
