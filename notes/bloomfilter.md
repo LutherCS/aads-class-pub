@@ -32,7 +32,7 @@ It is acceptable for an automated spell checker to miss a missspelled [sic] word
 ## Bloom filter properties
 
 * A fixed-size *bit vector*
-  * filter size $m$ is a function of the dictionary size $n$ and success probability $p$
+  * filter size $m$ is a function of the dictionary size $n$ and the desired probability $p$ of false positives
   * $m=-\frac{n\ln{p}}{(\ln{2})^2}$
 * $k$ hashing functions
   * if $k$ is low, too many false positives
