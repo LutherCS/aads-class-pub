@@ -67,7 +67,7 @@ Starting with node $n$ that has *target* color $c$, change color of all connecte
 
 1. If the current node (cell, pixel) color is equal to the *replacement* $c'$, return
 2. If the current node color is **not** equal to *target*, return
-3. Update color if the current node to $c'$
+3. Update color of the current node to $c'$
 4. Create an empty queue $Q$
 5. Add current node $n$ to $Q$
 6. Continue while $Q$ is not empty
