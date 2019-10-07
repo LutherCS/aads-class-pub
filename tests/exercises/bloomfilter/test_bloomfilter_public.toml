@@ -1,0 +1,18 @@
+title = "Public test cases"
+
+[meta]
+author = "Roman Yasinovskyy"
+date = 2019
+module = "projects.bloomfilter"
+
+[case_public]
+
+    [case_public.success]
+
+        [case_public.success.a]
+        data = ["fruits_dictionary.txt", "fruits_misspelled.txt"]
+        expected = 0
+
+        [case_public.success.b]
+        data = ["menagerie_dictionary.txt", "menagerie_misspelled.txt"]
+        expected = 0
