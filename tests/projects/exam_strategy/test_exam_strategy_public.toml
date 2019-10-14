@@ -1,0 +1,35 @@
+title = "Public test cases"
+
+[meta]
+author = "Roman Yasinovskyy"
+date = 2019
+module = "projects.exam_strategy"
+
+[case_public]
+
+    [case_public.success]
+
+        [case_public.success.a]
+        filename = "questions1.in"
+        selected = [0, 1, 2, 3, 4]
+        total_val = 100
+
+        [case_public.success.b]
+        filename = "questions2.in"
+        selected = [2]
+        total_val = 100
+
+        [case_public.success.c]
+        filename = "questions3.in"
+        selected = [1, 2, 3]
+        total_val = 9
+
+        [case_public.success.d]
+        filename = "questions4.in"
+        selected = [0, 3, 7]
+        total_val = 1270
+
+        [case_public.success.5]
+        filename = "questions5.in"
+        selected = [0, 4, 5, 7]
+        total_val = 101
