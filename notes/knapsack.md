@@ -28,13 +28,13 @@ Given a knapsack of *capacity* $C$ and a set of items $S=\{{1,...,n}\}$, where i
 
 Either take an item or don't
 
-Maximize $\sum_{i=1}^{n}v_ix_i$ while keeping $\sum_{i=1}^{n}w_ix_i \le C$, where $x_i\isin\{{0,1}\}$
- 
+Maximize $\sum_{i=1}^{n}v_ix_i$ while keeping $\sum_{i=1}^{n}w_ix_i \le C$, where $x_i\in\{{0,1}\}$
+
 ### Bounded knapsack
 
 Can take up to $c$ copies of each item
 
-Maximize $\sum_{i=1}^{n}v_ix_i$ while keeping $\sum_{i=1}^{n}w_ix_i \le C$, where $x_i\isin\{{0,...,c}\}$
+Maximize $\sum_{i=1}^{n}v_ix_i$ while keeping $\sum_{i=1}^{n}w_ix_i \le C$, where $x_i\in\{{0,...,c}\}$
 
 ### Unbounded knapsack
 
@@ -56,19 +56,49 @@ Solve the *knapsack* problem by finding $m[n, C]$.
 
 $C=6.1$, $i(v, w)=\{{(5, 4), (4, 3), (3, 2), (2, 1)}\}$
 
-| i \ j | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
-|---|---|---|---|---|---|---|---|
-| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
-| 1 | 0 | 0 | 0 | 0 | 5 | 5 | 5 |
-| 2 | 0 | 0 | 0 | **4** | 5 | 5 | 5 |
-| 3 | 0 | 0 | 3 | 4 | 5 | **7** | 8 |
-| 4 | 0 | 2 | 3 | 5 | 6 | 7 | **9** |
+| i \ j | 0   | 1   | 2   | 3     | 4   | 5     | 6     |
+| ----- | --- | --- | --- | ----- | --- | ----- | ----- |
+| 0     | 0   | 0   | 0   | 0     | 0   | 0     | 0     |
+| 1     | 0   | 0   | 0   | 0     | 5   | 5     | 5     |
+| 2     | 0   | 0   | 0   | **4** | 5   | 5     | 5     |
+| 3     | 0   | 0   | 3   | 4     | 5   | **7** | 8     |
+| 4     | 0   | 2   | 3   | 5     | 6   | 7     | **9** |
 
-Table 1. Sack
+Table 1. Matrix $m$
 
 ### Item selection
 
-Starting with the last item and continuing while there is room in the knapsack, only add items where the following is true: and item has value and $sack_{(i,j)} = sack_{(i-1,j-w_i)+v_i}$
+Initialize $j$ to $C$ and subtract weight of each *selected* item from it. Starting with the last item ($i=n$) and continuing while there is room in the knapsack ($j>0$), only add items where the following is true.
+
+* $v_i > 0$, and
+* $m[i,j] = m[i-1,j-w_i]+v_i$
+
+### Example 2
+
+![Wikipedia knapsack](images/knapsack.svg)
+
+$C=15$, $i(v, w)=\{{(2, 2), (1, 1), (10, 4), (2, 1), (4, 12)}\}$
+
+### Example 2 solution
+
+| i \ j | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  |
+| ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0     | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| 1     | 0   | 0   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   | 2   |
+| 2     | 0   | 1   | 2   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   | 3   |
+| 3     | 0   | 1   | 2   | 3   | 10  | 11  | 12  | 13  | 13  | 13  | 13  | 13  | 13  | 13  | 13  | 13  |
+| 4     | 0   | 2   | 3   | 4   | 10  | 12  | 13  | 14  | 15  | 15  | 15  | 15  | 15  | 15  | 15  | 15  |
+| 5     | 0   | 2   | 3   | 4   | 10  | 12  | 13  | 14  | 15  | 15  | 15  | 15  | 15  | 15  | 15  | 15  |
+
+```text
+Items [(2, 2), (1, 1), (10, 4), (2, 1)] sum up to 15
+```
+
+### Example 2 update
+
+* Let's add item (5, 10) to our options.
+* How will it change the selection?
+* Items [(10, 4), (2, 1), (5, 10)] sum up to 17
 
 ## Applications
 
