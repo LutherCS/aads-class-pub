@@ -92,10 +92,16 @@ where Feed.FeedID = FeedAttribute.FeedID and FeedAttribute.FeetAttribTypeID = Fe
 ### Properties
 
 * Balanced tree that consists of nodes
-* Each node is a combination of pointers and items
-* The *degree* of a tree is the minimum number of items that a node (except the root) can contain
+  * Each node is a combination of pointers and items
+  * All *leaf* nodes are at the same level
+* The *degree* of a tree is the minimum number of items that a node can contain
+  * except the root
 * The *capacity* is the maximum number of items that a node can contain
-* Items in a node are stored in increasing order of their *keys*
+  * $capacity = 2 \times degree$
+
+### Properties. Continued
+
+* Items in a node are stored in order (increasing or decreasing) of their *keys*
   * First value in the tuple
   * The second value is the record id (offset within a file)
 * A pointer to the **left** of an *item* points to a node with smaller items
@@ -118,7 +124,7 @@ where Feed.FeedID = FeedAttribute.FeedID and FeedAttribute.FeetAttribTypeID = Fe
 
 ## B-Tree implementation
 
-Wednesday
+See *btree.py* in the *src/notes/btree/*
 
 ## B-Tree operations
 
@@ -126,9 +132,78 @@ Wednesday
 * Insertion can cause splitting
 * Removal may cause rebalancing
 
-### B-Tree Insert
+## B-Tree Insert
 
-### B-Tree Delete
+* Find a **node** where the new item belongs
+* If the node is a leaf and there is room in that node, insert an item
+* If the node is a leaf that has reached its capacity, split
+  * Promote median item to the parent (recursively)
+  * All greater items become right node
+* If the node is not a leaf, call insert on the subtree
+  * Watch for promoted items
+  * Split, if necessary
+
+### B-Tree Insert. Tree to build
+
+* Let's built the tree of degree **2**
+  * Number of items in each node is **2..4**
+* Insert the following items: 10, 8, 22, 14, 12, 18, 2, 50, 15
+
+![Tree to build](images/btree1example4.png)
+
+### B-Tree Insert. Step 1: insert 10, 8, 22, 14
+
+![Insert 10](images/btree1example1a.png)
+
+![Insert 8, 22, 14](images/btree1example1b.png)
+
+### B-Tree Insert. Step 2: insert 12
+
+![Insert 12](images/btree1example2.png)
+
+### B-Tree Insert. Step 3: insert 18, 2, 50
+
+![Insert 18, 2, 50](images/btree1example3.png)
+
+### B-Tree Insert. Step 4: insert 15
+
+![Insert 15](images/btree1example4.png)
+
+## B-Tree Delete
+
+* Find the **item** and its **node**
+* If the node is a leaf and has more than *degree* items, delete
+* If fewer than degree items, rebalance
+* If the node is not a leaf, take the smallest item from the right subtree
+
+### B-Tree Rebalancing
+
+* Pick items from a sibling that has extra items
+* Merge the node, its sibling, and the separating parent item into a new node
+
+### B-Tree Delete. Initial tree
+
+![Initial tree](images/btree1example4.png)
+
+### B-Tree Delete. Step 1: Delete 14
+
+![Delete 14](images/btree1example5.png)
+
+### B-Tree Delete. Step 2: Delete 50
+
+![Delete 50](images/btree1example6.png)
+
+### B-Tree Delete. Step 3: Delete 8
+
+![Delete 8](images/btree1example7.png)
+
+### B-Tree Delete. Step 4: Delete 12
+
+![Delete 12](images/btree1example8.png)
+
+### B-Tree Delete. Step 5: Delete 18
+
+![Delete 18](images/btree1example9.png)
 
 ## Summary
 
