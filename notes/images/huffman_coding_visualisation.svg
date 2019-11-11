@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-48 -30 360 270">
+ <title>Huffman coding visualisation</title>
+ <desc>Visualisation of the use of Huffman coding to encode the message "A_DEAD_DAD_CEDED_A_BAD_BABE_A_BEADED_ABACA_BED" by CMG Lee. In steps 2 to 6, the letters are sorted by increasing frequency, and the least frequent two at each step are combined and reinserted into the list, and a partial tree is constructed. The final tree in step 6 is traversed to generate the dictionary in step 7. Step 8 uses it to encode the message.</desc>
+ <defs>
+  <text id="0" x="0" y="0.7ex"><tspan font-size="6" fill="#000000">0</tspan
+   ><tspan dx="1" dy="1" fill="#999999">/</tspan></text>
+  <text id="1" x="0" y="0.7ex"><tspan dy="1" fill="#999999">\</tspan
+   ><tspan dy="-2" font-size="6" font-weight="bold" fill="#cccccc">1</tspan></text>
+  <text id="_" x="0" y="0.7ex" fill="#0000ff"><tspan font-weight="bold">_</tspan><tspan fill="#999999">:10</tspan></text>
+  <text id="d" x="0" y="0.7ex" fill="#0099ff"><tspan font-weight="bold">D</tspan><tspan fill="#999999">:10</tspan></text>
+  <text id="a" x="0" y="0.7ex" fill="#009900"><tspan font-weight="bold">A</tspan><tspan fill="#999999">:11</tspan></text>
+  <text id="e" x="0" y="0.7ex" fill="#cc9900"><tspan font-weight="bold">E</tspan><tspan fill="#999999">: 7</tspan></text>
+  <text id="c" x="0" y="0.7ex" fill="#ff0000"><tspan font-weight="bold">C</tspan><tspan fill="#999999">: 2</tspan></text>
+  <text id="b" x="0" y="0.7ex" fill="#cc00ff"><tspan font-weight="bold">B</tspan><tspan fill="#999999">: 6</tspan></text>
+  <text id="cb"     x="0" y="0.7ex" fill="#ff00ff"><tspan>CB</tspan    ><tspan fill="#999999">: 8</tspan></text>
+  <text id="ecb"    x="0" y="0.7ex" fill="#ff9900"><tspan>ECB</tspan   ><tspan fill="#999999">:15</tspan></text>
+  <text id="aecb"   x="0" y="0.7ex" fill="#999900"><tspan>AECB</tspan  ><tspan fill="#999999">:26</tspan></text>
+  <text id="_daecb" x="0" y="0.7ex" fill="#00cc00"><tspan>_DAECB</tspan><tspan fill="#999999">:46</tspan></text>
+  <text id="_d"     x="0" y="0.7ex" fill="#6666ff"><tspan>_D</tspan    ><tspan fill="#999999">:20</tspan></text>
+  <path id="arrowhead" d="M 2,-1 l -2,1 l 2,1"/>
+  <g id="bracket">
+   <path d="M -25,-2 h -15 m -8,-8 c 8,0 -2,8 6,8 c -8,0 2,8 -6,8"/>
+   <use xlink:href="#arrowhead" transform="translate(-25,-2) rotate(180)"/>
+  </g>
+  <g id="tree_cb">
+   <use xlink:href="#cb"/>
+   <use xlink:href="#0" transform="translate(-10,10)"/>
+   <use xlink:href="#1" transform="translate( 10,10)"/>
+   <use xlink:href="#c" transform="translate(-15,20)"/>
+   <use xlink:href="#b" transform="translate( 15,20)"/>
+  </g>
+  <g id="tree_ecb">
+   <use xlink:href="#ecb"/>
+   <use xlink:href="#0"       transform="translate(-10,10)"/>
+   <use xlink:href="#1"       transform="translate( 10,10)"/>
+   <use xlink:href="#e"       transform="translate(-15,20)"/>
+   <use xlink:href="#tree_cb" transform="translate( 15,20)"/>
+  </g>
+  <g id="tree_aecb">
+   <use xlink:href="#aecb"/>
+   <use xlink:href="#0"        transform="translate(-10,10)"/>
+   <use xlink:href="#1"        transform="translate( 10,10)"/>
+   <use xlink:href="#a"        transform="translate(-15,20)"/>
+   <use xlink:href="#tree_ecb" transform="translate( 20,20)"/>
+  </g>
+  <g id="tree__daecb">
+   <use xlink:href="#_daecb"/>
+   <use xlink:href="#0"         transform="translate(-25,10)"/>
+   <use xlink:href="#1"         transform="translate( 25,10)"/>
+   <use xlink:href="#tree__d"   transform="translate(-30,20)"/>
+   <use xlink:href="#tree_aecb" transform="translate( 30,20)"/>
+  </g>
+  <g id="tree__d">
+   <use xlink:href="#_d"/>
+   <use xlink:href="#0" transform="translate(-10,10)"/>
+   <use xlink:href="#1" transform="translate( 10,10)"/>
+   <use xlink:href="#_" transform="translate(-15,20)"/>
+   <use xlink:href="#d" transform="translate( 15,20)"/>
+  </g>
+ </defs>
+ <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
+ <g font-family="Helvetica,Arial,sans-serif" font-size="9" text-anchor="middle"
+    stroke-width="0.5" stroke="none" fill="#000000">
+  <g transform="translate(0,-20)">
+   <text x="-40" y="0.7ex" font-weight="bold">1.</text>
+   <text x="-30" y="0.7ex" font-weight="bold" text-anchor="start"><tspan>"</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#0000ff">_</tspan
+    ><tspan fill="#0099ff">D</tspan><tspan fill="#cc9900">E</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#ff0000">C</tspan
+    ><tspan fill="#cc9900">E</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#cc9900">E</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#009900">A</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#cc00ff">B</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#cc00ff">B</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#cc00ff">B</tspan
+    ><tspan fill="#cc9900">E</tspan><tspan fill="#0000ff">_</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#0000ff">_</tspan
+    ><tspan fill="#cc00ff">B</tspan><tspan fill="#cc9900">E</tspan
+    ><tspan fill="#009900">A</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#cc9900">E</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#009900">A</tspan
+    ><tspan fill="#cc00ff">B</tspan><tspan fill="#009900">A</tspan
+    ><tspan fill="#ff0000">C</tspan><tspan fill="#009900">A</tspan
+    ><tspan fill="#0000ff">_</tspan><tspan fill="#cc00ff">B</tspan
+    ><tspan fill="#cc9900">E</tspan><tspan fill="#0099ff">D</tspan
+    ><tspan>"</tspan></text>
+  </g>
+  <g transform="translate(0,0)">
+   <text x="-40" y="0.7ex" font-weight="bold">2.</text>
+   <g text-anchor="end">
+    <use xlink:href="#c" transform="translate(0,0)"/>
+    <use xlink:href="#b" transform="translate(0,10)"/>
+    <use xlink:href="#e" transform="translate(0,20)"/>
+    <use xlink:href="#_" transform="translate(0,30)"/>
+    <use xlink:href="#d" transform="translate(0,40)"/>
+    <use xlink:href="#a" transform="translate(0,50)"/>
+   </g>
+   <g transform="translate(50,7)" stroke="#999999" fill="none">
+    <use xlink:href="#bracket"/>
+    <use xlink:href="#tree_cb" stroke="none"/>
+    <use xlink:href="#arrowhead" transform="translate(-48,17)"/>
+    <path d="M -25,0 c -25,0 0,17 -22,17"/>
+   </g>
+  </g>
+  <g transform="translate(0,80)">
+   <text x="-40" y="0.7ex" font-weight="bold">3.</text>
+   <g text-anchor="end">
+    <use xlink:href="#e"  transform="translate(0,0)"/>
+    <use xlink:href="#cb" transform="translate(0,10)"/>
+    <use xlink:href="#_"  transform="translate(0,20)"/>
+    <use xlink:href="#d"  transform="translate(0,30)"/>
+    <use xlink:href="#a"  transform="translate(0,40)"/>
+   </g>
+   <g transform="translate(50,7)" stroke="#999999" fill="none">
+    <use xlink:href="#bracket"/>
+    <use xlink:href="#tree_ecb" stroke="none"/>
+    <use xlink:href="#arrowhead" transform="translate(-48,37)"/>
+    <path d="M -25,0 c -25,0 0,37 -22,37"/>
+   </g>
+  </g>
+  <g transform="translate(0,150)">
+   <text x="-40" y="0.7ex" font-weight="bold">4.</text>
+   <g text-anchor="end">
+    <use xlink:href="#_"   transform="translate(0,0)"/>
+    <use xlink:href="#d"   transform="translate(0,10)"/>
+    <use xlink:href="#a"   transform="translate(0,20)"/>
+    <use xlink:href="#ecb" transform="translate(0,30)"/>
+   </g>
+   <g transform="translate(50,7)" stroke="#999999" fill="none">
+    <use xlink:href="#bracket"/>
+    <use xlink:href="#tree__d" stroke="none"/>
+    <use xlink:href="#arrowhead" transform="translate(-48,27)"/>
+    <path d="M -25,0 c -25,0 0,27 -22,27"/>
+   </g>
+  </g>
+  <g transform="translate(170,0)">
+   <text x="-45" y="0.7ex" font-weight="bold">5.</text>
+   <g text-anchor="end">
+    <use xlink:href="#a"   transform="translate(0,0)"/>
+    <use xlink:href="#ecb" transform="translate(0,10)"/>
+    <use xlink:href="#_d"  transform="translate(0,20)"/>
+   </g>
+   <g transform="translate(50,7)" stroke="#999999" fill="none">
+    <use xlink:href="#bracket"/>
+    <use xlink:href="#tree_aecb" stroke="none"/>
+    <use xlink:href="#arrowhead" transform="translate(-48,17)"/>
+    <path d="M -25,0 c -25,0 0,17 -22,17"/>
+   </g>
+  </g>
+  <g transform="translate(170,80)">
+   <text x="-45" y="0.7ex" font-weight="bold">6.</text>
+   <g text-anchor="end">
+    <use xlink:href="#_d"   transform="translate(0,0)"/>
+    <use xlink:href="#aecb" transform="translate(0,10)"/>
+   </g>
+   <g transform="translate(50,7)" stroke="#999999" fill="none">
+    <use xlink:href="#bracket"/>
+    <use xlink:href="#tree__daecb" stroke="none"/>
+   </g>
+  </g>
+  <g transform="translate(170,150)">
+   <text x="-45" y="0.7ex" font-weight="bold">7.</text>
+   <g text-anchor="start">
+    <text x="-35" y="0"  dy="0.7ex" fill="#0000ff"><tspan font-weight="bold">_</tspan><tspan>: 00</tspan  ></text>
+    <text x="-35" y="10" dy="0.7ex" fill="#0099ff"><tspan font-weight="bold">D</tspan><tspan>: 01</tspan  ></text>
+    <text x="-35" y="20" dy="0.7ex" fill="#009900"><tspan font-weight="bold">A</tspan><tspan>: 10</tspan  ></text>
+    <text x="-35" y="30" dy="0.7ex" fill="#cc9900"><tspan font-weight="bold">E</tspan><tspan>: 110</tspan ></text>
+    <text x="-35" y="40" dy="0.7ex" fill="#ff0000"><tspan font-weight="bold">C</tspan><tspan>: 1110</tspan></text>
+    <text x="-35" y="50" dy="0.7ex" fill="#cc00ff"><tspan font-weight="bold">B</tspan><tspan>: 1111</tspan></text>
+   </g>
+  </g>
+  <g transform="translate(0,220)">
+   <text x="-40" y="0.7ex" font-weight="bold">8.</text>
+   <text x="-30" y="0.7ex" text-anchor="start"><tspan>"</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#0000ff">00</tspan
+    ><tspan fill="#0099ff">01</tspan><tspan fill="#cc9900">110</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#ff0000">1110</tspan
+    ><tspan fill="#cc9900">110</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#cc9900">110</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#009900">10</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#cc00ff">1111</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#cc00ff">1111</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#cc00ff">1111</tspan
+    ><tspan fill="#cc9900">110</tspan><tspan x="-25" dy="1em" fill="#0000ff">00</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#0000ff">00</tspan
+    ><tspan fill="#cc00ff">1111</tspan><tspan fill="#cc9900">110</tspan
+    ><tspan fill="#009900">10</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#cc9900">110</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#009900">10</tspan
+    ><tspan fill="#cc00ff">1111</tspan><tspan fill="#009900">10</tspan
+    ><tspan fill="#ff0000">1110</tspan><tspan fill="#009900">10</tspan
+    ><tspan fill="#0000ff">00</tspan><tspan fill="#cc00ff">1111</tspan
+    ><tspan fill="#cc9900">110</tspan><tspan fill="#0099ff">01</tspan
+    ><tspan>"</tspan></text>
+  </g>
+ </g>
+</svg>
