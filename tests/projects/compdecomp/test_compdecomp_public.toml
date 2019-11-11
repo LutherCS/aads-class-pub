@@ -21,5 +21,5 @@ module = "projects.compdecomp"
 
         [case_public.success.c]
         text = "this is an example of a huffman tree"
-        tree = "e n x l u o s t m a i p r h f"
+        tree = "e n x l u o s t m a i p r h f  "
         total_weight = 36
