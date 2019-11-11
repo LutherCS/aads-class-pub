@@ -1,0 +1,36 @@
+
+A_DEAD_DAD_CEDED_A_BAD_BABE_A_BEADED_ABACA_BED
+Letter      Weight     Code   Length
+A             11        10        2
+_             10        01        2
+D             10        00        2
+E             7        110        3
+B             6        1111       4
+C             2        1110       4
+
+AAAAAAAAAAAAAAABBBBBBBCCCCCCDDDDDDEEEEE
+Letter      Weight     Code   Length
+A             15        0         1
+B             7        111        3
+C             6        101        3
+D             6        110        3
+E             5        100        3
+
+this is an example of a huffman tree
+Letter      Weight     Code   Length
+              7        111        3
+a             4        100        3
+e             4        000        3
+f             3        1101       4
+t             2        0110       4
+h             2        1100       4
+i             2        1010       4
+s             2        0101       4
+n             2        0010       4
+m             2        0111       4
+x             1       00110       5
+p             1       10110       5
+l             1       00111       5
+o             1       01001       5
+u             1       01000       5
+r             1       10111       5
