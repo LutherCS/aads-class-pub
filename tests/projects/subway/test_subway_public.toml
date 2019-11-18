@@ -1,0 +1,22 @@
+title = "Public test cases"
+
+[meta]
+author = "Roman Yasinovskyy"
+date = 2019
+module = "projects.subway"
+
+[case_public]
+
+    [case_public.success]
+
+        [case_public.success.a]
+        data = "pieces1.txt"
+        expected = "Uptown Midtown Downtown"
+
+        [case_public.success.b]
+        data = "pieces2.txt"
+        expected = "F E D B A"
+
+        [case_public.success.c]
+        data = "pieces2.txt"
+        expected = "no route found"
