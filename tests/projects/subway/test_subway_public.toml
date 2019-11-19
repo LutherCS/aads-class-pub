@@ -18,5 +18,5 @@ module = "projects.subway"
         expected = "F E D B A"
 
         [case_public.success.c]
-        data = "pieces2.txt"
+        data = "pieces3.txt"
         expected = "no route found"
