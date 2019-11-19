@@ -10,9 +10,8 @@ def read_toml(filename: str) -> Graph:
     """Read TOML config file"""
     pass
 
-
-def find_path(g: Graph) -> None:
-    """Use Dijkstra's algorithm to find the shortest path from *v* to other vertices"""
+def find_path(g: Graph, start: str) -> None:
+    """Use Dijkstra's algorithm to find the shortest path from *start* to other vertices"""
     pass
 
 
