@@ -3,6 +3,6 @@
 subway import statement
 """
 
-from .subway import find_path, read_file
+from .subway import find_routes, read_file
 
-__all__ = ["find_path", "read_file"]
+__all__ = ["find_routes", "read_file"]
