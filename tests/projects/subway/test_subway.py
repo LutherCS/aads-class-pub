@@ -9,7 +9,7 @@
 import pathlib
 import pytest
 import toml
-from src.projects.subway import read_file, find_path
+from src.projects.subway import read_file, find_routes
 
 THIS_DIR = pathlib.Path(".")
 TEST_DIR = pathlib.Path("tests/projects/subway/")
@@ -44,7 +44,7 @@ if FILE_SECRET.exists():
 def test_subway(data, expected):
     """Testing the output"""
     g, src, dst = read_file(DATA_DIR / pathlib.Path(data))
-    assert find_path(g, src, dst) == expected
+    assert find_routes(g, src, dst) == expected
 
 
 if __name__ == "__main__":

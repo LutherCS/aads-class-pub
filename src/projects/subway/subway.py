@@ -12,12 +12,12 @@ def read_file(filename: str) -> Tuple[Graph, str, str]:
 
     Return the graph object and two vertices: start and destination
     """
-    pass
+    raise NotImplementedError
 
 
-def find_path(g: Graph, src: str, dst: str) -> str:
+def find_routes(g: Graph, src: str, dst: str) -> str:
     """Find the path between two stations"""
-    pass
+    raise NotImplementedError
 
 
 def main():
