@@ -134,14 +134,12 @@ See *btree.py* in the *src/notes/btree/*
 
 ## B-Tree Insert
 
-* Find a **node** where the new item belongs
-* If the node is a leaf and there is room in that node, insert an item
-* If the node is a leaf that has reached its capacity, split
+* Find a **leaf node** where the new item belongs
+* If there is room in that node, insert an item
+* If the node has reached its capacity, split at median item
   * Promote median item to the parent (recursively)
+  * All smaller items become left node
   * All greater items become right node
-* If the node is not a leaf, call insert on the subtree
-  * Watch for promoted items
-  * Split, if necessary
 
 ### B-Tree Insert. Tree to build
 
@@ -173,13 +171,18 @@ See *btree.py* in the *src/notes/btree/*
 
 * Find the **item** and its **node**
 * If the node is a leaf and has more than *degree* items, delete
-* If fewer than degree items, rebalance
+  * If fewer than *degree* items, rebalance
 * If the node is not a leaf, take the smallest item from the right subtree
+  * Or the largest item from the left subtree
+  * If this causes some node to have fewer than *degree* items, rebalance
 
 ### B-Tree Rebalancing
 
-* Pick items from a sibling that has extra items
-* Merge the node, its sibling, and the separating parent item into a new node
+* If either left or right **sibling** has extra items
+  * Borrow from that sibling
+  * Rotate items as necessary (left or right)
+* If there is no immediate sibling to borrow from
+  * Merge the node, its sibling, and the separating parent item into a new node
 
 ### B-Tree Delete. Initial tree
 
