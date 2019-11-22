@@ -1,0 +1,23 @@
+graph g {
+	node [shape=circle height=0.1]
+
+	nodeA [label="A"]
+	nodeB [label="B"]
+	nodeC [label="C"]
+	nodeD [label="D"]
+	nodeE [label="E"]
+	nodeF [label="F"]
+	nodeG [label="G"]
+
+    nodeA -- nodeB [label="7"]
+    nodeA -- nodeD [label="5"]
+    nodeB -- nodeC [label="8"]
+    nodeB -- nodeD [label="9"]
+    nodeB -- nodeE [label="7"]
+    nodeC -- nodeE [label="5"]
+    nodeD -- nodeE [label="15"]
+    nodeD -- nodeF [label="6"]
+    nodeE -- nodeF [label="8"]
+    nodeE -- nodeG [label="9"]
+    nodeF -- nodeG [label="11"]
+}
