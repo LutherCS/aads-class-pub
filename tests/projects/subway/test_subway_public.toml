@@ -20,3 +20,15 @@ module = "projects.subway"
         [case_public.success.c]
         data = "pieces3.txt"
         expected = "no route found"
+
+        [case_public.success.d]
+        data = "pieces4.txt"
+        expected = "no route found"
+
+        [case_public.success.e]
+        data = "pieces5.txt"
+        expected = "no route found"
+
+        [case_public.success.f]
+        data = "pieces6.txt"
+        expected = "150 160 330 CSMinor 490 491"
