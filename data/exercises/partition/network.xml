@@ -1,0 +1,26 @@
+<Graph width="800" height="600" directed="True" weighted="True">
+  <Vertices>
+    <Vertex id="0" x="600" y="300" label="t"/>
+    <Vertex id="1" x="500" y="400" label="u"/>
+    <Vertex id="2" x="400" y="400" label="v"/>
+    <Vertex id="3" x="300" y="500" label="w"/>
+    <Vertex id="4" x="100" y="400" label="x"/>
+    <Vertex id="5" x="200" y="300" label="y"/>
+    <Vertex id="6" x="100" y="100" label="z"/>
+
+  </Vertices>
+  <Edges>
+    <Edge source="0" destination="1" weight="2"/>
+    <Edge source="1" destination="2" weight="3"/>
+    <Edge source="1" destination="3" weight="3"/>
+    <Edge source="2" destination="4" weight="3"/>
+    <Edge source="0" destination="2" weight="4"/>
+    <Edge source="2" destination="3" weight="4"/>
+    <Edge source="3" destination="4" weight="6"/>
+    <Edge source="4" destination="5" weight="6"/>
+    <Edge source="0" destination="5" weight="7"/>
+    <Edge source="2" destination="5" weight="8"/>
+    <Edge source="4" destination="6" weight="8"/>
+    <Edge source="5" destination="6" weight="12"/>
+  </Edges>
+</Graph>

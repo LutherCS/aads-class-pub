@@ -1,0 +1,81 @@
+<Graph width="1060.80" height="994.80" directed="True" weighted="True">
+  <Vertices>
+    <Vertex id="0" x="543.40" y="82.90" label="0"/>
+    <Vertex id="1" x="629.40" y="82.90" label="1"/>
+    <Vertex id="2" x="304.90" y="107.90" label="2"/>
+    <Vertex id="3" x="422.40" y="107.85" label="3"/>
+    <Vertex id="4" x="694.40" y="138.65" label="4"/>
+    <Vertex id="5" x="801.40" y="120.90" label="5"/>
+    <Vertex id="6" x="314.40" y="245.90" label="6"/>
+    <Vertex id="7" x="936.40" y="162.90" label="7"/>
+    <Vertex id="8" x="187.40" y="107.90" label="8"/>
+    <Vertex id="9" x="501.65" y="232.90" label="9"/>
+    <Vertex id="10" x="605.90" y="245.90" label="10"/>
+    <Vertex id="11" x="698.90" y="245.90" label="11"/>
+    <Vertex id="12" x="791.40" y="232.90" label="12"/>
+    <Vertex id="13" x="88.40" y="343.90" label="13"/>
+    <Vertex id="14" x="218.40" y="343.90" label="14"/>
+    <Vertex id="15" x="225.40" y="456.90" label="15"/>
+    <Vertex id="16" x="225.90" y="539.90" label="16"/>
+    <Vertex id="17" x="483.40" y="500.90" label="17"/>
+    <Vertex id="18" x="608.40" y="454.02" label="18"/>
+    <Vertex id="19" x="655.40" y="538.47" label="19"/>
+    <Vertex id="20" x="698.90" y="611.66" label="20"/>
+    <Vertex id="21" x="832.40" y="598.90" label="21"/>
+    <Vertex id="22" x="972.40" y="598.90" label="22"/>
+    <Vertex id="23" x="356.88" y="672.46" label="23"/>
+    <Vertex id="24" x="466.40" y="724.90" label="24"/>
+    <Vertex id="26" x="664.40" y="704.90" label="26"/>
+    <Vertex id="25" x="567.40" y="704.90" label="25"/>
+    <Vertex id="27" x="531.40" y="788.90" label="27"/>
+    <Vertex id="28" x="828.40" y="803.90" label="28"/>
+    <Vertex id="29" x="828.40" y="911.90" label="29"/>
+  </Vertices>
+  <Edges>
+    <Edge source="15" destination="16" weight="1.24"/>
+    <Edge source="19" destination="20" weight="1.53"/>
+    <Edge source="18" destination="19" weight="1.54"/>
+    <Edge source="10" destination="11" weight="1.67"/>
+    <Edge source="1" destination="4" weight="1.7"/>
+    <Edge source="25" destination="26" weight="1.86"/>
+    <Edge source="0" destination="1" weight="2.02"/>
+    <Edge source="11" destination="12" weight="2.16"/>
+    <Edge source="23" destination="24" weight="2.18"/>
+    <Edge source="9" destination="10" weight="2.32"/>
+    <Edge source="4" destination="5" weight="3.28"/>
+    <Edge source="5" destination="12" weight="3.3"/>
+    <Edge source="2" destination="6" weight="3.41"/>
+    <Edge source="25" destination="27" weight="3.51"/>
+    <Edge source="14" destination="15" weight="4.07"/>
+    <Edge source="17" destination="18" weight="4.07"/>
+    <Edge source="28" destination="29" weight="4.24"/>
+    <Edge source="5" destination="7" weight="4.28"/>
+    <Edge source="0" destination="3" weight="4.45"/>
+    <Edge source="13" destination="14" weight="4.61"/>
+    <Edge source="2" destination="8" weight="4.64"/>
+    <Edge source="21" destination="22" weight="4.66"/>
+    <Edge source="24" destination="27" weight="4.67"/>
+    <Edge source="19" destination="26" weight="4.72"/>
+    <Edge source="3" destination="9" weight="5.02"/>
+    <Edge source="2" destination="3" weight="5.53"/>
+    <Edge source="1" destination="10" weight="5.8"/>
+    <Edge source="18" destination="25" weight="6.17"/>
+    <Edge source="20" destination="21" weight="6.17"/>
+    <Edge source="0" destination="10" weight="6.2"/>
+    <Edge source="21" destination="28" weight="6.66"/>
+    <Edge source="9" destination="17" weight="7.1"/>
+    <Edge source="13" destination="16" weight="7.32"/>
+    <Edge source="17" destination="24" weight="8.42"/>
+    <Edge source="8" destination="13" weight="8.45"/>
+    <Edge source="10" destination="17" weight="8.65"/>
+    <Edge source="15" destination="17" weight="8.81"/>
+    <Edge source="16" destination="17" weight="9.01"/>
+    <Edge source="20" destination="28" weight="9.32"/>
+    <Edge source="3" destination="17" weight="10.81"/>
+    <Edge source="27" destination="29" weight="11.6"/>
+    <Edge source="6" destination="17" weight="11.6"/>
+    <Edge source="17" destination="23" weight="11.76"/>
+    <Edge source="14" destination="17" weight="13.47"/>
+    <Edge source="7" destination="22" weight="16.43"/>
+  </Edges>
+</Graph>

@@ -1,0 +1,15 @@
+<Graph width="200" height="200" directed="True" weighted="True">
+  <Vertices>
+    <Vertex id="0" x="50" y="50" label="A"/>
+    <Vertex id="1" x="150" y="50" label="B"/>
+    <Vertex id="2" x="50" y="150" label="C"/>
+    <Vertex id="3" x="150" y="150" label="D"/>
+  </Vertices>
+  <Edges>
+    <Edge source="0" destination="1" weight="1"/>
+    <Edge source="2" destination="3" weight="2"/>
+    <Edge source="0" destination="2" weight="3"/>
+    <Edge source="0" destination="3" weight="4"/>
+    <Edge source="1" destination="3" weight="5"/>
+  </Edges>
+</Graph>
