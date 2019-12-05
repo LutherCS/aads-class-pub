@@ -10,8 +10,10 @@ Within a class like middle-upper, there can be further distinctions as well, lea
 
 ## Input
 
-The first line of input contains a single positive integer *T* (T≤500) indicating the number of cases to follow. Each case starts with a positive integer *n* (n≤100) on a line indicating the number of people to consider. Each of the next n lines contains the name of a person followed by a colon and a space, followed by the class of the person. The name contains up to 30 lowercase characters. The class is a string consisting of a nonempty sequence of up to 10 of the words upper, middle, lower separated by hyphens (-), followed by a space, followed by the word class. No two people will have the same name in a single case.
+Each file contains 1 case and consists of a list of people and their classes. A line in the file is the name of a person followed by a colon and a space, followed by the class of the person. The name contains up to 30 lowercase characters. The class is a string consisting of a nonempty sequence of up to 10 of the words upper, middle, lower separated by hyphens (-), followed by a space, followed by the word class. No two people will have the same name in a file.
 
-##Output
+## Output
 
-For each test case, print the list of names from highest to lowest class. If two people have the same or equivalent classes, they should be listed in alphabetical order by name. Output a line of 30 equal signs (=) after each case.
+Return the list of names from highest to lowest class. If two people have the same or equivalent classes, they should be listed in alphabetical order by name.
+
+Pass the provided tests.

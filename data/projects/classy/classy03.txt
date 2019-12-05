@@ -1,0 +1,15 @@
+Dave: upper-upper-lower class
+Dan: middle-middle class
+Alec: lower-middle-middle-middle-upper-lower-upper class
+David: upper-upper-upper-middle-lower-middle class
+Nathan: upper-middle class
+Massi: lower-upper-upper-middle-lower-middle-lower-upper-upper class
+Nat: upper-middle-middle-middle-upper class
+Daniel: upper-upper-middle-upper-upper-middle-upper-lower-middle-middle class
+Biruk: upper class
+Simon: middle-lower-middle-lower class
+Tho: upper-lower-upper-upper-lower-lower-upper-lower class
+Harrison: lower-upper-upper-upper-lower-middle class
+Josh: middle-middle-upper-lower class
+Sam: middle-lower-upper-lower-middle-middle-upper-lower-lower-lower class
+Will: upper-lower-upper-lower-upper class
