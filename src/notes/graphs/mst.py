@@ -7,8 +7,36 @@ from pythonds3.graphs import Graph
 
 
 def kruskal(g: Graph):
-    """Kruska's algorithm"""
-    pass
+    """Kruskal's algorithm"""
+    Edge = namedtuple("Edge", ["src", "dst", "weight"])
+    vertices = [set(v) for v in g.get_vertices()]
+
+    edges = [Edge(e[0][0], e[0][1], e[1]) for e in g._edges.items()]
+    edges.sort(key=lambda edge: edge.weight, reverse=True)
+
+    min_span_tree = set()
+    min_span_tree_size = len(vertices) - 1
+
+    while len(min_span_tree) < min_span_tree_size:
+        candidate = edges.pop()
+        for v_set in vertices:
+            if candidate.src in v_set:
+                src_set = v_set
+                break
+        # else:
+        #     src_set = set()
+        for v_set in vertices:
+            if candidate.dst in v_set:
+                dst_set = v_set
+                break
+        # else:
+        #     dst_set = set()
+        if src_set != dst_set:
+            min_span_tree.add(candidate)
+            src_set.update(dst_set)
+            vertices.remove(dst_set)
+            yield candidate
+        # return min_span_tree
 
 
 def main():
