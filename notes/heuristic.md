@@ -98,11 +98,11 @@ def adjacent(location):
   * Over-estimation leads to DFS
 * Can handle large search spaces and branching
 * May not find an optimal solution
-  * My suffer from local maxima or peaks
+  * May suffer from local maxima or peaks
 
 ## Best First Search
 
-* Combination of BFS and Hill Climbing
+* Combination of BFS and Hill climbing
 * DFS when moving towards goal
 * BFS when moving away from the goal
 * Priority queue
@@ -118,6 +118,7 @@ def adjacent(location):
 ## A\* Search
 
 * Abandon long paths quickly
+* Path length and distance to the goal as heuristics
 
 ### A\* Search. Example
 
