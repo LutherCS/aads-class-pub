@@ -22,9 +22,9 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ### Maze search
 
-* Maze is just a graph
-* Special representation: `set` of tuples
-  * each `tuple` is a (row, column) pair
+![Maze](images/maze.png)
+
+### Maze implementation
 
 ```python
 import namedtuple
@@ -32,16 +32,20 @@ import namedtuple
 Location = namedtuple("Location", ["row", "col"])
 ```
 
-![Maze](images/maze.png)
+* Maze is just a graph
+* Special representation: `set` of tuples
+  * each `tuple` is a (row, column) pair
 
 ### Adjacent locations
 
 ```python
-def adjacent(maze, location):
-    [Location(location.row - 1, location.col),
-    Location(location.row + 1, location.col),
-    Location(location.row, location.col - 1),
-    Location(location.row, location.col + 1)]
+def adjacent(location):
+    return [
+        Location(location.row - 1, location.col),
+        Location(location.row + 1, location.col),
+        Location(location.row, location.col - 1),
+        Location(location.row, location.col + 1)
+        ]
 ```
 
 ## Depth First Search
@@ -51,6 +55,10 @@ def adjacent(maze, location):
 * Stack
 
 ### Depth First Search. Example
+
+![Maze](images/maze.png)
+
+### Depth First Search. Example solved
 
 ![DFS through maze](images/mazedfs.png)
 
@@ -62,6 +70,10 @@ def adjacent(maze, location):
 
 ### Breadth First Search. Example
 
+![Maze](images/maze.png)
+
+### Breadth First Search. Example solved
+
 ![BFS through maze](images/mazebfs.png)
 
 ## Hill Climbing
@@ -71,6 +83,10 @@ def adjacent(maze, location):
 * Under-estimate
 
 ### Hill Climbing. Example
+
+![Maze](images/maze.png)
+
+### Hill Climbing. Example solved
 
 ![Hill climbing through maze](images/mazehill.png)
 
@@ -93,6 +109,10 @@ def adjacent(maze, location):
 
 ### Best First Search. Example
 
+![Maze](images/maze.png)
+
+### Best First Search. Example solved
+
 ![Best First through maze](images/mazebestfirst.png)
 
 ## A\* Search
@@ -100,6 +120,10 @@ def adjacent(maze, location):
 * Abandon long paths quickly
 
 ### A\* Search. Example
+
+![Maze](images/maze.png)
+
+### A\* Search. Example solved
 
 ![A* through maze](images/mazeastar.png)
 
