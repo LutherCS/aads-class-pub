@@ -1,0 +1,141 @@
+[meta]
+author = "Roman Yasinovskyy"
+date   = 2020
+title  = "Public test cases for the module `hashing`"
+
+[[simple_remainder]]
+
+expected = [ 0, 2, 5, 0, 6 ]
+keys     = [ 112, 156, 187, 133, 188 ]
+size     = 7
+
+[[simple_remainder]]
+
+expected = [ 10, 4, 5, 6, 0, 9 ]
+keys     = [ 54, 26, 93, 17, 77, 31 ]
+size     = 11
+
+[[simple_remainder]]
+
+expected = [ 10, 5, 0, 2, 1, 3, 10, 7, 3 ]
+keys     = [ 10, 21, 32, 18, 17, 19, 42, 23, 99 ]
+size     = 16
+
+[[simple_remainder]]
+
+expected = [ 14, 4, 12, 22, 1, 10, 1, 19, 16, 17 ]
+keys     = [ 106, 142, 173, 114, 139, 148, 185, 134, 131, 109 ]
+size     = 23
+
+[[mid_square]]
+
+expected = [ 4, 1, 0, 6, 4 ]
+keys     = [ 112, 156, 187, 133, 188 ]
+size     = 7
+
+[[mid_square]]
+
+expected = [ 3, 1, 9, 6, 4, 8 ]
+keys     = [ 54, 26, 93, 17, 77, 31 ]
+size     = 11
+
+[[mid_square]]
+
+expected = [ 10, 12, 2, 0, 12, 4, 12, 4, 0 ]
+keys     = [ 10, 21, 32, 18, 17, 19, 42, 23, 99 ]
+size     = 16
+
+[[mid_square]]
+
+expected = [ 12, 1, 7, 6, 1, 19, 19, 10, 2, 18 ]
+keys     = [ 106, 142, 173, 114, 139, 148, 185, 134, 131, 109 ]
+size     = 23
+
+[[folding]]
+expected = [ 2, 1, 0 ]
+keys     = [ "111-22-3333", "444-55-6666", "777-88-9999" ]
+size     = 7
+
+[[folding]]
+
+expected = [ 1 ]
+keys     = [ "436-555-4601" ]
+size     = 11
+
+[[folding]]
+
+expected = [ 0, 12, 4 ]
+keys     = [ "563-555-1234", "800-555-8080", "888-555-0000" ]
+size     = 16
+
+[[folding]]
+
+expected = [ 20, 16, 3, 2 ]
+keys     = [ "324890576", "812746", "12394621", "9876123" ]
+size     = 23
+
+[[naive_string]]
+
+expected = [ 0, 0 ]
+keys     = [ "coronavirus", "carnivorous" ]
+size     = 7
+
+[[naive_string]]
+
+expected = [ 10, 10 ]
+keys     = [ "algorithm", "logarithm" ]
+size     = 11
+
+[[naive_string]]
+expected = [ 8, 1, 11, 15, 0, 14, 5, 3, 6 ]
+keys     = [
+    "pavel",
+    "bruce",
+    "talia",
+    "harvey",
+    "jim",
+    "alfred",
+    "lucius",
+    "jonathan",
+    "bane",
+]
+size     = 16
+
+[[naive_string]]
+
+expected = [ 13, 13, 13 ]
+keys     = [ "auctioned", "cautioned", "education" ]
+size     = 23
+
+[[weighted_string]]
+
+expected = [ 2, 4 ]
+keys     = [ "coronavirus", "carnivorous" ]
+size     = 7
+
+[[weighted_string]]
+expected = [ 12, 9, 8, 8, 3, 6, 9, 14, 12 ]
+keys     = [
+    "pavel",
+    "bruce",
+    "talia",
+    "harvey",
+    "jim",
+    "alfred",
+    "lucius",
+    "jonathan",
+    "bane",
+]
+size     = 16
+
+[[weighted_string]]
+
+expected = [ 8, 2 ]
+keys     = [ "algorithm", "logarithm" ]
+size     = 11
+
+[[weighted_string]]
+
+expected = [ 10, 3, 22 ]
+keys     = [ "auctioned", "cautioned", "education" ]
+size     = 23
