@@ -1,25 +1,49 @@
 #!/usr/bin/env python3
-# encoding: UTF-8
 """
+Testing Dijkstra's algorithm implementation
 @author: Roman Yasinovskyy
-@date: 2019
-@module: exercises.dijkstra
+@date: 2020
 """
 
+import pathlib
 import pytest
+import toml
 from src.exercises.dijkstra import read_toml, find_path
 
 TIME_LIMIT = 1
 
-NETWORK = [("t", 4), ("u", 3), ("v", 0), ("w", 4), ("x", 3), ("y", 8), ("z", 11)]
+
+def get_cases(category: str):
+    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
+        all_cases = toml.load(f)
+        for case in all_cases[category]:
+            yield (case.get("vertex"), case.get("distance"))
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("vertex, distance", NETWORK)
-def test_dijkstra(vertex, distance):
+@pytest.mark.parametrize("vertex, distance", get_cases("distance_to_t"))
+def test_dijkstra_1(vertex, distance):
+    """Testing the output"""
+    g = read_toml("data/exercises/dijkstra/network.toml")
+    find_path(g, "t")
+    assert g.get_vertex(vertex).distance == distance
+
+
+@pytest.mark.timeout(TIME_LIMIT)
+@pytest.mark.parametrize("vertex, distance", get_cases("distance_to_v"))
+def test_dijkstra_2(vertex, distance):
     """Testing the output"""
     g = read_toml("data/exercises/dijkstra/network.toml")
     find_path(g, "v")
+    assert g.get_vertex(vertex).distance == distance
+
+
+@pytest.mark.timeout(TIME_LIMIT)
+@pytest.mark.parametrize("vertex, distance", get_cases("distance_to_y"))
+def test_dijkstra_3(vertex, distance):
+    """Testing the output"""
+    g = read_toml("data/exercises/dijkstra/network.toml")
+    find_path(g, "y")
     assert g.get_vertex(vertex).distance == distance
 
 

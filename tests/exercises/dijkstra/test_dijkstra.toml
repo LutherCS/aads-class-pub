@@ -1,0 +1,109 @@
+[meta]
+author = "Roman Yasinovskyy"
+date   = 2020
+title  = "Public test cases for the module `dijkstra`"
+
+[[distance_to_t]]
+
+distance = 0
+vertex   = "t"
+
+[[distance_to_t]]
+
+distance = 2
+vertex   = "u"
+
+[[distance_to_t]]
+
+distance = 4
+vertex   = "v"
+
+[[distance_to_t]]
+
+distance = 5
+vertex   = "w"
+
+[[distance_to_t]]
+
+distance = 7
+vertex   = "x"
+
+[[distance_to_t]]
+
+distance = 7
+vertex   = "y"
+
+[[distance_to_t]]
+
+distance = 15
+vertex   = "z"
+
+[[distance_to_v]]
+
+distance = 4
+vertex   = "t"
+
+[[distance_to_v]]
+
+distance = 3
+vertex   = "u"
+
+[[distance_to_v]]
+
+distance = 0
+vertex   = "v"
+
+[[distance_to_v]]
+
+distance = 4
+vertex   = "w"
+
+[[distance_to_v]]
+
+distance = 3
+vertex   = "x"
+
+[[distance_to_v]]
+
+distance = 8
+vertex   = "y"
+
+[[distance_to_v]]
+
+distance = 11
+vertex   = "z"
+
+[[distance_to_y]]
+
+distance = 7
+vertex   = "t"
+
+[[distance_to_y]]
+
+distance = 9
+vertex   = "u"
+
+[[distance_to_y]]
+
+distance = 8
+vertex   = "v"
+
+[[distance_to_y]]
+
+distance = 12
+vertex   = "w"
+
+[[distance_to_y]]
+
+distance = 6
+vertex   = "x"
+
+[[distance_to_y]]
+
+distance = 0
+vertex   = "y"
+
+[[distance_to_y]]
+
+distance = 12
+vertex   = "z"
