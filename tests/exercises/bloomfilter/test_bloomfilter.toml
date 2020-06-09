@@ -1,0 +1,46 @@
+[meta]
+author = "Roman Yasinovskyy"
+date   = 2020
+title  = "Public test cases for the module `bloomfilter`"
+
+[[small_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/fruits_dictionary.txt"
+expected   = 17
+typos      = "data/exercises/bloomfilter/fruits_misspelled.txt"
+
+[[small_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/menagerie_dictionary.txt"
+expected   = 5
+typos      = "data/exercises/bloomfilter/menagerie_misspelled.txt"
+
+[[large_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/words"
+expected   = 1
+typos      = "data/exercises/bloomfilter/misspelled1.in"
+
+[[large_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/words"
+expected   = 1
+typos      = "data/exercises/bloomfilter/misspelled2.in"
+
+[[large_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/words"
+expected   = 3
+typos      = "data/exercises/bloomfilter/misspelled3.in"
+
+[[large_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/words"
+expected   = 3
+typos      = "data/exercises/bloomfilter/misspelled4.in"
+
+[[large_dictionary]]
+
+dictionary = "data/exercises/bloomfilter/words"
+expected   = 5
+typos      = "data/exercises/bloomfilter/misspelled5.in"
