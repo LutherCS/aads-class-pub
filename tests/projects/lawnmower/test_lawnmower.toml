@@ -1,0 +1,129 @@
+[meta]
+author = "Roman Yasinovskyy"
+date   = 2020
+title  = "Public test cases for the module `lawnmower`"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/01"
+expected = "tests/projects/lawnmower/01"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/02"
+expected = "tests/projects/lawnmower/02"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/03"
+expected = "tests/projects/lawnmower/03"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/04"
+expected = "tests/projects/lawnmower/04"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/05"
+expected = "tests/projects/lawnmower/05"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/06"
+expected = "tests/projects/lawnmower/06"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/07"
+expected = "tests/projects/lawnmower/07"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/08"
+expected = "tests/projects/lawnmower/08"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/09"
+expected = "tests/projects/lawnmower/09"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/10"
+expected = "tests/projects/lawnmower/10"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/11"
+expected = "tests/projects/lawnmower/11"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/12"
+expected = "tests/projects/lawnmower/12"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/13"
+expected = "tests/projects/lawnmower/13"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/14"
+expected = "tests/projects/lawnmower/14"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/15"
+expected = "tests/projects/lawnmower/15"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/16"
+expected = "tests/projects/lawnmower/16"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/17"
+expected = "tests/projects/lawnmower/17"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/18"
+expected = "tests/projects/lawnmower/18"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/19"
+expected = "tests/projects/lawnmower/19"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/20"
+expected = "tests/projects/lawnmower/20"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/21"
+expected = "tests/projects/lawnmower/21"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/22"
+expected = "tests/projects/lawnmower/22"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/23"
+expected = "tests/projects/lawnmower/23"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/24"
+expected = "tests/projects/lawnmower/24"
+
+[[test_case]]
+
+data = "data/projects/lawnmower/25"
+expected = "tests/projects/lawnmower/25"
