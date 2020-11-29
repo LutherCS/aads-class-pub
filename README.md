@@ -14,20 +14,20 @@
 * Clone the repository.
 
 ```bash
-git clone git@github.com:LutherCS/aads-class-pub.git
+git clone git@bitbucket.org:yasinovskyy/aads-class-prep.git
 ```
 
 * Get updates.
 
 ```bash
-git pull origin master
+git pull origin main
 ```
 
-* Create and activate Python 3.7 virtual environment
+* Create and activate Python 3.8 virtual environment
 
 ```bash
-sudo apt-get install python3.7-venv
-python3.7 -m venv .venv
+sudo apt-get install python3.8-venv
+python3.8 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -37,7 +37,7 @@ source .venv/bin/activate
 PYTHONPATH=.
 ```
 
-Note that *.env* is excluded from version control by default and has to be added to each copy of the repository
+Note that *.env* is excluded from version control and has to be added to each copy of the repository
 
 * Install *pythonds3* to use textbook implementations of various data structures and algorithms.
 
@@ -45,10 +45,10 @@ Note that *.env* is excluded from version control by default and has to be added
 python3 -m pip install -U pythonds3
 ```
 
-* Install linters *pylint*, *flake8*, and *mypy*.
+* Install linters *pylint* and *mypy*.
 
 ```bash
-python3 -m pip install -U pylint mypy flake8 flake8-mypy
+python3 -m pip install -U pylint mypy
 ```
 
 * Install formatter *black*.
@@ -104,6 +104,7 @@ pandoc -s -i --slide-level=2 -t revealjs topic.md -o topic.html
 ## Topics
 
 * Python review
+  * [GitHub - mattharrison/Tiny-Python-3.8-Notebook: Python 3.8 language and syntax](https://github.com/mattharrison/Tiny-Python-3.8-Notebook)
   * Tools: black, pylint, pytest
   * Collection data types
   * Exceptions and errors
@@ -204,15 +205,16 @@ pandoc -s -i --slide-level=2 -t revealjs topic.md -o topic.html
 
 ### Python Basics
 
-* [The Python Standard Library — Python 3.7.0 documentation](https://docs.python.org/3/library/index.html)
+* [The Python Standard Library — Python 3.9.0 documentation](https://docs.python.org/3/library/index.html)
 * [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
 * [Python Style Guidelines - The Chromium Projects](https://www.chromium.org/chromium-os/python-style-guidelines)
 * [mattharrison/Tiny-Python-3.6-Notebook: This repository contains the text for the Tiny Python 3.6 Notebook.](https://github.com/mattharrison/Tiny-Python-3.6-Notebook)
+* [GitHub - mattharrison/Tiny-Python-3.8-Notebook: Python 3.8 language and syntax](https://github.com/mattharrison/Tiny-Python-3.8-Notebook)
 * [crazyguitar/pysheeet: Python Cheat Sheet](https://github.com/crazyguitar/pysheeet)
 
 ### Exception Handling
 
-* [8. Errors and Exceptions — Python 3.6.0 documentation](https://docs.python.org/3/tutorial/errors.html)
+* [8. Errors and Exceptions — Python 3.9.0 documentation](https://docs.python.org/3/tutorial/errors.html)
 * [Python Exceptions Handling](https://www.tutorialspoint.com/python/python_exceptions.htm)
 
 ### Object-Oriented Programming
@@ -220,10 +222,10 @@ pandoc -s -i --slide-level=2 -t revealjs topic.md -o topic.html
 * [Python @property: How to Use it and Why? - Programiz](https://www.programiz.com/python-programming/property)
 * [Introduction to Python descriptors – IBM Developer](https://developer.ibm.com/tutorials/os-pythondescriptors/)
 * [Python Tutorial: Properties vs. getters and setters](https://www.python-course.eu/python3_properties.php)
-* [Descriptor HowTo Guide — Python 3.7.2 documentation](https://docs.python.org/3/howto/descriptor.html)
+* [Descriptor HowTo Guide — Python 3.9.0 documentation](https://docs.python.org/3/howto/descriptor.html)
 * [Object-Oriented Programming (OOP) in Python 3 – Real Python](https://realpython.com/python3-object-oriented-programming/)
 * [Jupyter Notebook Viewer - The Tao of Python](http://nbviewer.jupyter.org/github/akittas/presentations/blob/master/pythess/tao_mro/tao_of_python.ipynb)
-* [3. Data model — Python 3.7.0 documentation](https://docs.python.org/3/reference/datamodel.html)
+* [3. Data model — Python 3.9.0 documentation](https://docs.python.org/3/reference/datamodel.html)
 * [Underscores in Python](https://shahriar.svbtle.com/underscores-in-python)
 * [Python3 Tutorial: Magic Methods](http://www.python-course.eu/python3_magic_methods.php)
 * [Python Class Examples: Init and Self - Dot Net Perls](https://www.dotnetperls.com/class-python)

@@ -1,0 +1,52 @@
+[meta]
+author = "Roman Yasinovskyy"
+date = 2020
+title = "Public test cases for notes.environment"
+
+[[test_case_success]]
+data = "World"
+expected = "Hello, World"
+
+[[test_case_success]]
+data = "CS360 Class"
+expected = "Hello, CS360 Class"
+
+[[test_case_success]]
+data = "комп'ютер"
+expected = "Hello, комп'ютер"
+
+[[test_case_success]]
+data = "Luther College"
+expected = "Hello, Luther College"
+
+[[test_case_success]]
+data = ""
+expected = "Hello, "
+
+[[test_case_success]]
+data = "コンピューター"
+expected = "Hello, コンピューター"
+
+
+[[test_case_error]]
+data = 42
+expected = "Please provide a valid string instead of 42"
+
+[[test_case_error]]
+expected = "Please provide a valid string instead of None"
+
+[[test_case_error]]
+data = [1, 2, 3]
+expected = "Please provide a valid string instead of [1, 2, 3]"
+
+[[test_case_error]]
+data = 36.6
+expected = "Please provide a valid string instead of 36.6"
+
+[[test_case_error]]
+data = false
+expected = "Please provide a valid string instead of False"
+
+[[test_case_error]]
+data = []
+expected = "Please provide a valid string instead of []"
