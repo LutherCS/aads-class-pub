@@ -7,8 +7,8 @@ keywords: ["python", "formatting", "linting", "testing"]
 
 ### Tools
 
-* Python **3.7**
-* `flake8` with `flake8-mypy` plugin
+* Python **3.8**
+* `pylint` and `mypy`
 * `black`
 * `pytest` with `pytest-timeout` plugin
 * `colorama`
@@ -35,11 +35,11 @@ git clone git@github.com:LutherCS/aads-class-pub.git aads-class
 cd aads-class
 git remote rename origin upstream
 git remote add origin git@github.com:your_github_username/aads-class.git
-git pull upstream master
+git pull upstream main
 touch some_file.py
 git add some_file.py
 git commit -m "Add some file"
-git push --set-upstream origin master
+git push --set-upstream origin main
 ```
 
 ::: notes
@@ -75,8 +75,8 @@ aads-class-pub
 ├── tests
 │   └── notes
 │       └── environment
-│           ├── test_hello_public.toml
-│           └── test_hello.py
+│           ├── test_hello.py
+│           └── test_hello.toml
 ├── README.md
 └── requirements.txt
 
@@ -91,8 +91,8 @@ There are two types of *notes*: Markdown lectures and Python source.
 ### Virtual environment
 
 ```bash
-sudo apt-get install python3.7 python3.7-venv
-python3.7 -m venv .venv
+sudo apt-get install python3.8 python3.8-venv
+python3.8 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -105,7 +105,7 @@ source .venv/bin/activate
 ### Install
 
 ```bash
-python -m pip install flake8 flake8-mypy black pytest pytest-timeout colorama
+python -m pip install pylint mypy black pytest pytest-timeout colorama
 ```
 
 ```bash
@@ -151,7 +151,7 @@ print("Hello, World")
 Use a formatter
 
 ```bash
-black src/notes/introduction/hello.py
+python -m black src/notes/environment/hello.py
 ```
 
 ### Flexible
@@ -173,55 +173,55 @@ print(f"Hello, {audience}")
 ### Function
 
 ```python
-def hello(audience):
+def greet(audience):
     return "Hello, " + audience
 
-print(hello("World"))
+print(greet("World"))
 ```
 
 ### Docstring
 
 ```python
-def hello(audience):
+def greet(audience):
     """Greet the audience"""
     return "Hello, " + audience
 
-print(hello("World"))
+print(greet("World"))
 ```
 
 Use a linter
 
 ```bash
-flake8 src/notes/introduction/hello.py
+python -m pylint src/notes/environment/hello.py
 ```
 
 ### Type hints
 
 ```python
-def hello(audience: str) -> str:
+def greet(audience: str) -> str:
     """Greet the audience"""
     return "Hello, " + audience
 
-print(hello("World"))
+print(greet("World"))
 ```
 
 Use a static type checker
 
 ```bash
-mypy src/notes/introduction/hello.py
+python -m mypy src/notes/environment/hello.py
 ```
 
 ### Invocation
 
 ```python
-def hello(audience: str) -> str:
+def greet(audience: str) -> str:
     """Greet the audience"""
     return "Hello, " + audience
 
 
 def main():
     """This is the main function"""
-    print(hello("World"))
+    print(greet("World"))
 
 if __name__ == "__main__":
     main()
@@ -231,11 +231,10 @@ if __name__ == "__main__":
 
 ```python
 #!/usr/bin/env python3
-# encoding: UTF-8
 """
 Implementation of Hello, World
 @author: Roman Yasinovskyy
-@date: 2019
+@date: 2020
 """
 ```
 
@@ -249,22 +248,21 @@ Always include your name in the source file
 
 ```python
 #!/usr/bin/env python3
-# encoding: UTF-8
 """
 Implementation of Hello, World
 @author: Roman Yasinovskyy
-@date: 2019
+@date: 2020
 """
 
 
-def hello(audience: str) -> str:
+def greet(audience: str) -> str:
     """Greet the audience"""
     return "Hello, " + audience
 
 
 def main():
     """This is the main function"""
-    print(hello("World"))
+    print(greet("World"))
 
 
 if __name__ == "__main__":
@@ -273,7 +271,7 @@ if __name__ == "__main__":
 ```
 
 ```bash
-python3 src/notes/environment/hello.py
+python src/notes/environment/hello.py
 ```
 
 ## Packaging
@@ -290,7 +288,7 @@ Not necessary since Python 3.3 but don't be confused if you see them
 
 ### Environment setup
 
-For the current directory structure to work properly, your system path must insclude the project directory `aads-class-pub`. Either configure your `$PYTHONPATH` or add a `.env` file to the project directory.
+For the current directory structure to work properly, your system path must include the project directory `aads-class-pub`. Either configure your `$PYTHONPATH` or add a `.env` file to the project directory.
 
 ```bash
 echo PYTHONPATH=.: > .env
@@ -306,42 +304,42 @@ Use `pytest`
 
 ```python
 import pytest
-from src.notes.environment.hello import hello
+from src.notes.environment.hello import greet
 
 
-def test_hello():
+def test_greet():
     """Testing the output"""
-    assert hello("class") == "Hello, class"
-    assert hello("world") == "Hello, world"
+    assert greet("class") == "Hello, class"
+    assert greet("world") == "Hello, world"
 ```
 
 Test the code
 
 ```bash
-pytest tests/notes/environment/test_hello.py
+python -m pytest tests/notes/environment/test_hello.py
 ```
 
 ### Timed test
 
 ```python
 import pytest
-from src.notes.environment.hello import hello
+from src.notes.environment.hello import greet
 
 TIME_LIMIT = 1
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-def test_hello():
+def test_greet():
     """Testing the output"""
-    assert hello("class") == "Hello, class"
-    assert hello("World") == "Hello, World"
+    assert greet("class") == "Hello, class"
+    assert greet("World") == "Hello, World"
 ```
 
 ### Parametrized test
 
 ```python
 import pytest
-from src.notes.environment.hello import hello
+from src.notes.environment.hello import greet
 
 TIME_LIMIT = 1
 AUDIENCE = ["World", "CS360 Class", "комп'ютер", 42, None, [1, 2, 3]]
@@ -349,9 +347,9 @@ AUDIENCE = ["World", "CS360 Class", "комп'ютер", 42, None, [1, 2, 3]]
 
 @pytest.mark.timeout(TIME_LIMIT)
 @pytest.mark.parametrize("data", AUDIENCE)
-def test_hello(data):
+def test_greet(data):
     """Testing the output"""
-    assert hello(data) == f"Hello, {data}"
+    assert greet(data) == f"Hello, {data}"
 ```
 
 ## Hello, World revised
@@ -359,7 +357,7 @@ def test_hello(data):
 ### Fixed
 
 ```python
-def hello(audience: str) -> str:
+def greet(audience: str) -> str:
     """Greet the audience"""
     if not isinstance(audience, str):
         raise TypeError(f"Please provide a valid string instead of {audience}")
@@ -372,7 +370,7 @@ def hello(audience: str) -> str:
 
 ```python
 import pytest
-from src.notes.environment.hello import hello
+from src.notes.environment.hello import greet
 
 TIME_LIMIT = 1
 AUDIENCE = ["World", "CS360 Class", "комп'ютер"]
@@ -381,17 +379,17 @@ AUDIENCE_ERR = [42, None, [1, 2, 3]]
 
 @pytest.mark.timeout(TIME_LIMIT)
 @pytest.mark.parametrize("data", AUDIENCE)
-def test_hello(data):
+def test_greet(data):
     """Testing the output"""
-    assert hello(data) == f"Hello, {data}"
+    assert greet(data) == f"Hello, {data}"
 
 
 @pytest.mark.timeout(TIME_LIMIT)
 @pytest.mark.parametrize("data", AUDIENCE_ERR)
-def test_hello_err(data):
+def test_greet_err(data):
     """Testing the exception"""
     with pytest.raises(TypeError) as exc:
-        hello(data)
+        greet(data)
     assert str(exc.value) == "Please provide a valid string instead of " + str(data)
 ```
 
@@ -407,7 +405,7 @@ AUDIENCE = [
 
 @pytest.mark.timeout(TIME_LIMIT)
 @pytest.mark.parametrize("data, expected", AUDIENCE)
-def test_hello(data, expected):
+def test_greet(data, expected):
     """Testing the output"""
     assert hello(data) == expected
 ```
@@ -415,17 +413,15 @@ def test_hello(data, expected):
 ### Configure test cases using TOML
 
 ```toml
-title = "Public test cases"
+title = "Public test cases for notes.environment"
 
-[case_public]
-  [case_public.success]
-    [case_public.success.pa]
-    data = "World"
-    expected = "Hello, World"
-  [case_public.error]
-    [case_public.error.pa]
-    data = 42
-    expected = "Please provide a valid string instead of 42"
+[[test_case_success]]
+data = "World"
+expected = "Hello, World"
+
+[[test_case_error]]
+data = 42
+expected = "Please provide a valid string instead of 42"
 ```
 
 ### Read test configuration
@@ -433,17 +429,11 @@ title = "Public test cases"
 ```python
 import toml
 
-FILE_PUBLIC = "tests/notes/environment/test_hello_public.toml"
-
-all_test_cases = toml.load(FILE_PUBLIC)
-AUDIENCE = [
-    (v.get("data"), v.get("expected"))
-    for v in all_test_cases.get("case_public").get("success").values()
-]
-AUDIENCE_ERR = [
-    (v.get("data", None), v.get("expected", None))
-    for v in all_test_cases.get("case_public").get("error").values()
-]
+def get_cases(category: str):
+    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
+        all_cases = toml.load(f)
+        for case in all_cases[category]:
+            yield (case.get("data"), case.get("expected"))
 ```
 
 ## Thank you
