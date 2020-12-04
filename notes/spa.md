@@ -12,7 +12,7 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Dijkstra’s shortest path first algorithm (1959)
 
-Did it tree times already.
+Did it three times already.
 
 ## Bellman-Ford algorithm (1956)
 

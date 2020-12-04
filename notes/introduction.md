@@ -45,6 +45,16 @@ Algorithms are for people who don't know how to buy RAM.
 
 --Anonymous
 
+### Who needs those fancy algorithms anyway
+
+![Mega Godzilla Beast](images/mega_godzilla_beast.jpg)
+
+::: notes
+
+<https://twitter.com/markrussinovich/status/1333723956902121474>
+
+:::
+
 ### Basic algorithms
 
 * Linear search
@@ -172,7 +182,7 @@ Almost any solution can be *improved* using the combination of the following:
 
 ## Computational complexity
 
-### Asymptoric notation
+### Asymptotic notation
 
 * Asymptotic *upper* bound: Big-O
 * Asymptotic *lower* bound: Big-$\Omega$
