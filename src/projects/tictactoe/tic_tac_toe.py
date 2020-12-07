@@ -12,7 +12,7 @@ screenMax = 300
 COMPUTER = 1
 HUMAN = -1
 PLAYERS = {1: "COMPUTER", -1: "HUMAN"}
-AILVLS = {"Dummy": 0, "Easy": 2, "Hard": 4}
+AILVLS = {"Naive": 0, "Easy": 2, "Hard": 4}
 
 
 class Board:

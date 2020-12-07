@@ -4,7 +4,7 @@ Minimax is a fairly simple algorithm that *mini*mizes the *max*imum possible los
 
 ## Algorithm
 
-See section 4.9 (pp. 116-117) of the texbook.
+See section 4.9 (pp. 116-117) of the textbook.
 
 ## References
 
