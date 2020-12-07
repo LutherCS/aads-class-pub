@@ -1,0 +1,58 @@
+[meta]
+author = "Roman Yasinovskyy"
+date   = 2020
+title  = "Public test cases for the module `tictactoe`"
+
+[[test_board]]
+# Board 0/1
+available  = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+board      = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+evaluation = 0
+full       = false
+move_comp  = 0
+move_humn  = 0
+
+[[test_board]]
+# Board 2/3
+available  = []
+board      = [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]]
+evaluation = -1
+full       = true
+move_comp  = -1
+move_humn  = -1
+
+[[test_board]]
+# Board 4
+available  = []
+board      = [["X", "X", "X"], ["X", "X", "X"], ["X", "X", "X"]]
+evaluation = 1
+full       = true
+move_comp  = 1
+move_humn  = 1
+
+[[test_board]]
+
+available  = [[1, 0], [1, 2], [2, 0], [2, 2]]
+board      = [["X", "O", "O"], ["D", "X", "D"], ["D", "O", "D"]]
+evaluation = 1
+full       = false
+move_comp  = 1
+move_humn  = -1
+
+[[test_board]]
+
+available  = [[0, 2], [1, 0], [1, 2], [2, 0], [2, 1]]
+board      = [["O", "O", "D"], ["D", "X", "D"], ["D", "D", "X"]]
+evaluation = 1
+full       = false
+move_comp  = 1
+move_humn  = -1
+
+[[test_board]]
+
+available  = [[0, 0], [1, 0], [1, 2], [2, 0], [2, 1], [2, 2]]
+board      = [["D", "X", "O"], ["D", "O", "D"], ["D", "D", "D"]]
+evaluation = -1
+full       = false
+move_comp  = -1
+move_humn  = -1
