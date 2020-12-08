@@ -52,26 +52,26 @@ keys     = [ 106, 142, 173, 114, 139, 148, 185, 134, 131, 109 ]
 size     = 23
 
 [[folding]]
-expected = [ 2, 1, 0 ]
-keys     = [ "111-22-3333", "444-55-6666", "777-88-9999" ]
+expected = [ 2, 3, 3, 6 ]
+keys     = [ "324890576", "1/22/33", "444-555-6666", "127.0.0.1" ]
 size     = 7
 
 [[folding]]
 
-expected = [ 1 ]
-keys     = [ "436-555-4601" ]
+expected = [ 1, 5, 1, 10 ]
+keys     = [ "18610901", "9/1/1861", "1861-09-01", "September 1, 1861"]
 size     = 11
 
 [[folding]]
 
-expected = [ 0, 12, 4 ]
-keys     = [ "563-555-1234", "800-555-8080", "888-555-0000" ]
+expected = [ 7, 6, 2, 4 ]
+keys     = [ "123946211", "1/22/33", "111-22-3333", "(444) 555 6666" ]
 size     = 16
 
 [[folding]]
 
-expected = [ 20, 16, 3, 2 ]
-keys     = [ "324890576", "812746", "12394621", "9876123" ]
+expected = [ 5, 17, 5, 8 ]
+keys     = [ "123456789", "1234567890", "1234567809", "987654321" ]
 size     = 23
 
 [[naive_string]]
@@ -114,6 +114,13 @@ keys     = [ "coronavirus", "carnivorous" ]
 size     = 7
 
 [[weighted_string]]
+
+expected = [ 8, 2 ]
+keys     = [ "algorithm", "logarithm" ]
+size     = 11
+
+[[weighted_string]]
+
 expected = [ 12, 9, 8, 8, 3, 6, 9, 14, 12 ]
 keys     = [
     "pavel",
@@ -127,12 +134,6 @@ keys     = [
     "bane",
 ]
 size     = 16
-
-[[weighted_string]]
-
-expected = [ 8, 2 ]
-keys     = [ "algorithm", "logarithm" ]
-size     = 11
 
 [[weighted_string]]
 
