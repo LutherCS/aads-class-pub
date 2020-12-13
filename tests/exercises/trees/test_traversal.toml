@@ -3,61 +3,61 @@ author = "Roman Yasinovskyy"
 date   = 2020
 title  = "Public test cases for the module `trees`"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "BAC"
 postorder = "BCA"
 preorder  = "ABC"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "ABC"
 postorder = "CBA"
 preorder  = "ABC"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "SC630"
 postorder = "S603C"
 preorder  = "CS360"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "DBEAFCG"
 postorder = "DEBFGCA"
 preorder  = "ABDECFG"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "HDBEIAJFCGK"
 postorder = "HDIEBJFKGCA"
 preorder  = "ABDHEICFJGK"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "LOWSKVGEAN"
 postorder = "LWSKOEGNAV"
 preorder  = "VOLKSWAGEN"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "YMPASTHIZNUDE"
 postorder = "APMYZIHTSNDEU"
 preorder  = "UNSYMPATHIZED"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "PUTEMRIZAOCLBY"
 postorder = "ETUPAZIRMOLYBC"
 preorder  = "COMPUTERIZABLY"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "EDBRUAMTSLGYOHPIC"
 postorder = "EDRBATMULYGHCIPOS"
 preorder  = "SUBDERMATOGLYPHIC"
 
-[[to_preorder]]
+[[test_case]]
 
 inorder   = "FEVIBHNXGWAZODJSRMUTCKQPLY"
 postorder = "FVBIENAZWGXJSDMUROHKCQYLPT"

@@ -21,7 +21,7 @@ def get_cases(category: str):
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("inorder, postorder, preorder", get_cases("to_preorder"))
+@pytest.mark.parametrize("inorder, postorder, preorder", get_cases("test_case"))
 def test_traversal(inorder, postorder, preorder):
     """Testing the output"""
     assert get_preorder(inorder, postorder) == preorder
