@@ -20,7 +20,7 @@ keywords: ["algorithms", "gaming", "programming"]
 
 ### Algorithm
 
-Each possible move is analized from the computer's perspective to achieve the best position
+Each possible move is analyzed from the computer's perspective to achieve the best position
 
 Each position is evaluated as either a loss (-1), win (1), or undecided/tie (0)
 

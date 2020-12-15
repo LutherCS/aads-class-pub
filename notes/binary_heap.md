@@ -21,14 +21,14 @@ Introduced by J. Williams in 1964, as a data structure for the *heapsort*
 
 Assuming min-heap
 
-| Operation | Time complexity |
-|---|----|
-| building | $O(n)$ |
-| find-min (peek) | $\Theta(1)$ |
+| Operation        | Time complexity  |
+| ---------------- | ---------------- |
+| building         | $O(n)$           |
+| find-min (peek)  | $\Theta(1)$      |
 | delete-min (pop) | $\Theta(log(n))$ |
-| insert (push) | $O(log(n))$ |
-| decrease-key | $O(log(n))$ |
-| meld (merging) | $\Theta(n)$ |
+| insert (push)    | $O(log(n))$      |
+| decrease-key     | $O(log(n))$      |
+| meld (merging)   | $\Theta(n)$      |
 
 ## Implementation
 
