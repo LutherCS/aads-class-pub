@@ -2,9 +2,15 @@
 """Huffman coding"""
 
 
+import argparse
 import heapq
+import json
+import logging
+import pathlib
 from collections import Counter
-from typing import List, Union
+from typing import List, Tuple, Union
+
+DATA_DIR = pathlib.Path("data/projects/compdecomp/")
 
 
 class Node:
@@ -29,61 +35,163 @@ class Node:
         return f"Node({self.value}, {self.weight}, {self.left}, {self.right})"
 
 
-def build_tree(text: str) -> tuple:
+def build_tree(all_freq: dict) -> Node:
     """
-    Construct a Huffman tree from the text using the following algorithm:
-        1. Calculate frequency of each letter in the text and store the result in a frequency table
-        2. Turn each letter into an object of type Node and add to a heap
-        3. While the heap contains 2 or more items:
-            3.1 Remove two items (i1 and i2) from the heap
-            3.2 Make a new node with the weight equal to the sum of weight of the two items from 3.1
-            3.3 Assign i1 and i2 as left and right children of the new node
-            3.4 Add the new node to the heap
-        4. Remove the only remaining node from the heap. This is the root of the Huffman tree
-        5. Return the (root, frequency table) tuple
+    Construct a Huffman tree from the text
+
+    :param all_freq: frequency table
+    :return tuple the tree root
     """
+    heap: List[Node] = []
+    # TODO: Implement this function
     raise NotImplementedError
 
 
 def traverse_tree(root: Node) -> str:
-    """Traverse a tree pre-order and return the result"""
+    """
+    Traverse a tree pre-order and return the result
+
+    :param root: tree root
+    :return values of a tree
+    """
+    # TODO: Implement this function
     raise NotImplementedError
 
 
-def mark_nodes(d1: dict, d2: dict, root: Node, path: str) -> Union[None, tuple]:
+def follow_tree(tree: Node, code: str) -> Union[str, None]:
     """
-    Generate code for each letter in the text using the following algorithm:
-        1. If the root is empty, return
-        2. If the value of the root is a valid character:
-            2.1 Add the value: path mapping to d1
-            2.2 Add the path: value mapping to d2
-            2.3 return
-        3. Recursively mark nodes in the left subtree (add 0 to the path)
-        4. Recursively mark nodes in the right subtree (add 1 to the path)
-        5. Return (d1, d2) tuple
+    Follow the code through the tree
+
+    :param tree: tree root
+    :param code: code to find
+    :return node value or None
     """
+    # TODO: Implement this function
+    raise NotImplementedError
+
+
+def mark_tree(d1: dict, d2: dict, root: Node, path: str) -> Union[None, tuple]:
+    """
+    Generate code for each letter in the text
+
+    :param d1: character-to-code mapping
+    :param d2: code-to-character mapping
+    :param root: tree root
+    :param path: path to the current node
+    :return (d1, d2) tuple
+    """
+    # TODO: Implement this function
     raise NotImplementedError
 
 
 def print_codes(d: dict, weights: dict) -> None:
-    """Print letters of the text and their codes. The output is ordered by the letter weight."""
+    """
+    Print letters of the text and their codes. The output is ordered by the letter weight.
+
+    :param d: character-to-code mapping
+    :param weights: character-to-frequency mapping
+    """
     print(f"{'Letter':10s}{'Weight':^10s}{'Code':^10s}{'Length':^5s}")
+    # TODO: Implement this function
+    raise NotImplementedError
+
+
+def load_codes(codes: dict) -> Node:
+    """
+    Build the Huffman tree from the stored code-to-character mapping
+
+    :param codes: code-to-character mapping
+    :return root of the Huffman tree
+    """
+    # TODO: Implement this function
+    raise NotImplementedError
+
+
+def compress(text: str, codes: dict) -> Tuple[bytes, int]:
+    """
+    Compress text using Huffman coding
+
+    :param text: text to compress
+    :param codes: character-to-code mapping
+    :return (packed text, padding length) tuple
+    """
+    # TODO: Implement this function
+    raise NotImplementedError
+
+
+def decompress(bytestream: bytes, padding: int, tree: Node) -> str:
+    """
+    Decompress binary data using Huffman coding
+
+    :param bytestream: bytes from the archived file
+    :param padding: padding length
+    :param tree: root of the Huffman tree
+    :return decompressed (decoded) text
+    """
+    # TODO: Implement this function
     raise NotImplementedError
 
 
 def main():
-    snippets = [
-        "A_DEAD_DAD_CEDED_A_BAD_BABE_A_BEADED_ABACA_BED",
-        "AAAAAAAAAAAAAAABBBBBBBCCCCCCDDDDDDEEEEE",
-        "this is an example of a huffman tree",
-    ]
+    """Main function"""
+    parser = argparse.ArgumentParser(description="Greet the audience")
+    parser.add_argument(
+        "-d",
+        "--debug",
+        help="Enable debug mode",
+        action="store_const",
+        dest="loglevel",
+        const=logging.DEBUG,
+        default=logging.WARNING,
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        help="Enable verbose mode",
+        action="store_const",
+        dest="loglevel",
+        const=logging.INFO,
+    )
+    args = parser.parse_args()
+    logging.basicConfig(format="%(levelname)s: %(message)s", level=args.loglevel)
+    logging.info("Starting up")
 
-    for text in snippets:
-        root, weights = build_tree(text)
-        char_to_code, code_to_char = mark_nodes({}, {}, root, "")
+    input_files = ["dead_dad", "alphabet", "example", "preamble"]
 
+    for filename in input_files:
+        logging.info("Building the tree")
+        with open(DATA_DIR / pathlib.Path(f"{filename}.txt"), "r") as text_file:
+            text = text_file.read().strip()
+        weights = Counter(text)
+        root = build_tree(weights)
+        char_to_code, code_to_char = mark_tree({}, {}, root, "")
+
+        logging.info("Text statistics")
         print(f"\n{text}")
         print_codes(char_to_code, weights)
+        logging.debug(char_to_code)
+        logging.debug(code_to_char)
+        logging.debug(traverse_tree(root))
+
+        logging.info("Compressing the text")
+        archive, padding_length = compress(text, char_to_code)
+        code_to_char["padding"] = padding_length
+        print(
+            f"Text: {text[:5]} ... {text[-5:]}. Compression ratio: {len(archive) / len(text):.3f}"
+        )
+        logging.debug(archive)
+
+        logging.info("Loading codes from the file")
+        with open(DATA_DIR / pathlib.Path(f"{filename}.json"), "r") as code_file:
+            metadata = json.load(code_file)
+        root = load_codes(metadata)
+        padding_length = metadata.get("padding", 0)
+        logging.debug(traverse_tree(root))
+
+        logging.info("Decompressing the archive")
+        with open(DATA_DIR / pathlib.Path(f"{filename}.bin"), "rb") as data_file:
+            result = decompress(data_file.read(), padding_length, root)
+        print(result)
 
 
 if __name__ == "__main__":

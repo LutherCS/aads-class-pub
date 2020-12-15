@@ -1,0 +1,44 @@
+[meta]
+author = "Roman Yasinovskyy"
+date = 2020
+title = "Public test cases for projects.compdecomp"
+
+[[test_case]]
+
+char2code = '{"D": "00", "_": "01", "A": "10", "E": "110", "C": "1110", "B": "1111"}'
+code2char = '{"00": "D", "01": "_", "10": "A", "110": "E", "1110": "C", "1111": "B"}'
+filename = "dead_dad"
+padding = 5
+text = "A_DEAD_DAD_CEDED_A_BAD_BABE_A_BEADED_ABACA_BED"
+total_weight = 46
+tree = "D _ A E C B"
+
+[[test_case]]
+
+char2code = '{"A": "0", "E": "100", "C": "101", "D": "110", "B": "111"}'
+code2char = '{"0": "A", "100": "E", "101": "C", "110": "D", "111": "B"}'
+filename = "alphabet"
+padding = 1
+text = "AAAAAAAAAAAAAAABBBBBBBCCCCCCDDDDDDEEEEE"
+total_weight = 39
+tree = "A E C D B"
+
+[[test_case]]
+
+char2code = '{"e": "000", "n": "0010", "x": "00110", "l": "00111", "u": "01000", "o": "01001", "s": "0101", "t": "0110", "m": "0111", "a": "100", "i": "1010", "p": "10110", "r": "10111", "h": "1100", "f": "1101", " ": "111"}'
+code2char = '{"000": "e", "0010": "n", "00110": "x", "00111": "l", "01000": "u", "01001": "o", "0101": "s", "0110": "t", "0111": "m", "100": "a", "1010": "i", "10110": "p", "10111": "r", "1100": "h", "1101": "f", "111": " "}'
+filename = "example"
+padding = 1
+text = "this is an example of a huffman tree"
+total_weight = 36
+tree = "e n x l u o s t m a i p r h f  "
+
+[[test_case]]
+
+char2code = '{"u": "00000", "m": "00001", ",": "00010", "S": "0001100", "g": "0001101", "q": "00011100", "L": "00011101", "C": "00011110", "A": "00011111", "v": "0010000", "P": "0010001", "W": "0010010", "B": "00100110", "T": "00100111", "l": "00101", "n": "0011", "f": "01000", "p": "010010", "O": "01001100", "J": "01001101", "y": "0100111", "s": "0101", "e": "011", "i": "1000", "h": "10010", "d": "10011", "r": "1010", "o": "1011", " ": "110", "U": "1110000", "b": "1110001", "c": "111001", "a": "11101", "t": "1111"}'
+code2char = '{"00000": "u", "00001": "m", "00010": ",", "0001100": "S", "0001101": "g", "00011100": "q", "00011101": "L", "00011110": "C", "00011111": "A", "0010000": "v", "0010001": "P", "0010010": "W", "00100110": "B", "00100111": "T", "00101": "l", "0011": "n", "01000": "f", "010010": "p", "01001100": "O", "01001101": "J", "0100111": "y", "0101": "s", "011": "e", "1000": "i", "10010": "h", "10011": "d", "1010": "r", "1011": "o", "110": " ", "1110000": "U", "1110001": "b", "111001": "c", "11101": "a", "1111": "t"}'
+filename = "preamble"
+padding = 6
+text = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defense, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America"
+total_weight = 326
+tree = "u m , S g q L C A v P W B T l n f p O J y s e i h d r o   U b c a t"
