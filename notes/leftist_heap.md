@@ -7,19 +7,19 @@ keywords: ["algorithms", "data structures", "programming"]
 
 * Leftist heap definition
 * Leftist heap implementation
-* Merging
 * Insertion
 * Removal
+* Merging
 
 ## Leftist heap ADT
 
 ### Leftist
 
-![Che](images/che.jpg)
+![Karl Marx and Friedrich Engels](images/kmfe.jpg)
 
 ### Leftist heap (tree)
 
-![Leftist tree](images/leftistheap.png)
+![Leftist tree](images/leftist_heap.png)
 
 ### Leftist tree properties
 
@@ -40,13 +40,14 @@ Leftist heap is a heap-ordered leftist tree
 
 Rule #2 may be violated after the insertion, that is *s-value* of the right subtree of a certain node may become larger than the *s-value* of the left subtree
 
-In that case, swap left and right subtrees of the node
+In that case, *swap left and right subtrees of the node*.
 
 ## Implementation
 
 Implemented with links (pointers), based on `BinaryTree`
 
 ### Class BinaryTree
+
 ```python
 class BinaryTree:
     """Binary tree class"""
@@ -68,6 +69,14 @@ class LeftistHeap(BinaryTree):
         self._svalue = 0
 ```
 
+## Insertion
+
+In order to insert an element `e` into leftist heap `h`, create a new leftist heap of one element (`e`) and merge it into `h1`
+
+## Removal
+
+In order to remove an element from the leftist heap `h`, remove its root and merge left and right subtrees into a new leftist heap.
+
 ## Merging leftist heaps
 
 Merging heaps `h1` and `h2` keeps `h1` *leftist* and `h2` empty
@@ -88,21 +97,13 @@ $O(log(n))$ operation
 
 ![Two leftist heaps](images/HBLT_9.jpg)
 
-## Insertion
-
-In order to insert an element `e` into leftist heap `h`, create a new leftist heap of one element (`e`) and merge it into `h1`
-
-## Removal
-
-In order to remove an element from the leftis heap `h`, remove its root and merge left and right subtrees into a new leftist heap.
-
 ## Summary
 
 * Leftist heap definition
 * Leftist heap implementation
-* Merging
 * Insertion
 * Removal
+* Merging
 
 ## Thank you
 
