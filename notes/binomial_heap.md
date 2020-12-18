@@ -71,11 +71,17 @@ $F_n = \{B_i : b_i = 1\}$
 
 ## Merging
 
-Add two binary representations of each heap size.
+* Add two binary representations of each heap size
 
-Combine two trees of the lower order, carry over if necessary.
+    $7 + 3 = 10$
 
-Running time $O(log(n + m))$.
+    $111_2 + 11_2 = 1010_2$
+
+* Combine two trees of the same order from the input forests and move to the output forest
+
+  * Carry over if necessary
+
+* Running time $O(log(n + m))$
 
 ## Insertion
 
