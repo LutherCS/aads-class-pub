@@ -1,0 +1,26 @@
+title = "Public test cases"
+
+[meta]
+author = "Roman Yasinovskyy"
+date = 2021
+module = "projects.anomalycounter"
+
+[[test_case]]
+data = "anomalycounter1.in"
+expected = 5
+
+[[test_case]]
+data = "anomalycounter2.in"
+expected = 1
+
+[[test_case]]
+data = "anomalycounter3.in"
+expected = 0
+
+[[test_case]]
+data = "anomalycounter4.in"
+expected = 1
+
+[[test_case]]
+data = "anomalycounter5.in"
+expected = 11
