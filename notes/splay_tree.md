@@ -13,15 +13,18 @@ keywords: ["algorithms", "data structures", "programming"]
 ## Properties
 
 * Invented in 1985 by Daniel Sleator and Robert Tarjan
-* Has (amortized) $O(\log{n})$ complexity for insertion, lookup, and removal
+* Has (amortized) $\Theta(\log{n})$ complexity for insertion, lookup, and removal
 * Prioritizes recency of access (read or write)
-* *Splay tree* maintains balance that is *good enough* without storing *balance* explicitely
+* *Splay tree* maintains balance that is *good enough* without storing *balance* explicitly
 * Relies on *spatial locality*
 * Used to implement caching or garbage collectors
 
 ## Rotation
 
-* *zig*, *zag*, *zig-zig*, and *zig-zag*
+* *zig* (right)
+* *zag* (left)
+* *zig-zig* (right-right, left-left)
+* *zig-zag* (right-left, left-right)
 
 ### Right-right
 
@@ -60,5 +63,6 @@ Got questions?
 
 ## References
 
+* [Sleator, Daniel D.; Tarjan, Robert E. (1985). "Self-Adjusting Binary Search Trees" (PDF)](https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf)
 * [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
 * [Splay tree - Wikipedia](https://en.wikipedia.org/wiki/Splay_tree)
