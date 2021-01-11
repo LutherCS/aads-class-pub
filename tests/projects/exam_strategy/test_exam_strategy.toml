@@ -1,0 +1,31 @@
+title = "Public test cases"
+
+[meta]
+author = "Roman Yasinovskyy"
+date = 2021
+module = "projects.exam_strategy"
+
+[[test_case]]
+filename = "questions1.in"
+selected = [0, 1, 2, 3, 4]
+total_val = 100
+
+[[test_case]]
+filename = "questions2.in"
+selected = [2]
+total_val = 100
+
+[[test_case]]
+filename = "questions3.in"
+selected = [1, 2, 3]
+total_val = 9
+
+[[test_case]]
+filename = "questions4.in"
+selected = [0, 3, 7]
+total_val = 1270
+
+[[test_case]]
+filename = "questions5.in"
+selected = [0, 4, 5, 7]
+total_val = 101

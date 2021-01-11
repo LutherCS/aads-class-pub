@@ -11,40 +11,31 @@ import pytest
 import toml
 from src.projects.exam_strategy import pick_questions_to_answer
 
-THIS_DIR = pathlib.Path(".")
-TEST_DIR = pathlib.Path("tests/projects/exam_strategy/")
+
 DATA_DIR = pathlib.Path("data/projects/exam_strategy/")
-FILE_PUBLIC = pathlib.Path("test_exam_strategy_public.toml")
-FILE_SECRET = pathlib.Path("test_exam_strategy_secret.toml")
-
-if "tests" not in THIS_DIR.parts:
-    FILE_PUBLIC = THIS_DIR / TEST_DIR / FILE_PUBLIC
-    FILE_SECRET = THIS_DIR / TEST_DIR / FILE_SECRET
-
-all_test_cases = toml.load(FILE_PUBLIC)
-
 TIME_LIMIT = 1
-QUESTIONS = [
-    (v.get("filename"), v.get("selected"), v.get("total_val"))
-    for v in all_test_cases.get("case_public").get("success").values()
-]
 
-if FILE_SECRET.exists():
-    all_test_cases.update(toml.load(FILE_SECRET))
-    QUESTIONS.extend(
-        [
-            (v.get("filename"), v.get("selected"), v.get("total_val"))
-            for v in all_test_cases.get("case_secret").get("success").values()
-        ]
-    )
+
+def get_cases(category: str):
+    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
+        all_cases = toml.load(f)
+        for case in all_cases[category]:
+            yield (case.get("filename"), case.get("selected"), case.get("total_val"))
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("filename, selected, total_val", QUESTIONS)
-def test_exam_strategy(filename, selected, total_val):
+@pytest.mark.parametrize("filename, selected, total_val", get_cases("test_case"))
+def test_selection(filename, selected, total_val):
     """Testing the output"""
     result = pick_questions_to_answer(DATA_DIR / pathlib.Path(filename))
     assert result[0] == selected
+
+
+@pytest.mark.timeout(TIME_LIMIT)
+@pytest.mark.parametrize("filename, selected, total_val", get_cases("test_case"))
+def test_total_value(filename, selected, total_val):
+    """Testing the output"""
+    result = pick_questions_to_answer(DATA_DIR / pathlib.Path(filename))
     assert result[1] == total_val
 
 
