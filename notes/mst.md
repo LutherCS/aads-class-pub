@@ -63,6 +63,26 @@ The list is a collection of trees where a vertex is a root if the value matches 
   * add the edge to the forest $F$
   * update the root of the tree that contains $D$ to be the root of the tree that contains $S$
 
+### Example
+
+![Simple graph](images/network.png)
+
+### Building a tree
+
+```python
+[0, 1, 2, 3, 4, 5, 6]
+(0, 1) -> [0, 0, 2, 3, 4, 5, 6]
+(2, 4) -> [0, 0, 2, 3, 2, 5, 6]
+(1, 3) -> [0, 0, 2, 0, 2, 5, 6]
+(1, 2) -> [0, 0, 0, 0, 2, 5, 6]
+(2, 3) -> pass
+(0, 2) -> pass
+(3, 4) -> pass
+(4, 5) -> [0, 0, 0, 0, 2, 0, 6]
+(0, 5) -> pass
+(4, 6) -> [0, 0, 0, 0, 2, 0, 0]
+```
+
 ## Prim's algorithm
 
 * Greedy algorithm for finding MST

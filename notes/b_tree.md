@@ -5,10 +5,10 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* Database background
-* B-Tree organization
-* B-Tree implementation
-* B-Tree operations
+- Database background
+- B-Tree organization
+- B-Tree implementation
+- B-Tree operations
 
 ## Database background
 
@@ -18,28 +18,28 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ::: notes
 
-<http://knuth.luther.edu/~leekent/CS2Plus/chap10/chap10.html#figures-from-text>
+<http://jupyter.luther.edu/~leekent/CS2Plus/chap10/chap10.html#figures-from-text>
 
 :::
 
 ### Relational database
 
-* Many *relations* (entities) connected via *relationships*
-* Represented as an *LDS* or an *ERD*
-* Relationships could be: *1-1*, *1-M*, *M-M*
-* *M-M* relationships must be *reified* for the schema to work properly
-* Schema should be *normalized* to remove functional dependencies
-* Reification and normalization yield new entities
-* Data can be retrieved from tables using *join* operation
+- Many _relations_ (entities) connected via _relationships_
+- Represented as an _LDS_ or an _ERD_
+- Relationships could be: _1-1_, _1-M_, _M-M_
+- _M-M_ relationships must be _reified_ for the schema to work properly
+- Schema should be _normalized_ to remove functional dependencies
+- Reification and normalization yield new entities
+- Data can be retrieved from tables using _join_ operation
 
 ### Textbook example
 
-* Relation *Feed* contains items like corn silage and alfalfa
-  * Those items are composed of many nutrients
-* Relation *FeedAttribType* contains nutrients (calcium, iron, sugar etc)
-  * Those nutrients can be part of many feeds
-* Relation *FeedAttribute* is used to reify many-many relationship between feed and nutrient
-* *FeedAttribute* adds the value for the quantity
+- Relation _Feed_ contains items like corn silage and alfalfa
+  - Those items are composed of many nutrients
+- Relation _FeedAttribType_ contains nutrients (calcium, iron, sugar etc)
+  - Those nutrients can be part of many feeds
+- Relation _FeedAttribute_ is used to reify many-many relationship between feed and nutrient
+- _FeedAttribute_ adds the value for the quantity
 
 ### Textbook example LDS
 
@@ -55,29 +55,29 @@ where Feed.FeedID = FeedAttribute.FeedID and FeedAttribute.FeetAttribTypeID = Fe
 
 ### Database organization
 
-* Each relation (table) is stored as a separate file
-* Joining tables means reading 2 files
-  * In the worst case, sequentially
-* Data can be stored in increasing order (of the key)
-  * Parts of a file can be accessed directly using Python's `seek` function
-* Big question: **are tables always ordered?**
+- Each relation (table) is stored as a separate file
+- Joining tables means reading 2 files
+  - In the worst case, sequentially
+- Data can be stored in increasing order (of the key)
+  - Parts of a file can be accessed directly using Python's `seek` function
+- Big question: **are tables always ordered?**
 
 ::: notes
 
-<http://knuth.luther.edu/~leekent/CS2Plus/chap10/chap10.html#the-inefficient-join-program>
+<http://jupyter.luther.edu/~leekent/CS2Plus/chap10/chap10.html#the-inefficient-join-program>
 
 :::
 
 ### Database index
 
-* A structure that allows efficient lookup time on any record in the table
-* Implementation details are left up to a specific DBMS
+- A structure that allows efficient lookup time on any record in the table
+- Implementation details are left up to a specific DBMS
 
 ### B-Tree history
 
-* Invented by Rudolf Bayer and Edward McCreight
-* Bayer also invented *red-black tree* in 1972
-* The meaning of **B** is unknown (could be Boeing, balanced, Bayer)
+- Invented by Rudolf Bayer and Edward McCreight
+- Bayer also invented _red-black tree_ in 1972
+- The meaning of **B** is unknown (could be Boeing, balanced, Bayer)
 
 ::: notes
 
@@ -91,21 +91,21 @@ where Feed.FeedID = FeedAttribute.FeedID and FeedAttribute.FeetAttribTypeID = Fe
 
 ### Properties
 
-* Balanced tree that consists of nodes
-  * Each node is a combination of pointers and items
-  * All *leaf* nodes are at the same level
-* The *degree* of a tree is the minimum number of items that a node can contain
-  * except the root
-* The *capacity* is the maximum number of items that a node can contain
-  * $capacity = 2 \times degree$
+- Balanced tree that consists of nodes
+  - Each node is a combination of pointers and items
+  - All _leaf_ nodes are at the same level
+- The _degree_ of a tree is the minimum number of items that a node can contain
+  - except the root
+- The _capacity_ is the maximum number of items that a node can contain
+  - $capacity = 2 \times degree$
 
 ### Properties. Continued
 
-* Items in a node are stored in order (increasing or decreasing) of their *keys*
-  * First value in the tuple
-  * The second value is the record id (offset within a file)
-* A pointer to the **left** of an *item* points to a node with smaller items
-* A pointer to the **right** of an *item* points to a node with larger items
+- Items in a node are stored in order (increasing or decreasing) of their _keys_
+  - First value in the tuple
+  - The second value is the record id (offset within a file)
+- A pointer to the **left** of an _item_ points to a node with smaller items
+- A pointer to the **right** of an _item_ points to a node with larger items
 
 ### B-Tree example
 
@@ -113,39 +113,39 @@ where Feed.FeedID = FeedAttribute.FeedID and FeedAttribute.FeetAttribTypeID = Fe
 
 ### B-Tree advantages
 
-* Multiple indices can be built on a single table
-* $O(\log_d{n})$ lookup, where $d$ is the degree of the tree and $n$ is the number of items
-* Ordered **sequential** access to the index, as opposed to hashing
-* Suitable to store **very large** amounts of data
-* As a tree gets wider, access time improves
-* Index itself can be a file
-* Record can be removed from the tree (index) without rewriting the file (table)
-* Tree (index) does not have to be rebuilt
+- Multiple indices can be built on a single table
+- $O(\log_d{n})$ lookup, where $d$ is the degree of the tree and $n$ is the number of items
+- Ordered **sequential** access to the index, as opposed to hashing
+- Suitable to store **very large** amounts of data
+- As a tree gets wider, access time improves
+- Index itself can be a file
+- Record can be removed from the tree (index) without rewriting the file (table)
+- Tree (index) does not have to be rebuilt
 
 ## B-Tree implementation
 
-See *btree.py* in the *src/notes/btree/*
+See _btree.py_ in the _src/notes/btree/_
 
 ## B-Tree operations
 
-* Lookup is similar to other search trees
-* Insertion can cause splitting
-* Removal may cause rebalancing
+- Lookup is similar to other search trees
+- Insertion can cause splitting
+- Removal may cause rebalancing
 
 ## B-Tree Insert
 
-* Find a **leaf node** where the new item belongs
-* If there is room in that node, insert an item
-* If the node has reached its capacity, split at median item
-  * Promote median item to the parent (recursively)
-  * All smaller items become left node
-  * All greater items become right node
+- Find a **leaf node** where the new item belongs
+- If there is room in that node, insert an item
+- If the node has reached its capacity, split at median item
+  - Promote median item to the parent (recursively)
+  - All smaller items become left node
+  - All greater items become right node
 
 ### B-Tree Insert. Tree to build
 
-* Let's built the tree of degree **2**
-  * Number of items in each node is **2..4**
-* Insert the following items: 10, 8, 22, 14, 12, 18, 2, 50, 15
+- Let's built the tree of degree **2**
+  - Number of items in each node is **2..4**
+- Insert the following items: 10, 8, 22, 14, 12, 18, 2, 50, 15
 
 ![Tree to build](images/btree1example4.png)
 
@@ -169,20 +169,20 @@ See *btree.py* in the *src/notes/btree/*
 
 ## B-Tree Delete
 
-* Find the **item** and its **node**
-* If the node is a leaf and has more than *degree* items, delete
-  * If fewer than *degree* items, rebalance
-* If the node is not a leaf, take the smallest item from the right subtree
-  * Or the largest item from the left subtree
-  * If this causes some node to have fewer than *degree* items, rebalance
+- Find the **item** and its **node**
+- If the node is a leaf and has more than _degree_ items, delete
+  - If fewer than _degree_ items, rebalance
+- If the node is not a leaf, take the smallest item from the right subtree
+  - Or the largest item from the left subtree
+  - If this causes some node to have fewer than _degree_ items, rebalance
 
 ### B-Tree Rebalancing
 
-* If either left or right **sibling** has extra items
-  * Borrow from that sibling
-  * Rotate items as necessary (left or right)
-* If there is no immediate sibling to borrow from
-  * Merge the node, its sibling, and the separating parent item into a new node
+- If either left or right **sibling** has extra items
+  - Borrow from that sibling
+  - Rotate items as necessary (left or right)
+- If there is no immediate sibling to borrow from
+  - Merge the node, its sibling, and the separating parent item into a new node
 
 ### B-Tree Delete. Initial tree
 
@@ -210,10 +210,10 @@ See *btree.py* in the *src/notes/btree/*
 
 ## Summary
 
-* Database background
-* B-Tree organization
-* B-Tree implementation
-* B-Tree operations
+- Database background
+- B-Tree organization
+- B-Tree implementation
+- B-Tree operations
 
 ## Thank you
 
@@ -221,6 +221,6 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
-* [B-tree - Wikipedia](https://en.wikipedia.org/wiki/B-tree)
-* [Organization and maintenance of large ordered indexes | SpringerLink](https://link.springer.com/article/10.1007%2FBF00288683)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [B-tree - Wikipedia](https://en.wikipedia.org/wiki/B-tree)
+- [Organization and maintenance of large ordered indexes | SpringerLink](https://link.springer.com/article/10.1007%2FBF00288683)

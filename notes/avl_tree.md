@@ -5,33 +5,33 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* History
-* Definition
-* Implementation
-* Insertion
-* Rotation
-* Removal
+- History
+- Definition
+- Implementation
+- Insertion
+- Rotation
+- Removal
 
 ## History
 
-* AVL tree was invented in 1962 by two soviet mathematicians, Georgy **A**delson-**V**elsky and Engenii **L**andis
-* It was the first data structure of this kind (self-balancing tree)
-* It is mathematically related to the *red-black tree*
+- AVL tree was invented in 1962 by two soviet mathematicians, Georgy **A**delson-**V**elsky and Engenii **L**andis
+- It was the first data structure of this kind (self-balancing tree)
+- It is mathematically related to the _red-black tree_
 
 ## Definition
 
-* The *height* of a tree is one plus the maximum height of its subtrees
-* The height of a leaf node is one.
-* The *balance* of a node in a binary tree is $height(right subtree)-height(left subtree)$
-* An *AVL tree* is a binary tree in which the balance of every node in the tree is −1, 0, or 1
-* In other words, the heights of the two subtrees of any node differ by at most one
+- The _height_ of a tree is one plus the maximum height of its subtrees
+- The height of a leaf node is one.
+- The _balance_ of a node in a binary tree is $height(right subtree)-height(left subtree)$
+- An _AVL tree_ is a binary tree in which the balance of every node in the tree is −1, 0, or 1
+- In other words, the heights of the two subtrees of any node differ by at most one
 
 ## Implementation
 
-* Iterative (stack-based)
-* Recursive
-* Maintaining node balance
-* Maintaining node height
+- Iterative (stack-based)
+- Recursive
+- Maintaining node balance
+- Maintaining node height
 
 ### Class AVL Tree
 
@@ -65,10 +65,10 @@ def _insert(self, root, val):
 
 ### Iterative Insertion
 
-* Keep track of the *path stack* to the new node
-* After the new element has been inserted, start popping items from the stack
-* If the popped node has balance of $0$, adjust it (if necessary) to $1$ or $-1$
-* If the popped node's balance is not $0$, declare this node the *pivot* and consider 3 mutually exclusive cases
+- Keep track of the _path stack_ to the new node
+- After the new element has been inserted, start popping items from the stack
+- If the popped node has balance of $0$, adjust it (if necessary) to $1$ or $-1$
+- If the popped node's balance is not $0$, declare this node the _pivot_ and consider 3 mutually exclusive cases
 
 ### Case 1. No Pivot (before)
 
@@ -96,9 +96,9 @@ Adjust balance of each node in the stack path up to the pivot
 
 ### Case 3
 
-* The pivot node exists and the new node was added to its **taller** subtree, causing the balance of the pivot to become greater than $|2|$ after adjustment.
-* The child of the pivot in the direction (left or right) of *imbalance* is the *bad child*.
-* Solution involves some combination of left (counter-clockwise) and right (clockwise) *rotation*
+- The pivot node exists and the new node was added to its **taller** subtree, causing the balance of the pivot to become $+2$ or $-2$ after adjustment.
+- The child of the pivot in the direction (left or right) of _imbalance_ is the _bad child_.
+- Solution involves some combination of left (counter-clockwise) and right (clockwise) _rotation_
 
 ### Case 3a. Single rotation (before)
 
@@ -114,7 +114,7 @@ Perform a rotation at the pivot in the direction **opposite** of the imbalance
 
 ### Case 3b. Double rotation (before)
 
-New node is added to the subtree of the bad child and the direction **opposite** of imbalance. A *bad grandchild* is a child of the bad child that lies on the path.
+New node is added to the subtree of the bad child and the direction **opposite** of imbalance. A _bad grandchild_ is a child of the bad child that lies on the path.
 
 ![Double rotation](images/avlcase3ba.png)
 
@@ -158,18 +158,18 @@ Wikipedia
 
 ## Removal
 
-* Remove a node and check adjust balance of each node on the path stack
-* If the adjusted balance of a node on the path is $2$ (skewed to the right), perform left rotation
-* If the adjusted balance of a node on the path is $-2$ (skewed to the left), perform right rotation
+- Remove a node and check adjust balance of each node on the path stack
+- If the adjusted balance of a node on the path is $+2$ (skewed to the right), perform left rotation
+- If the adjusted balance of a node on the path is $-2$ (skewed to the left), perform right rotation
 
 ## Summary
 
-* History
-* Definition
-* Implementation
-* Insertion
-* Rotation
-* Removal
+- History
+- Definition
+- Implementation
+- Insertion
+- Rotation
+- Removal
 
 ## Thank you
 
@@ -177,6 +177,7 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
-* Адельсон-Вельский Г. М., Ландис Е. М. Один алгоритм организации информации //Доклады АН СССР, 146 (1962), 263-266
-* [AVL tree - Wikipedia](https://en.wikipedia.org/wiki/AVL_tree)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- Адельсон-Вельский Г. М., Ландис Е. М. Один алгоритм организации информации //Доклады АН СССР, 146 (1962), 263-266
+- [AVL tree - Wikipedia](https://en.wikipedia.org/wiki/AVL_tree)
+- [VisuAlgo - Binary Search Tree, AVL Tree](https://visualgo.net/en/bst)

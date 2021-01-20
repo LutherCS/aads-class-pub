@@ -5,10 +5,10 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* Dijkstra’s shortest path first algorithm (1959)
-* Bellman-Ford algorithm (1956)
-* Floyd-Warshall algorithm (1962)
-* A\* search (1968)
+- Dijkstra’s shortest path first algorithm (1959)
+- Bellman-Ford algorithm (1956)
+- Floyd-Warshall algorithm (1962)
+- A\* search (1968)
 
 ## Dijkstra’s shortest path first algorithm (1959)
 
@@ -16,28 +16,29 @@ Did it three times already.
 
 ## Bellman-Ford algorithm (1956)
 
-* Slower than Dijkstra's, but more versatile
-* Will cover later
-* Probably, next year
-* Please come back
+- Slower than Dijkstra's, but more versatile
+- Will cover later
+- Probably, next year
+- Please come back
 
 ## Floyd-Warshall algorithm (1962)
 
-*Dynamic programming* algorithm for finding the shortest paths between all pairs of vertices in a weighted graph with no negative cycles with $\Theta (|V|^{3})$ performance
+_Dynamic programming_ algorithm for finding the shortest paths between all pairs of vertices in a weighted graph with no negative cycles with $\Theta (|V|^{3})$ performance
 
 ### History
 
-* Invented by Robert Floyd in 1962
-* And by Stephen Warshall in 1962
-* And by Bernard Roy in 1959
-* Similar to Stephen Kleene's NFA to RE conversion algorithm from 1956
-* Implementation by Peter Ingerman in 1962
+- Invented by Robert Floyd in 1962
+- And by Stephen Warshall in 1962
+- And by Bernard Roy in 1959
+- Similar to Stephen Kleene's NFA to RE conversion algorithm from 1956
+- Implementation by Peter Ingerman in 1962
 
 ### Algorithm
 
 If the shortest path between vertices $i$ and $j$ exists, it either:
-* goes through a vertex $k$ ($i \rightarrow k \rightarrow j$ via vertices in $\{1,...k-1\}$)
-* does not go through a vertex $k$ (so, only using vertices in $\{1,...k-1\}$
+
+- goes through a vertex $k$ ($i \rightarrow k \rightarrow j$ via vertices in $\{1,...k-1\}$)
+- does not go through a vertex $k$ (so, only using vertices in $\{1,...k-1\}$
 
 $sp(i, j, 0) = w(i, j)$
 
@@ -68,23 +69,23 @@ for k in range(n):
 
 ### Comparison to repeated Dijkstra's
 
-* Floyd-Warshall's performs better in dense graphs (large number of edges)
-* Dijkstra's is  $O(|E||V|+|V|^2\log{|V|})$
-* Floyd-Warshall's is $O(|V|^3)$
+- Floyd-Warshall's performs better in dense graphs (large number of edges)
+- Dijkstra's is $O(|E||V|+|V|^2\log{|V|})$
+- Floyd-Warshall's is $O(|V|^3)$
 
 ## A\* search (1968)
 
-* Graph traversal and path search algorithm
-* Complete, optimal, and efficient
-* Invented by Peter Hart, Nils Nilsson, and Bertram Raphael in 1968
-* Uses heuristics to improve on Dijkstra's
+- Graph traversal and path search algorithm
+- Complete, optimal, and efficient
+- Invented by Peter Hart, Nils Nilsson, and Bertram Raphael in 1968
+- Uses heuristics to improve on Dijkstra's
 
 ## Summary
 
-* Dijkstra’s shortest path first algorithm (1959)
-* Bellman-Ford algorithm (1956)
-* Floyd-Warshall algorithm (1962)
-* A\* search (1968)
+- Dijkstra’s shortest path first algorithm (1959)
+- Bellman-Ford algorithm (1956)
+- Floyd-Warshall algorithm (1962)
+- A\* search (1968)
 
 ## Thank you
 
@@ -92,5 +93,5 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
-* [Floyd–Warshall algorithm - Wikipedia](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [Floyd–Warshall algorithm - Wikipedia](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
