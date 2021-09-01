@@ -7,7 +7,7 @@ keywords: ["python", "formatting", "linting", "testing"]
 
 ### Tools
 
-* Python **3.8**
+* Python **3.9**
 * `pylint` and `mypy`
 * `black`
 * `pytest` with `pytest-timeout` plugin
@@ -46,7 +46,9 @@ git push --set-upstream origin main
 
 Create a private repository and invite me as a collaborator.
 
-Assignments will be collected through the repository, **not** KATIE.
+Most assignments will be collected through the repository, *not* KATIE.
+
+Some assignments will be collected through KATIE.
 
 :::
 
@@ -91,8 +93,8 @@ There are two types of *notes*: Markdown lectures and Python source.
 ### Virtual environment
 
 ```bash
-sudo apt-get install python3.8 python3.8-venv
-python3.8 -m venv .venv
+sudo apt-get install python3.9 python3.9-venv
+python3.9 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -233,8 +235,9 @@ if __name__ == "__main__":
 #!/usr/bin/env python3
 """
 Implementation of Hello, World
-@author: Roman Yasinovskyy
-@date: 2020
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 ```
 
@@ -250,8 +253,9 @@ Always include your name in the source file
 #!/usr/bin/env python3
 """
 Implementation of Hello, World
+
 @author: Roman Yasinovskyy
-@date: 2020
+@date: 2021
 """
 
 
@@ -296,6 +300,14 @@ echo PYTHONPATH=.: > .env
 
 ## Testing
 
+### Using doctest
+
+Use `doctest`, if provided
+
+```bash
+python -m doctest src/notes/environment/hello.py
+```
+
 ### Framework
 
 Use `pytest`
@@ -304,7 +316,7 @@ Use `pytest`
 
 ```python
 import pytest
-from src.notes.environment.hello import greet
+from src.notes.environment import greet
 
 
 def test_greet():
@@ -323,7 +335,7 @@ python -m pytest tests/notes/environment/test_hello.py
 
 ```python
 import pytest
-from src.notes.environment.hello import greet
+from src.notes.environment import greet
 
 TIME_LIMIT = 1
 
@@ -339,7 +351,7 @@ def test_greet():
 
 ```python
 import pytest
-from src.notes.environment.hello import greet
+from src.notes.environment import greet
 
 TIME_LIMIT = 1
 AUDIENCE = ["World", "CS360 Class", "комп'ютер", 42, None, [1, 2, 3]]
@@ -370,7 +382,7 @@ def greet(audience: str) -> str:
 
 ```python
 import pytest
-from src.notes.environment.hello import greet
+from src.notes.environment import greet
 
 TIME_LIMIT = 1
 AUDIENCE = ["World", "CS360 Class", "комп'ютер"]

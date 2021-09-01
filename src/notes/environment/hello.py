@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Implementation of Hello, World
-@author: Roman Yasinovskyy
-@date: 2020
+`hello` implementation and driver
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 
 import argparse
@@ -10,7 +11,18 @@ import logging
 
 
 def greet(audience: str) -> str:
-    """Greet the audience"""
+    """
+    Greets the audience
+    
+    :param audience: who should we greet
+    :returns: personalized greeting
+    :raises: `TypeError` if `audience` is not a string
+
+    >>> greet("World")
+    'Hello, World'
+    >>> greet("CS360")
+    'Hello, CS360'
+    """
     if not isinstance(audience, str):
         raise TypeError(f"Please provide a valid string instead of {audience}")
     return "Hello, " + audience

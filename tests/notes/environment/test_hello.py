@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-@author: Roman Yasinovskyy
-@date: 2020
-@module: notes.environment
+`hello` testing
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 
 import pathlib
+
 import pytest
 import toml
 from src.notes.environment import greet
@@ -37,4 +39,4 @@ def test_greet_err(data, expected):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_hello.py"])
+    pytest.main(["-v", __file__])
