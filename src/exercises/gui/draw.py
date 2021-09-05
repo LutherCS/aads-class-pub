@@ -94,7 +94,6 @@ class PenDownCommand:
         return "<Command>PenDown</Command>"
 
 
-
 # This is the container class for a graphics sequence. It is meant
 # to hold the graphics commands sequence. 
 class PyList:
