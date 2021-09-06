@@ -12,16 +12,10 @@ import logging
 
 def greet(audience: str) -> str:
     """
-    Greets the audience
+    Greet the audience
     
-    :param audience: who should we greet
-    :returns: personalized greeting
-    :raises: `TypeError` if `audience` is not a string
-
-    >>> greet("World")
-    'Hello, World'
-    >>> greet("CS360")
-    'Hello, CS360'
+    :param audience: who to greet
+    :returns: greeting
     """
     if not isinstance(audience, str):
         raise TypeError(f"Please provide a valid string instead of {audience}")

@@ -3,10 +3,10 @@
 A Classy Problem
 """
 
-from typing import Dict, List
+# from typing import Dict, List
 
 
-def classify(people: dict) -> List[str]:
+def classify(people: dict) -> list[str]:
     """
     Classify people
     
@@ -15,7 +15,7 @@ def classify(people: dict) -> List[str]:
     raise NotImplementedError
 
 
-def read_file(filename: str) -> Dict[str, str]:
+def read_file(filename: str) -> dict[str, str]:
     """
     Read data from the file into a dictionary
 

@@ -254,8 +254,8 @@ Always include your name in the source file
 """
 Implementation of Hello, World
 
-@author: Roman Yasinovskyy
-@date: 2021
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 
 
@@ -378,12 +378,27 @@ def greet(audience: str) -> str:
 
 ## Testing revised
 
+### Safeguard import statement
+
+```python
+import importlib
+import pathlib
+import sys
+
+import pytest
+import toml
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.notes.environment import greet
+```
+
 ### Split success and errors
 
 ```python
-import pytest
-from src.notes.environment import greet
-
 TIME_LIMIT = 1
 AUDIENCE = ["World", "CS360 Class", "комп'ютер"]
 AUDIENCE_ERR = [42, None, [1, 2, 3]]

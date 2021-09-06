@@ -6,11 +6,20 @@
 @version: 2021.9
 """
 
+import importlib
 import pathlib
+import sys
 
 import pytest
 import toml
-from src.notes.environment import greet
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.notes.environment import greet
+
 
 TIME_LIMIT = 1
 

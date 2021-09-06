@@ -1,7 +1,7 @@
 [meta]
 author = "Roman Yasinovskyy"
-date = 2021
-title = "Public test cases for notes.environment"
+version = "2021.9"
+comment = "Public test cases for notes.environment"
 
 [[test_case_success]]
 data = "World"

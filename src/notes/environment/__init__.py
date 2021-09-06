@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-import statement for the `environment` module
+`environment` module
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 
 from .hello import greet
