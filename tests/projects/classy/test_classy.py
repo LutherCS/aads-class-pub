@@ -1,14 +1,25 @@
 #!/usr/bin/env python3
 """
-Testing the classy project
-@author: Roman Yasinovskyy
-@date: 2020
+`classy` testing
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 
+import importlib
 import pathlib
+import sys
+
 import pytest
 import toml
-from src.projects.classy import read_file, classify
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.projects.classy import classify, read_file
+
 
 TIME_LIMIT = 1
 
@@ -60,4 +71,4 @@ def test_classy(filename, expected):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_classy.py"])
+    pytest.main(["-v", __file__])

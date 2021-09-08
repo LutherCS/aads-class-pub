@@ -1,21 +1,21 @@
 [meta]
-author = "Roman Yasinovskyy"
-date   = 2020
-title  = "Public test cases for the module `classy`"
+authors = "Roman Yasinovskyy"
+comment = "Public test cases for the project `classy`"
+version = "2021.9"
 
 [[test_case]]
 
-expected = [ "queenelizabeth", "mom", "dad", "unclebob", "chair" ]
+expected = ["queenelizabeth", "mom", "dad", "unclebob", "chair"]
 filename = "data/projects/classy/classy01.txt"
 
 [[test_case]]
 
-expected = [ "queenelizabeth", "mom", "dad", "daddy", "unclebob", "chair" ]
+expected = ["queenelizabeth", "mom", "dad", "daddy", "unclebob", "chair"]
 filename = "data/projects/classy/classy02.txt"
 
 [[test_case]]
 
-filename     = "data/projects/classy/classy03.txt"
+filename = "data/projects/classy/classy03.txt"
 expected = [
     "Catherine",
     "Peter",
