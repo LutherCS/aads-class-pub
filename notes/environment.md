@@ -7,13 +7,13 @@ keywords: ["python", "formatting", "linting", "testing"]
 
 ### Tools
 
-* Python **3.9**
-* `pylint` and `mypy`
-* `black`
-* `pytest` with `pytest-timeout` plugin
-* `colorama`
-* `tkinter`
-* `git`
+- Python **3.9**
+- `pylint` and `mypy`
+- `black`
+- `pytest` with `pytest-timeout` plugin
+- `colorama`
+- `tkinter`
+- `git`
 
 ### Course repository
 
@@ -46,7 +46,7 @@ git push --set-upstream origin main
 
 Create a private repository and invite me as a collaborator.
 
-Most assignments will be collected through the repository, *not* KATIE.
+Most assignments will be collected through the repository, _not_ KATIE.
 
 Some assignments will be collected through KATIE.
 
@@ -58,7 +58,7 @@ Some assignments will be collected through KATIE.
 
 ::: notes
 
-You must two remotes configured in your repository, *upstream* (my public repo) and *origin* (your private repo).
+You must two remotes configured in your repository, _upstream_ (my public repo) and _origin_ (your private repo).
 
 :::
 
@@ -86,7 +86,7 @@ aads-class-pub
 
 ::: notes
 
-There are two types of *notes*: Markdown lectures and Python source.
+There are two types of _notes_: Markdown lectures and Python source.
 
 :::
 
@@ -282,7 +282,7 @@ python src/notes/environment/hello.py
 
 ### Directory as a module
 
-Add an empty `__init__.py` to the *hello* directory
+Add an empty `__init__.py` to the _hello_ directory
 
 ::: notes
 
@@ -471,17 +471,17 @@ def get_cases(category: str):
 
 ### References
 
-* [Duplicating a repository - GitHub Help](https://help.github.com/en/articles/duplicating-a-repository)
-* [python - What is the difference between venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc? - Stack Overflow](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
-* [venv — Creation of virtual environments — Python 3.7.4 documentation](https://docs.python.org/3/library/venv.html)
-* [GitHub - LutherCS/aads-class-pub: Advanced Algorithms and Data Structures (CS360)](https://github.com/LutherCS/aads-class-pub)
-* [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
-* [The uncompromising code formatter](https://black.readthedocs.io/en/stable/)
-* [PEP 498 -- Literal String Interpolation | Python.org](https://www.python.org/dev/peps/pep-0498/)
-* [PEP 257 -- Docstring Conventions | Python.org](https://www.python.org/dev/peps/pep-0257/)
-* [Pylint - code analysis for Python | www.pylint.org](https://www.pylint.org/)
-* [Flake8: Your Tool For Style Guide Enforcement — flake8 3.7.8 documentation](http://flake8.pycqa.org/en/latest/)
-* [PEP 484 -- Type Hints | Python.org](https://www.python.org/dev/peps/pep-0484/)
-* [pytest: helps you write better programs — pytest documentation](https://pytest.org/en/latest/)
-* [Repository Structure and Python — Kenneth Reitz](https://www.kennethreitz.org/essays/repository-structure-and-python)
-* [toml-lang/toml: Tom's Obvious, Minimal Language](https://github.com/toml-lang/toml)
+- [Duplicating a repository - GitHub Help](https://help.github.com/en/articles/duplicating-a-repository)
+- [python - What is the difference between venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc? - Stack Overflow](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
+- [venv — Creation of virtual environments — Python 3.7.4 documentation](https://docs.python.org/3/library/venv.html)
+- [GitHub - LutherCS/aads-class-pub: Advanced Algorithms and Data Structures (CS360)](https://github.com/LutherCS/aads-class-pub)
+- [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
+- [The uncompromising code formatter](https://black.readthedocs.io/en/stable/)
+- [PEP 498 -- Literal String Interpolation | Python.org](https://www.python.org/dev/peps/pep-0498/)
+- [PEP 257 -- Docstring Conventions | Python.org](https://www.python.org/dev/peps/pep-0257/)
+- [Pylint - code analysis for Python | www.pylint.org](https://www.pylint.org/)
+- [Flake8: Your Tool For Style Guide Enforcement — flake8 3.7.8 documentation](http://flake8.pycqa.org/en/latest/)
+- [PEP 484 -- Type Hints | Python.org](https://www.python.org/dev/peps/pep-0484/)
+- [pytest: helps you write better programs — pytest documentation](https://pytest.org/en/latest/)
+- [Repository Structure and Python — Kenneth Reitz](https://www.kennethreitz.org/essays/repository-structure-and-python)
+- [toml-lang/toml: Tom's Obvious, Minimal Language](https://github.com/toml-lang/toml)
