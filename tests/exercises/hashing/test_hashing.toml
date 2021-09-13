@@ -1,7 +1,7 @@
 [meta]
-author = "Roman Yasinovskyy"
-date   = 2020
-title  = "Public test cases for the module `hashing`"
+authors = "Roman Yasinovskyy"
+version = "2021.9"
+comment = "Public test cases for exercises.hashing"
 
 [[simple_remainder]]
 
