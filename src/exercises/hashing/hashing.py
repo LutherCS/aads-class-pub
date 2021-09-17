@@ -12,7 +12,7 @@ def hash_mid_sqr(key: int, size: int) -> int:
     raise NotImplementedError
 
 
-def hash_folding(key: int, size: int) -> int:
+def hash_folding(key: str, size: int) -> int:
     """Find hash using folding method"""
     raise NotImplementedError
 
