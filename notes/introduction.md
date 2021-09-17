@@ -5,11 +5,11 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* Why bother learning advanced algorithms and data structures
-* Why bother learning advanced anything
-* Why bother learning
-* Why bother
-* Why
+- Why bother learning advanced algorithms and data structures
+- Why bother learning advanced anything
+- Why bother learning
+- Why bother
+- Why
 
 ::: notes
 
@@ -23,9 +23,9 @@ Sometimes standard implementation is too rigid or does not fit the needs of a sp
 
 Almost any problem can be solved using the combination of the following:
 
-* Brute force
-* Array
-* Infinite time
+- Brute force
+- Array
+- Infinite time
 
 ### See them aliens
 
@@ -33,11 +33,11 @@ Almost any problem can be solved using the combination of the following:
 
 ### Constrains
 
-* Time
-* Processing power
-* Storage
-* Memory
-* Bandwidth
+- Time
+- Processing power
+- Storage
+- Memory
+- Bandwidth
 
 ## Algorithms
 
@@ -57,23 +57,23 @@ Algorithms are for people who don't know how to buy RAM.
 
 ### Basic algorithms
 
-* Linear search
-* Binary search
-* Selection sort
-* Insertion sort
-* Breadth first search
-* Depth first search
-* Greedy algorithms
+- Linear search
+- Binary search
+- Selection sort
+- Insertion sort
+- Breadth first search
+- Depth first search
+- Greedy algorithms
 
 ### Advanced algorithms
 
-* Quick sort
-* Merge sort
-* Minimax
-* Dynamic programming
-* Minimum spanning tree
-* Shortest path
-* Heuristic search
+- Quick sort
+- Merge sort
+- Minimax
+- Dynamic programming
+- Minimum spanning tree
+- Shortest path
+- Heuristic search
 
 ### Very advanced algorithms
 
@@ -89,105 +89,105 @@ Algorithms + data structures = programs
 
 Data storage optimization needs:
 
-* **C**reate / Insert
-* **R**etrieve / Query
-* **U**pdate
-* **D**elete
+- **C**reate / Insert
+- **R**etrieve / Query
+- **U**pdate
+- **D**elete
 
 ### Collection data types
 
-* Tuple
-* List
-* Set
-* Dictionary
+- Tuple
+- List
+- Set
+- Dictionary
 
 ::: notes
 
-*lists* are basic and versatile
+_lists_ are basic and versatile
 
-*tuples* are immutable
+_tuples_ are immutable
 
-*sets* are fast
+_sets_ are fast
 
-*dictionaries* are awesome
+_dictionaries_ are awesome
 
 :::
 
 ### Basic data structures
 
-* Array
-* Stack
-* Queue
-* Deque
-* Linked list
-* Doubly-linked list
-* Circular list
-* Doubly-linked circular list
+- Array
+- Stack
+- Queue
+- Deque
+- Linked list
+- Doubly-linked list
+- Circular list
+- Doubly-linked circular list
 
 ::: notes
 
-*arrays* are basic and versatile
+_arrays_ are basic and versatile
 
-*stacks* are used to simulate recursion, process function calls, DFS
+_stacks_ are used to simulate recursion, process function calls, DFS
 
-*queues* are used in simulations, BFS
+_queues_ are used in simulations, BFS
 
-*linked lists* are fast for insertion and removal
+_linked lists_ are fast for insertion and removal
 
 :::
 
 ### Advanced data structures
 
-* Set
-* Map
-* Partition
-* Tree
-* Heap
-* Balanced tree
-* Trie
-* Graph
+- Set
+- Map
+- Partition
+- Tree
+- Heap
+- Balanced tree
+- Trie
+- Graph
 
 ::: notes
 
-*heaps* are also known as *priority queues* and used in Dijkstra's and other *greedy* algorithms
+_heaps_ are also known as _priority queues_ and used in Dijkstra's and other _greedy_ algorithms
 
-*sets* are used to check membership, find $k$-th largest, items smaller then the given one
+_sets_ are used to check membership, find $k$-th largest, items smaller then the given one
 
-*maps* are used in *dynamic programming*
+_maps_ are used in _dynamic programming_
 
 :::
 
 ### Very advanced data structures
 
-* Van Emde Boas tree
-* Judy array
-* Probabilistic data structures
+- Van Emde Boas tree
+- Judy array
+- Probabilistic data structures
 
 ## Algorithms + data structures = programs
 
-Almost any solution can be *improved* using the combination of the following:
+Almost any solution can be _improved_ using the combination of the following:
 
-* Proper algorithm
-  * more efficient
-  * more specific
-  * constraint-aware
-* Appropriate data structure
-  * more efficient
-  * yet feasible
+- Proper algorithm
+  - more efficient
+  - more specific
+  - constraint-aware
+- Appropriate data structure
+  - more efficient
+  - yet feasible
 
 ## Human vs machine
 
-* Machine is *stupid*
-* Human is *smart*
+- Machine is _stupid_
+- Human is _smart_
 
 ## Computational complexity
 
 ### Asymptotic notation
 
-* Asymptotic *upper* bound: Big-O
-* Asymptotic *lower* bound: Big-$\Omega$
-* Asymptotic *tight* bound: Big-$\Theta$
-* Amortized complexity
+- Asymptotic _upper_ bound: Big-O
+- Asymptotic _lower_ bound: Big-$\Omega$
+- Asymptotic _tight_ bound: Big-$\Theta$
+- Amortized complexity
 
 ### Big-O
 
@@ -229,11 +229,11 @@ $NP-hard$ - at least as hard as any $NP$ but he solution doesn't need to be veri
 
 ## Summary
 
-* Basic algorithms
-* Advanced algorithms
-* Basic data structures
-* Advanced data structures
-* Computational complexity
+- Basic algorithms
+- Advanced algorithms
+- Basic data structures
+- Advanced data structures
+- Computational complexity
 
 ## Thank you
 
@@ -241,12 +241,12 @@ Got questions?
 
 ## References
 
-* [Algorithms by Dasgupta et al](https://dl.acm.org/citation.cfm?id=1177299)
-* [Algorithms + Data Structures = Programs by Niklaus Wirth](https://dl.acm.org/citation.cfm?id=540029)
-* [Data Structures and Algorithms by Alfred Aho et al](https://dl.acm.org/citation.cfm?id=577958)
-* [Data Structures and Algorithms in Python by Goodrich et al](https://dl.acm.org/citation.cfm?id=2500912)
-* [Data structures and algorithms with object-oriented design patterns in C++ by Bruno Preiss](https://dl.acm.org/citation.cfm?id=289373)
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
-* [A Discipline of Programming by Edsger Dijkstra](https://dl.acm.org/citation.cfm?id=550359)
-* [Introduction to Algorithms by Thomas Cormen et al](https://dl.acm.org/citation.cfm?id=1614191)
-* [Problem Solving with Algorithms and Data Structures Using Python by Brad Miller and David Ranum](https://dl.acm.org/citation.cfm?id=2073661)
+- [Algorithms by Dasgupta et al](https://dl.acm.org/citation.cfm?id=1177299)
+- [Algorithms + Data Structures = Programs by Niklaus Wirth](https://dl.acm.org/citation.cfm?id=540029)
+- [Data Structures and Algorithms by Alfred Aho et al](https://dl.acm.org/citation.cfm?id=577958)
+- [Data Structures and Algorithms in Python by Goodrich et al](https://dl.acm.org/citation.cfm?id=2500912)
+- [Data structures and algorithms with object-oriented design patterns in C++ by Bruno Preiss](https://dl.acm.org/citation.cfm?id=289373)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [A Discipline of Programming by Edsger Dijkstra](https://dl.acm.org/citation.cfm?id=550359)
+- [Introduction to Algorithms by Thomas Cormen et al](https://dl.acm.org/citation.cfm?id=1614191)
+- [Problem Solving with Algorithms and Data Structures Using Python by Brad Miller and David Ranum](https://dl.acm.org/citation.cfm?id=2073661)

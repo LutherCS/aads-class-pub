@@ -5,9 +5,9 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* Set as HashSet
-* Map as HashMap
-* Memoization
+- Set as HashSet
+- Map as HashMap
+- Memoization
 
 ## Set
 
@@ -15,33 +15,33 @@ An unordered collection of unique elements
 
 ### Set properties
 
-* Cardinality (number of items)
-* Load factor
+- Cardinality (number of items)
+- Load factor
 
 ### Set operations (item)
 
-* add (new_member)
-* discard (or do nothing)
-* pop (random member)
-* remove (member)
+- add (new_member)
+- discard (or do nothing)
+- pop (random member)
+- remove (member)
 
 ### Set operations (another set)
 
-* difference
-* intersection
-* isdisjoint
-* issubset
-* issuperset
-* symmetric_difference
-* union
-* update
+- difference
+- intersection
+- isdisjoint
+- issubset
+- issuperset
+- symmetric_difference
+- union
+- update
 
 ### Set implementation
 
-* Hashing
-* Why can't we have a set of lists?
-* What happens if there is a collision?
-* What happens is an item is removed?
+- Hashing
+- Why can't we have a set of lists?
+- What happens if there is a collision?
+- What happens is an item is removed?
 
 ### Python set
 
@@ -110,11 +110,17 @@ def fib(n):
     return fib(n - 1) + fib(n - 2)
 ```
 
+::: notes
+
+Python 3.9 introduced `functools.cache`, a smaller and faster version of `lru_cache`.
+
+:::
+
 ## Summary
 
-* Set as HashSet
-* Map as HashMap
-* Memoization
+- Set as HashSet
+- Map as HashMap
+- Memoization
 
 ## Thank you
 
@@ -122,6 +128,7 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
-* [How Python implements dictionaries | Jessica Yung](http://www.jessicayung.com/how-python-implements-dictionaries/)
-* [cpython/dictobject.c at master · python/cpython](https://github.com/python/cpython/blob/master/Objects/dictobject.c)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [How Python implements dictionaries | Jessica Yung](http://www.jessicayung.com/how-python-implements-dictionaries/)
+- [cpython/dictobject.c at master · python/cpython](https://github.com/python/cpython/blob/master/Objects/dictobject.c)
+- [functools — Higher-order functions and operations on callable objects — Python 3.9.7 documentation](https://docs.python.org/3/library/functools.html)

@@ -5,9 +5,9 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* Understand recursion
-* Embrace recursion
-* Avoid recursion
+- Understand recursion
+- Embrace recursion
+- Avoid recursion
 
 ## Recursion
 
@@ -15,13 +15,13 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Laws of recursion
 
-* Function calling itself
-* Base case(s)
-* Approach the base case
+- Function calling itself
+- Base case(s)
+- Approach the base case
 
 ## Summary
 
-* Recursion is recursive
+- Recursion is recursive
 
 ## Thank you
 
@@ -31,4 +31,4 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)

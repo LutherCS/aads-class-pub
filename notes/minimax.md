@@ -5,8 +5,8 @@ keywords: ["algorithms", "gaming", "programming"]
 
 ## Goals
 
-* Tic-Tac-Toe
-* Minimax
+- Tic-Tac-Toe
+- Minimax
 
 ## Tic-Tac-Toe
 
@@ -42,10 +42,10 @@ The algorithm alternates between **max**imizing computer's gain and **mini**mizi
 
 1. Evaluate the board (check) to find:
 
-    1. Move that yields **max** value if it is COMPUTER's turn
-    1. Move that yields **min** value if it is HUMAN's turn
+   1. Move that yields **max** value if it is COMPUTER's turn
+   1. Move that yields **min** value if it is HUMAN's turn
 
-1. Call *minimax* recursively, switching the players and decreasing the search depth
+1. Call _minimax_ recursively, switching the players and decreasing the search depth
 
 1. Record the **move** the leads to the best position
 
@@ -55,8 +55,8 @@ The algorithm alternates between **max**imizing computer's gain and **mini**mizi
 
 ## Summary
 
-* Tic-Tac-Toe
-* Minimax
+- Tic-Tac-Toe
+- Minimax
 
 ## Thank you
 
@@ -64,4 +64,4 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)

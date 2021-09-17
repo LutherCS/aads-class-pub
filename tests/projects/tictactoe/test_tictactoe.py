@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
 """
-Testing the tictactoe project
-@author: Roman Yasinovskyy
-@date: 2020
+`tictactoe` testing
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
 """
 
+import importlib
 import pathlib
+import sys
 import tkinter
-from turtle import RawTurtle, ScrolledCanvas
+from turtle import RawTurtle
 
 import pytest
 import toml
-from src.projects.tictactoe import Board, O, X, minimax
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.projects.tictactoe import Board, O, X, minimax
+
 
 TIME_LIMIT = 5
 
@@ -216,4 +226,4 @@ def test_minimax_param(board, evaluation):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_tictactoe.py"])
+    pytest.main(["-v", __file__])

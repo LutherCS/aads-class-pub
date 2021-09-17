@@ -1,7 +1,7 @@
 [meta]
-author = "Roman Yasinovskyy"
-date   = 2020
-title  = "Public test cases for the module `tictactoe`"
+authors = "Roman Yasinovskyy"
+version = "2021.9"
+comment = "Public test cases for projects.tictactoe"
 
 [[test_board]]
 # Board 0/1
