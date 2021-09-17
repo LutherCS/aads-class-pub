@@ -2,22 +2,23 @@
 """Implement Minimax to play Tic Tac Toe"""
 
 
-import tkinter.messagebox
 import tkinter
+import tkinter.messagebox
 from turtle import RawTurtle, ScrolledCanvas
-from functools import lru_cache
 
 screenMin = 0
 screenMax = 300
 COMPUTER = 1
 HUMAN = -1
 PLAYERS = {1: "COMPUTER", -1: "HUMAN"}
-AILVLS = {"Naive": 0, "Easy": 2, "Hard": 4}
+AILVLS = {"Naive": 0, "Easy": 2, "Hard": 6}
 
 
 class Board:
     def __init__(self, board=None, screen=None):
         """
+        Board constructor
+
         When a board is constructed, you may want to make a copy of the board.
         This can be a shallow copy of the board because Turtle objects are
         Immutable from the perspective of a board object.
@@ -39,27 +40,40 @@ class Board:
             self.items.append(row)
 
     def getscreen(self):
-        """Accessor method for the screen"""
+        """
+        Screen accessor
+        """
         return self.screen
 
     def __getitem__(self, index):
         """
-        The getitem method is used to index into the board. It should
-        return a row of the board. That row itself is indexable (it is just
-        a list) so accessing a row and column in the board can be written
+        Row accessor
+
+        That row itself is indexable (it is just a list)
+        so accessing a row and column in the board can be written
         board[row][column] because of this method.
+
+        :param index: row of the board to get
+        :returns: a specific row
         """
         return self.items[index]
 
     def __eq__(self, other):
         """
-        This method should return true if the two boards, self and other,
-        represent exactly the same state.
-        """
-        # TODO: COMPLETE THIS FUNCTION
-        pass
+        Compares two boards
 
-    def __hash__(self):
+        :param other: another Board
+        :returns: `True` if two boards represent the same state, `False` otherwise
+        """
+        # TODO: Implement this function
+        ...
+
+    def __hash__(self) -> int:
+        """
+        Calculates hash value of a board
+
+        :returns: integer hash value
+        """
         result = 0
         for i in range(3):
             for j in range(3):
@@ -68,12 +82,13 @@ class Board:
 
     def reset(self):
         """
-        This method will mutate this board to contain all dummy
-        turtles. This way the board can be reset when a new game
-        is selected. It should NOT be used except when starting
-        a new game.
-        """
+        Resets the board state
 
+        This method will mutate this board to contain all `Dummy`
+        turtles. This way the board can be reset when a new game
+        is selected.
+        It should NOT be used except when starting a new game.
+        """
         # self.screen.tracer(1)
         for i in range(3):
             for j in range(3):
@@ -82,30 +97,32 @@ class Board:
 
         self.screen.tracer(0)
 
-    def eval(self):
+    def eval(self) -> int:
         """
-        This method should return an integer representing the
-        state of the board. If the computer has won, return 1.
-        If the human has won, return -1. Otherwise, return 0.
-        """
-        # TODO: COMPLETE THIS FUNCTION
-        pass
+        Evaluates the board
 
-    def full(self):
+        :returns: an integer representing the state of the board
+        If the computer has won, return 1.
+        If the human has won, return -1.
+        Otherwise, return 0.
         """
-        This method should return True if the board
-        is completely filled up (no dummy turtles).
-        Otherwise, it should return False.
+        # TODO: Implement this function
+        ...
+
+    def full(self) -> bool:
         """
-        # TODO: COMPLETE THIS FUNCTION
-        pass
+        Checks if the board is full
+
+        :returns: `True` if the board is completely filled up (no `Dummy` turtles).
+        Otherwise, it should return `False`.
+        """
+        # TODO: Implement this function
+        ...
 
     def drawXOs(self):
         """
-        This method should draw the X's and O's
-        Of this board on the screen.
+        Draws `X`s and `O`s on the screen
         """
-
         for row in range(3):
             for col in range(3):
                 if self[row][col].eval() != 0:
@@ -114,15 +131,18 @@ class Board:
 
         self.screen.update()
 
-    def available(self):
+    def available(self) -> list[tuple[int, int]]:
         """
-        Return available (empty) cells
+        Returns available (empty) cells
+
+        :returns: a list of tuples where each tuple is a (row, column) pair
         """
-        pass
+        # TODO: Implement this function
+        ...
 
     def clone(self):
         """
-        Return a copy of the board
+        Returns a copy of the board
         """
         return Board(self)
 
@@ -199,7 +219,7 @@ class O(RawTurtle):
         return HUMAN
 
 
-def minimax(player, board, depth=4):
+def minimax(player, board, depth=6):
     """
     The minimax function is given a player (1 = Computer, -1 = Human) and a
     board object. When the player = Computer, minimax returns the maximum
@@ -211,8 +231,8 @@ def minimax(player, board, depth=4):
     The base case results when, given the state of the board, someone has won or
     the board is full.
     """
-    # TODO: COMPLETE THIS FUNCTION
-    pass
+    # TODO: Implement this function
+    ...
 
 
 class TicTacToe(tkinter.Frame):
@@ -312,7 +332,8 @@ class TicTacToe(tkinter.Frame):
             # contain the best move for the computer. For instance,
             # if the best move is in the first row and third column
             # then maxMove would be (0,2).
-            # TODO: IMPLEMENT THE DESCRIBED LOGIC
+            # TODO: Implement the game logic
+            ...
 
             row, col = maxMove
             board[row][col] = X(canvas)
@@ -345,7 +366,7 @@ class TicTacToe(tkinter.Frame):
                         )
                     elif board.eval() == -1:
                         tkinter.messagebox.showerror(
-                            "Game Over", "Suprisingly, Human wins."
+                            "Game Over", "Surprisingly, Human wins."
                         )
                     elif board.full():
                         tkinter.messagebox.showinfo("Game Over", "It was a tie.")
