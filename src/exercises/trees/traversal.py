@@ -1,14 +1,31 @@
 #!/usr/bin/env python3
-"""Turning in-order and post-order tree traversals into pre-order"""
+"""
+`trees` implementation and driver
+Turning in-order and post-order tree traversals into pre-order
+
+
+@authors: Roman Yasinovskyy
+@version: 2021.9
+"""
 
 
 def get_preorder(inorder: str, postorder: str) -> str:
-    """Return pre-order traversal of a tree based on its in-order and post-order traversals"""
-    raise NotImplementedError
+    """
+    Returns pre-order traversal of a tree based on its in-order and post-order traversals
+
+    :param inorder: in-order tree traversal
+    :param postorder: post-order tree traversal
+    :return: pre-order tree traversal
+    >>> get_preorder("UOMELBARTKGSNI", "UMELABORSGNIKT")
+    'TROUBLEMAKINGS'
+    """
+    # TODO: Implement this function
+    ...
 
 
 def main():
     """This is the main function"""
+    print("Pre-order tree traversal")
     print(get_preorder(inorder="UOMELBARTKGSNI", postorder="UMELABORSGNIKT"))
 
 
