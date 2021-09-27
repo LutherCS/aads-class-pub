@@ -5,17 +5,17 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## Goals
 
-* Binary heap analysis
-* Binary heap implementation
-* Build a binary heap
-* Remove an element
-* Add a new element
+- Binary heap analysis
+- Binary heap implementation
+- Build a binary heap
+- Remove an element
+- Add a new element
 
 ## Binary heap
 
 A data structure used when it's necessary to repeatedly remove the smallest (largest) item.
 
-Introduced by J. Williams in 1964, as a data structure for the *heapsort*
+Introduced by J. Williams in 1964, as a data structure for the _heapsort_
 
 ## Analysis
 
@@ -42,8 +42,8 @@ Using an array (list) guarantees $O(1)$ access to a node and its children / pare
 
 ## Build binary heap
 
-* Build by insertion ($O(n\times log(n))$)
-* Heapify ($O(n)$)
+- Build by insertion ($O(n\times log(n))$)
+- Heapify ($O(n)$)
 
 ### Heapify
 
@@ -98,9 +98,9 @@ def _perc_up(self, cur_idx):
 
 ## Summary
 
-* Binary heap has $\Theta(1)$ *root* retrieval
-* Used in heapsort, Dijkstra's, and Prim's algorithms
-* Priority queue
+- Binary heap has $\Theta(1)$ _root_ retrieval
+- Used in heapsort, Dijkstra's, and Prim's algorithms
+- Priority queue
 
 ## Thank you
 
@@ -108,7 +108,7 @@ Got questions?
 
 ## References
 
-* [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
-* [cpython/heapq.py at 3.7 · python/cpython](https://github.com/python/cpython/blob/3.7/Lib/heapq.py)
-* [Algorithm Repository](http://algorist.com/problems/Priority_Queues.html)
-* [Binary heap - Wikipedia](https://en.wikipedia.org/wiki/Binary_heap)
+- [Data Structures and Algorithms with Python by Kent Lee and Steve Hubbard](https://dl.acm.org/citation.cfm?id=2732680)
+- [cpython/heapq.py at 3.7 · python/cpython](https://github.com/python/cpython/blob/3.7/Lib/heapq.py)
+- [Algorithm Repository](http://algorist.com/problems/Priority_Queues.html)
+- [Binary heap - Wikipedia](https://en.wikipedia.org/wiki/Binary_heap)
