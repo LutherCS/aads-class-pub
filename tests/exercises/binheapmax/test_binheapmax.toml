@@ -1,0 +1,24 @@
+[meta]
+authors = "Roman Yasinovskyy"
+version = 2021.10
+comment = "Public test cases for exercises.binheapmax"
+
+[[test_case]]
+data = [1, 2, 3]
+expected = [3, 2, 1]
+
+[[test_case]]
+data = ["A", "B", "C"]
+expected = ["C", "B", "A"]
+
+[[test_case]]
+data = [11, 48, 3, 55, 20, 71]
+expected = [71, 55, 11, 48, 20, 3]
+
+[[test_case]]
+data = [10, 20, 30, 25, 35, 40, 33, 32, 36, 50]
+expected = [50, 36, 40, 32, 35, 30, 33, 10, 25, 20]
+
+[[test_case]]
+data = ["Alfred", "Bruce", "Jim", "Harvey", "Lucius", "Rachel", "Robin", "Selina", "Talia"]
+expected = ['Talia', 'Selina', 'Robin', 'Harvey', 'Lucius', 'Rachel', 'Jim', 'Bruce', 'Alfred']

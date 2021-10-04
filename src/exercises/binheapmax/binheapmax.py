@@ -2,6 +2,9 @@
 """Binary Heap implementation"""
 
 
+from typing import Any
+
+
 class BinaryHeapMax:
     """Heap class implementation"""
 
@@ -10,34 +13,40 @@ class BinaryHeapMax:
         self._heap = []
         self._size = 0
 
-    def _perc_up(self, cur_idx):
+    def _perc_up(self, cur_idx: int) -> None:
         """Move a node up"""
-        raise NotImplementedError
+        # TODO: Implement this function
+        ...
 
-    def _perc_down(self, cur_idx):
+    def _perc_down(self, cur_idx: int) -> None:
         """Move a node down"""
-        raise NotImplementedError
+        # TODO: Implement this function
+        ...
 
-    def insert(self, item):
-        """Add a new item. Optional for this exercise"""
-        pass
+    def add(self, item: Any) -> None:
+        """Add a new item"""
+        # TODO: Implement this function
+        ...
 
-    def delete(self):
-        """Remove an item from the heap. Optional for this exercise"""
-        pass
+    def remove(self) -> Any:
+        """Remove an item from the heap"""
+        # TODO: Implement this function
+        ...
 
-    def heapify(self, not_a_heap):
+    def heapify(self, not_a_heap: list) -> None:
         """Turn a list into a heap"""
-        raise NotImplementedError
+        # TODO: Implement this function
+        ...
 
-    def get_max_child(self, parent_idx):
-        """Get the greater child"""
-        raise NotImplementedError
+    def _get_max_child(self, parent_idx: int) -> int:
+        """Get index of the greater child"""
+        # TODO: Implement this function
+        ...
 
-    def __len__(self):
+    def __len__(self) -> int:
         """Get heap size"""
         return self._size
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Heap as a string """
         return str(self._heap)
