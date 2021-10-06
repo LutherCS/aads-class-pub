@@ -31,11 +31,31 @@ def get_cases(category: str):
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("items, pqueue", get_cases("test_case"))
+@pytest.mark.parametrize("items, pqueue", get_cases("test_heapify"))
 def test_heapify(items, pqueue):
-    """Testing the output"""
+    """Testing the heap after list is heapified"""
     bhm = BinaryHeapMax()
     bhm.heapify(items)
+    assert str(bhm) == str(pqueue)
+
+
+@pytest.mark.timeout(TIME_LIMIT)
+@pytest.mark.parametrize("items, pqueue", get_cases("test_insert"))
+def test_insert(items, pqueue):
+    """Testing the heap after items are inserted"""
+    bhm = BinaryHeapMax()
+    for i in items:
+        bhm.insert(i)
+    assert str(bhm) == str(pqueue)
+
+
+@pytest.mark.timeout(TIME_LIMIT)
+@pytest.mark.parametrize("items, pqueue", get_cases("test_remove"))
+def test_remove(items, pqueue):
+    """Testing the heap after items are removed"""
+    bhm = BinaryHeapMax()
+    bhm.heapify(items)
+    bhm.remove()
     assert str(bhm) == str(pqueue)
 
 
