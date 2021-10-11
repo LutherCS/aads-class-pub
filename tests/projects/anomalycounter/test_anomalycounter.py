@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
-# encoding: UTF-8
 """
-@author: Roman Yasinovskyy
-@date: 2021
-@module: project.anomalycounter
+`anomalycounter` testing
+
+@authors: Roman Yasinovskyy
+@version: 2021.10
 """
 
+import importlib
 import pathlib
+import sys
+
 import pytest
 import toml
-from src.projects.anomalycounter import count
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.projects.anomalycounter import count
 
 
 DATA_DIR = pathlib.Path("data/projects/anomalycounter/")
@@ -31,4 +40,4 @@ def test_anomalycounter(data, expected):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_anomalycounter.py"])
+    pytest.main(["-v", __file__])
