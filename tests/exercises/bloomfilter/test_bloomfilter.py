@@ -34,7 +34,7 @@ def get_cases(category: str):
 def the_bloom_filter():
     """Build Bloom filter"""
     my_filter = BloomFilter(980600, 7)
-    with open("data/exercises/bloomfilter/words") as file_in:
+    with open("data/exercises/bloomfilter/words", encoding='utf-8') as file_in:
         for word in file_in.readlines():
             my_filter.add(word.strip())
     return my_filter
