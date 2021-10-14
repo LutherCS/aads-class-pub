@@ -44,7 +44,7 @@ def the_bloom_filter():
 def test_bloomfilter_len():
     """Testing the filter size"""
     my_filter = BloomFilter(980600, 7)
-    with open("data/exercises/bloomfilter/words") as file_in:
+    with open("data/exercises/bloomfilter/words", encoding='utf-8') as file_in:
         for word in file_in.readlines():
             my_filter.add(word.strip())
 
@@ -59,11 +59,11 @@ def test_bloomfilter_small_filter(dictionary, typos, expected):
     Since the filter size is small, some mishits are expected
     """
     bf = BloomFilter(100, 7)
-    with open(dictionary) as file_in:
+    with open(dictionary, encoding='utf-8') as file_in:
         for word in file_in.readlines():
             bf.add(word.strip())
     count = 0
-    with open(typos) as file_in:
+    with open(typos, encoding='utf-8') as file_in:
         for word in file_in.readlines():
             if word.strip() in bf:
                 count += 1
@@ -78,11 +78,11 @@ def test_bloomfilter_medium_filter(dictionary, typos, _):
     Since the filter size is sufficient, mishits are not expected
     """
     bf = BloomFilter(250, 7)
-    with open(dictionary) as file_in:
+    with open(dictionary, encoding='utf-8') as file_in:
         for word in file_in.readlines():
             bf.add(word.strip())
     count = 0
-    with open(typos) as file_in:
+    with open(typos, encoding='utf-8') as file_in:
         for word in file_in.readlines():
             if word.strip() in bf:
                 count += 1
@@ -97,7 +97,7 @@ def test_bloomfilter_large_filter(the_bloom_filter, _, typos, expected):
     Even though the filter size is large, some mishits are expected
     """
     count = 0
-    with open(typos) as file_in:
+    with open(typos, encoding='utf-8') as file_in:
         for word in file_in.readlines():
             if word.strip() in the_bloom_filter:
                 count += 1
