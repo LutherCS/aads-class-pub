@@ -63,6 +63,7 @@ class AVLTree(BinarySearchTree):
     def update_balance(self, node: AVLTreeNode) -> None:
         """Update the tree balance"""
         # TODO: Fix this method
+        ...
         if node.balance > 1 or node.balance < -1:
             self.rebalance(node)
             return
@@ -78,12 +79,13 @@ class AVLTree(BinarySearchTree):
     def rebalance(self, node: AVLTreeNode) -> None:
         """Rebalance the tree"""
         # TODO: consider all cases
+        ...
         if node.balance < 0:
             if node.child_left.balance < 0:
-                raise NotImplementedError
+                ...
         elif node.balance > 0:
             if node.child_right.balance > 0:
-                raise NotImplementedError
+                ...
 
     def rotate_left(self, rotation_root: AVLTreeNode) -> None:
         """Left rotation"""
@@ -103,6 +105,7 @@ class AVLTree(BinarySearchTree):
         rotation_root.parent = new_root
         # TODO: update rotation_root.balance
         # TODO: update new_root.balance
+        ...
 
     def rotate_right(self, rotation_root: AVLTreeNode) -> None:
         """Right rotation"""
@@ -122,3 +125,4 @@ class AVLTree(BinarySearchTree):
         rotation_root.parent = new_root
         # TODO: update rotation_root.balance
         # TODO: update new_root.balance
+        ...
