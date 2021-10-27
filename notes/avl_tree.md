@@ -14,7 +14,7 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ## History
 
-- AVL tree was invented in 1962 by two soviet mathematicians, Georgy **A**delson-**V**elsky and Engenii **L**andis
+- AVL tree was invented in 1962 by two soviet mathematicians, Georgy **A**delson-**V**elsky and Evgenii **L**andis
 - It was the first data structure of this kind (self-balancing tree)
 - It is mathematically related to the _red-black tree_
 
@@ -45,7 +45,9 @@ class AVLTree:
             self.balance = balance
 
         def __repr__(self):
-            return f"AVLTree.AVLNode({repr(self.item)}, balance={repr(self.balance)}, left={repr(self.left)}, right={repr(self.right)})"
+            return f"AVLTree.AVLNode({repr(self.item)}, "
+            + f"balance={repr(self.balance)}, "
+            + f"left={repr(self.left)}, right={repr(self.right)})"
 ```
 
 ## Insertion
