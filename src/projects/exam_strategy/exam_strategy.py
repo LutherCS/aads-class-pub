@@ -1,34 +1,37 @@
 #!/usr/bin/env python3
 """
-Exam strategy
+`exam_strategy` implementation and driver
+
+@authors: Roman Yasinovskyy
+@version: 2021.10
 """
 
 from collections import namedtuple
-from typing import List, Tuple
 
 Item = namedtuple("Item", ["value", "weight"])
 
 
-def knapsack(capacity: int, items: List[Item]) -> List[int]:
+def knapsack(capacity: int, items: list[Item]) -> list[int]:
     """
     General Knapsack solution.
 
-    This function takes the knapsack capacity and the list of items (named tuples) to consider.
-    The function returns a list of chosen indices.
-    This function is optional but highly recommended.
-    Use of the named tuple Item is optional but encouraged.
+    :param capacity: total knapsack capacity
+    :param items: the list of items (named tuples) to consider
+    :return: a list of chosen indices
     """
-    pass
+    # TODO: Implement this function
+    ...
 
 
-def pick_questions_to_answer(filename: str) -> Tuple[List[int], int]:
+def pick_questions_to_answer(filename: str) -> tuple[list[int], int]:
     """
     Main selection function
 
-    This function takes file name as an argument.
-    The function returns a tuple of two items: the list of chosen indices and total point value of all selected questions.
+    :param filename: file to process
+    :return: the list of chosen indices and total point value of all selected questions
     """
-    raise NotImplementedError
+    # TODO: Implement this function
+    ...
 
 
 def main():

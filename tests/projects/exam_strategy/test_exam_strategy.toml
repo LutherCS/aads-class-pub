@@ -1,9 +1,7 @@
-title = "Public test cases"
-
 [meta]
-author = "Roman Yasinovskyy"
-date = 2021
-module = "projects.exam_strategy"
+authors = "Roman Yasinovskyy"
+version = "2021.10"
+comment = "Public test cases for the project exam_strategy"
 
 [[test_case]]
 filename = "questions1.in"
