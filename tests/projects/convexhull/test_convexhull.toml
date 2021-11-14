@@ -1,0 +1,25 @@
+[meta]
+authors = "Roman Yasinovskyy"
+version = "2021.11"
+title = "Public test cases for the project convexhull"
+
+[[test_case]]
+filename = "convexhull1.in"
+points = 4
+length = 8.0
+first = [-1, -1]
+last = [-1, 1]
+
+[[test_case]]
+filename = "convexhull2.in"
+points = 33
+length = 3987816679.8933277
+first = [8731, 813254884]
+last = [27595, 926040755]
+
+[[test_case]]
+filename = "convexhull3.in"
+points = 100000
+length = 100000.0
+first = [1, 1]
+last = [1, 2]
