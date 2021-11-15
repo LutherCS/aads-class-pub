@@ -13,6 +13,6 @@ In this assignment, the first sub-task has already been done for you, and your p
 
 The input files (found in *data/projects/convexhull/*) contains *all* the points in the following format: (x-coordinate, y-coordinate, letter). Letter "Y" indicates that the point *is* on the convex hull of all the points, and "N" indicates that it *is not*.
 
-Function `get_convex` returns the list of points on the hull in counter-clockwise order around the hull, starting with the rightmost-lowest point (lowest x- and y- coordinates). If multiple points have the same x-coordinate, order them by y-coordinate.
+Function `get_convex` returns the list of points on the hull in counter-clockwise order around the hull, starting with the leftmost-lowest point (lowest x- and y- coordinates). If multiple points have the same x-coordinate, order them by y-coordinate.
 
 Function `measure_convex` returns the length of the convex hull found by `get_convex`.
