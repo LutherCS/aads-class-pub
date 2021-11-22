@@ -1,20 +1,18 @@
 [meta]
-author = "Roman Yasinovskyy"
-date   = 2020
-title  = "Public test cases for the module `partition`"
+authors = "Roman Yasinovskyy"
+version = "2021.10"
+comment = "Public test cases for the exercise partition"
 
 [[test_case]]
-
-expected = [ 0, 0, 0, 2 ]
-filename = "data/exercises/partition/simple.xml"
-
-[[test_case]]
-
-expected = [ 0, 0, 0, 0, 0, 0, 0 ]
-filename = "data/exercises/partition/network.xml"
+filename = "simple.xml"
+expected = [0, 0, 0, 2]
 
 [[test_case]]
+filename = "network.xml"
+expected = [0, 0, 0, 0, 0, 0, 0]
 
+[[test_case]]
+filename = "neia.xml"
 expected = [
     2,
     0,
@@ -47,4 +45,3 @@ expected = [
     17,
     28,
 ]
-filename = "data/exercises/partition/neia.xml"
