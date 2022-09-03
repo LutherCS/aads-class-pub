@@ -6,4 +6,5 @@ pylint
 pytest
 pytest-timeout
 pythonds3
+toml
 types-toml
