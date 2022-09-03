@@ -3,7 +3,7 @@
 `hello` implementation and driver
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2022.9
 """
 
 import argparse
@@ -13,7 +13,7 @@ import logging
 def greet(audience: str) -> str:
     """
     Greet the audience
-    
+
     :param audience: who to greet
     :returns: greeting
     """
@@ -46,7 +46,7 @@ def main():
     args = parser.parse_args()
     logging.basicConfig(format="%(levelname)s: %(message)s", level=args.loglevel)
     logging.info("Starting up")
-    logging.debug(f"About to greet {args.audience}")
+    logging.debug("About to greet %s", args.audience)
     print(greet(args.audience))
 
 

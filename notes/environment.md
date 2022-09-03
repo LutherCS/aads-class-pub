@@ -7,7 +7,7 @@ keywords: ["python", "formatting", "linting", "testing"]
 
 ### Tools
 
-- Python **3.9**
+- Python **3.10**
 - `pylint` and `mypy`
 - `black`
 - `pytest` with `pytest-timeout` plugin
@@ -93,8 +93,8 @@ There are two types of _notes_: Markdown lectures and Python source.
 ### Virtual environment
 
 ```bash
-sudo apt-get install python3.9 python3.9-venv
-python3.9 -m venv .venv
+sudo apt-get install python3.10 python3.10-venv
+python3.10 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -237,7 +237,7 @@ if __name__ == "__main__":
 Implementation of Hello, World
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2022.9
 """
 ```
 
@@ -255,7 +255,7 @@ Always include your name in the source file
 Implementation of Hello, World
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2022.9
 """
 
 

@@ -3,12 +3,13 @@
 `hello` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2021.10
 """
 
 import importlib
 import pathlib
 import sys
+from typing import Generator
 
 import pytest
 import toml
@@ -24,23 +25,28 @@ finally:
 TIME_LIMIT = 1
 
 
-def get_cases(category: str):
-    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
-        all_cases = toml.load(f)
+def get_cases(category: str, *attribs: str) -> Generator:
+    """Get test cases from the TOML file"""
+    with open(pathlib.Path(__file__).with_suffix(".toml"), encoding="utf-8") as file:
+        all_cases = toml.load(file)
         for case in all_cases[category]:
-            yield (case.get("data"), case.get("expected"))
+            yield tuple(case.get(a) for a in attribs)
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("data, expected", get_cases("test_case_success"))
-def test_greet(data, expected):
+@pytest.mark.parametrize(
+    "data, expected", get_cases("test_case_success", "data", "expected")
+)
+def test_greet(data: str, expected: str):
     """Testing the output"""
     assert greet(data) == expected
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("data, expected", get_cases("test_case_error"))
-def test_greet_err(data, expected):
+@pytest.mark.parametrize(
+    "data, expected", get_cases("test_case_error", "data", "expected")
+)
+def test_greet_err(data: str, expected: str):
     """Testing the exception"""
     with pytest.raises(TypeError) as exc:
         greet(data)
