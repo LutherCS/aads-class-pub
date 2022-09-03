@@ -13,7 +13,8 @@ keywords: ["algorithms", "data structures", "programming"]
 
 ::: notes
 
-Sometimes standard implementation is too rigid or does not fit the needs of a specific problem. One needs to understand a known data structure or an algorithm in order to use it properly.
+Sometimes standard implementation is too rigid or does not fit the needs of a specific problem.
+One needs to understand a known data structure or an algorithm in order to use it properly.
 
 :::
 
@@ -179,6 +180,14 @@ Almost any solution can be _improved_ using the combination of the following:
 
 - Machine is _stupid_
 - Human is _smart_
+
+::: notes
+
+stupid (adj): having or showing a great lack of intelligence or common sense
+
+smart (adj): having or showing a quick-witted intelligence
+
+:::
 
 ## Computational complexity
 
