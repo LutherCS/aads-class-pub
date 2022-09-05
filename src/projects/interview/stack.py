@@ -45,7 +45,7 @@ class Stack:
         Remove an item from the stack
 
         :return: the top element of the stack
-        :raise StackError is the stack is empty
+        :raise StackError if the stack is empty
         """
         # TODO: Implement this method
         ...
@@ -56,7 +56,7 @@ class Stack:
         Look at the top item without removing it
 
         :return: the top element of the stack
-        :raise StackError is the stack is empty
+        :raise StackError if the stack is empty
         """
         # TODO: Implement this method
         ...
