@@ -1,28 +1,32 @@
 #!/usr/bin/env python3
 """
-A Classy Problem
-"""
+`classy` implementation and driver
 
-# from typing import Dict, List
+@authors:
+@version: 2022.9
+"""
 
 
 def classify(people: dict) -> list[str]:
     """
-    Classify people
-    
-    Return the ordered (highest to lowest) list
+    Classify people by class
+
+    :param people: group to classify
+    :return list of people sorted by class
     """
-    raise NotImplementedError
+    # TODO: Implement this function
+    ...
 
 
 def read_file(filename: str) -> dict[str, str]:
     """
     Read data from the file into a dictionary
 
-    Return the {person: class} mapping
+    :param filename: file to sort
+    :return the {person: class} mapping
     """
-    raise NotImplementedError
-
+    # TODO: Implement this function
+    ...
 
 
 def main():
