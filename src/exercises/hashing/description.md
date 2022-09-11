@@ -19,7 +19,7 @@ Complete the following hashing functions. Note that you are not required to addr
     89 % 3 == 2
     ```
 
-3. Implement a hash function for **integers** using the *folding method* (extract two digits at a time, the last item may be a single-digit number).
+3. Implement a hash function for **numbers in a string** using the *folding method* (extract two digits at a time, the last item may be a single-digit number).
 
     ```python
     123 == 12 + 3 == 15
