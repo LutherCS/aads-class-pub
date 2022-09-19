@@ -3,7 +3,7 @@
 `trees` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2022.9
 """
 
 import importlib
@@ -24,7 +24,7 @@ TIME_LIMIT = 1
 
 
 def get_cases(category: str):
-    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
+    with open(pathlib.Path(__file__).with_suffix(".toml"), encoding="utf-8") as f:
         all_cases = toml.load(f)
         for case in all_cases[category]:
             yield (case.get("inorder"), case.get("postorder"), case.get("preorder"))
