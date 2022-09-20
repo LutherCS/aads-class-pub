@@ -20,7 +20,7 @@ try:
 except ModuleNotFoundError:
     sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
 finally:
-    from src.projects.tictactoe import Board, O, X, minimax
+    from src.projects.tictactoe import Board, MarkO, MarkX, minimax
 
 
 TIME_LIMIT = 5
@@ -57,7 +57,7 @@ def board2():
     board = Board()
     for i in range(3):
         for j in range(3):
-            board[i][j] = O(canvas)
+            board[i][j] = MarkO(canvas)
     root.destroy()
     return board
 
@@ -69,7 +69,7 @@ def board3():
     board = Board()
     for i in range(3):
         for j in range(3):
-            board[i][j] = O(canvas)
+            board[i][j] = MarkO(canvas)
     root.destroy()
     return board
 
@@ -81,7 +81,7 @@ def board4():
     board = Board()
     for i in range(3):
         for j in range(3):
-            board[i][j] = X(canvas)
+            board[i][j] = MarkX(canvas)
     root.destroy()
     return board
 
@@ -218,9 +218,9 @@ def test_minimax_param(board, evaluation):
     for i in range(3):
         for j in range(3):
             if board[i][j] == "O":
-                tkboard[i][j] = O(canvas)
+                tkboard[i][j] = MarkO(canvas)
             elif board[i][j] == "X":
-                tkboard[i][j] = X(canvas)
+                tkboard[i][j] = MarkX(canvas)
     # root.destroy()
     assert minimax(1, tkboard, 4) == evaluation
 

@@ -1,51 +1,60 @@
 #!/usr/bin/env python3
-"""Implement Minimax to play Tic Tac Toe"""
+"""
+`tic_tac_toe` implementation and driver
 
+Implement Minimax to play Tic Tac Toe
+
+@authors:
+@version: 2022.9
+"""
 
 import tkinter
 import tkinter.messagebox
 from turtle import RawTurtle, ScrolledCanvas
 
-screenMin = 0
-screenMax = 300
+SCREEN_MIN = 0
+SCREEN_MAX = 300
 COMPUTER = 1
 HUMAN = -1
-PLAYERS = {1: "COMPUTER", -1: "HUMAN"}
-AILVLS = {"Naive": 0, "Easy": 2, "Hard": 6}
+PLAYER = {1: "COMPUTER", -1: "HUMAN"}
+AI_LEVEL = {"Naive": 0, "Easy": 2, "Normal": 5, "Hard": 6}
 
 
 class Board:
-    def __init__(self, board=None, screen=None):
+    """Game board"""
+
+    def __init__(self, board_: "Board" = None, screen_: ScrolledCanvas = None) -> None:
         """
         Board constructor
 
         When a board is constructed, you may want to make a copy of the board.
-        This can be a shallow copy of the board because Turtle objects are
-        Immutable from the perspective of a board object.
+        This can be a shallow copy of the board because `Turtle` objects are
+        immutable from the perspective of a `board` object.
         """
-        self.screen = screen
-        if screen is None:
-            if board:
-                self.screen = board.screen
+        if board_:
+            self._screen = board_.screen
+        else:
+            self._screen = screen_
 
         self.items = []
         for i in range(3):
             row = []
             for j in range(3):
-                if board is None:
+                if not board_:
                     row.append(Dummy())
                 else:
-                    row.append(board[i][j])
+                    row.append(board_[i][j])
 
             self.items.append(row)
 
-    def getscreen(self):
+    @property
+    def screen(self):
         """
         Screen accessor
         """
-        return self.screen
+        return self._screen
 
-    def __getitem__(self, index):
+    def __getitem__(self, index) -> list:
         """
         Row accessor
 
@@ -54,25 +63,25 @@ class Board:
         board[row][column] because of this method.
 
         :param index: row of the board to get
-        :returns: a specific row
+        :return: a specific row
         """
         return self.items[index]
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         """
-        Compares two boards
+        Compare two boards
 
         :param other: another Board
-        :returns: `True` if two boards represent the same state, `False` otherwise
+        :return: `True` if two boards represent the same state, `False` otherwise
         """
         # TODO: Implement this function
         ...
 
     def __hash__(self) -> int:
         """
-        Calculates hash value of a board
+        Calculate hash value of a board
 
-        :returns: integer hash value
+        :return: integer hash value
         """
         result = 0
         for i in range(3):
@@ -80,28 +89,25 @@ class Board:
                 result += (i + j) * self.items[i][j].eval()
         return result
 
-    def reset(self):
+    def reset(self) -> None:
         """
-        Resets the board state
+        Reset the board state
 
-        This method will mutate this board to contain all `Dummy`
-        turtles. This way the board can be reset when a new game
-        is selected.
+        This method will mutate this board to contain all `Dummy` turtles.
+        This way the board can be reset when a new game is selected.
         It should NOT be used except when starting a new game.
         """
-        # self.screen.tracer(1)
         for i in range(3):
             for j in range(3):
                 self.items[i][j].goto(-100, -100)
                 self.items[i][j] = Dummy()
-
         self.screen.tracer(0)
 
     def eval(self) -> int:
         """
-        Evaluates the board
+        Evaluate the board
 
-        :returns: an integer representing the state of the board
+        :return: an integer representing the state of the board
         If the computer has won, return 1.
         If the human has won, return -1.
         Otherwise, return 0.
@@ -111,17 +117,17 @@ class Board:
 
     def full(self) -> bool:
         """
-        Checks if the board is full
+        Check if the board is full
 
-        :returns: `True` if the board is completely filled up (no `Dummy` turtles).
+        :return: `True` if the board is completely filled up (no `Dummy` turtles).
         Otherwise, it should return `False`.
         """
         # TODO: Implement this function
         ...
 
-    def drawXOs(self):
+    def draw_marks(self) -> None:
         """
-        Draws `X`s and `O`s on the screen
+        Draw `X`s and `O`s on the screen
         """
         for row in range(3):
             for col in range(3):
@@ -133,16 +139,18 @@ class Board:
 
     def available(self) -> list[tuple[int, int]]:
         """
-        Returns available (empty) cells
+        Return available (empty) cells
 
-        :returns: a list of tuples where each tuple is a (row, column) pair
+        :return: a list of tuples where each tuple is a (row, column) pair
         """
         # TODO: Implement this function
         ...
 
-    def clone(self):
+    def clone(self) -> "Board":
         """
-        Returns a copy of the board
+        Return a copy of the board
+        
+        :return: a copy of this board
         """
         return Board(self)
 
@@ -150,29 +158,33 @@ class Board:
 class Dummy:
     """
     This class is just for placeholder objects when no move has been made
-    yet at a position in the board. Having eval() return 0 is convenient when no
-    move has been made.
+    yet at a position in the board.
+    Having eval() return 0 is convenient when no move has been made.
     """
 
     def __init__(self):
-        pass
+        """Placeholder"""
 
-    def eval(self):
+    def eval(self) -> int:
+        """Evaluate to 0"""
         return 0
 
     def goto(self, x, y):
-        pass
+        """Placeholder"""
 
 
-class X(RawTurtle):
-    """
-    In the X and O classes below the constructor begins by initializing the RawTurtle part of the object with the call to super().__init__(canvas).
-    The super() call returns the class of the superclass (the class above the X or O in the class hierarchy).
-    In this case, the superclass is RawTurtle.
-    Then, calling __init__ on the superclass initializes the part of the object that is a RawTurtle.
-    """
+class MarkX(RawTurtle):
+    """Class for the X mark"""
 
     def __init__(self, canvas):
+        """
+        The constructor begins by initializing the
+        RawTurtle part of the object with the call to super().__init__(canvas).
+        The super() call returns the class of the superclass
+        (the class above the X or O in the class hierarchy).
+        In this case, the superclass is RawTurtle.
+        Calling __init__ on the superclass initializes the part of the object that is a RawTurtle.
+        """
         super().__init__(canvas)
         self.hideturtle()
         self.getscreen().register_shape(
@@ -200,11 +212,22 @@ class X(RawTurtle):
         self.goto(-100, -100)
 
     def eval(self):
+        """Evaluate the mark"""
         return COMPUTER
 
 
-class O(RawTurtle):
+class MarkO(RawTurtle):
+    """Class for the O mark"""
+
     def __init__(self, canvas):
+        """
+        The constructor begins by initializing the
+        RawTurtle part of the object with the call to super().__init__(canvas).
+        The super() call returns the class of the superclass
+        (the class above the X or O in the class hierarchy).
+        In this case, the superclass is RawTurtle.
+        Calling __init__ on the superclass initializes the part of the object that is a RawTurtle.
+        """
         super().__init__(canvas)
         self.hideturtle()
         self.shapesize(5, 5, 10)
@@ -216,20 +239,18 @@ class O(RawTurtle):
         self.goto(-100, -100)
 
     def eval(self):
+        """Evaluate the mark"""
         return HUMAN
 
 
-def minimax(player, board, depth=6):
+def minimax(player, board: Board, depth: int = 5) -> int:
     """
-    The minimax function is given a player (1 = Computer, -1 = Human) and a
-    board object. When the player = Computer, minimax returns the maximum
-    value of all possible moves that the Computer could make. When the player =
-    Human then minimax returns the minimum value of all possible moves the Human
-    could make. Minimax works by assuming that at each move the Computer will pick
-    its best move and the Human will pick its best move. It does this by making a
-    move for the player whose turn it is, and then recursively calling minimax.
-    The base case results when, given the state of the board, someone has won or
-    the board is full.
+    The minimax function is given a player (1 = Computer, -1 = Human) and a board object.
+    When the player = Computer, minimax returns the maximum value of all possible moves that the Computer could make.
+    When the player = Human then minimax returns the minimum value of all possible moves the Human could make.
+    Minimax works by assuming that at each move the Computer will pick its best move and the Human will pick its best move.
+    It does this by making a move for the player whose turn it is, and then recursively calling minimax.
+    The base case results when, given the state of the board, someone has won or the board is full.
     """
     # TODO: Implement this function
     ...
@@ -243,7 +264,7 @@ class TicTacToe(tkinter.Frame):
         self.stop = False
         self.running = False
         self.turn = HUMAN
-        self.level = "Easy"
+        self.level = "Normal"
         self.locked = False
         self.buildWindow()
 
@@ -255,7 +276,7 @@ class TicTacToe(tkinter.Frame):
         screen = t.getscreen()
         screen.tracer(100000)
 
-        screen.setworldcoordinates(screenMin, screenMin, screenMax, screenMax)
+        screen.setworldcoordinates(SCREEN_MIN, SCREEN_MIN, SCREEN_MAX, SCREEN_MAX)
         screen.bgcolor("white")
         t.hideturtle()
 
@@ -266,7 +287,7 @@ class TicTacToe(tkinter.Frame):
         def drawGrid():
             screen.clear()
             screen.tracer(1000000)
-            screen.setworldcoordinates(screenMin, screenMin, screenMax, screenMax)
+            screen.setworldcoordinates(SCREEN_MIN, SCREEN_MIN, SCREEN_MAX, SCREEN_MAX)
             screen.bgcolor("white")
             screen.tracer(0)
             t = RawTurtle(canvas)
@@ -310,8 +331,11 @@ class TicTacToe(tkinter.Frame):
         lbl_Level = tkinter.Label(frame, text="AI level")
         lbl_Level.pack()
 
-        dd_Level = tkinter.OptionMenu(frame, tkvar, command=levelHandler, *AILVLS)
+        dd_Level = tkinter.OptionMenu(frame, tkvar, command=levelHandler, *AI_LEVEL)
         dd_Level.pack()
+        
+        status = tkinter.Text(frame, height=20, width=10)
+        status.pack()
 
         def quitHandler():
             self.master.quit()
@@ -320,23 +344,18 @@ class TicTacToe(tkinter.Frame):
         btn_Quit.pack()
 
         def computerTurn():
-            """
-            The locked variable prevents another event from being
-            processed while the computer is making up its mind.
+            """Call Minimax to find the best move to make
+
+            After writing this code, the `next_move` tuple should contain the next move for the computer.
+            For instance, if the best move is in the first row and third column then `next_move` would be (0,2).
+            The locked variable prevents another event from being processed while the computer is making up its mind.
             """
             self.locked = True
-            maxMove = None
-
-            # Call Minimax to find the best move to make.
-            # After writing this code, the maxMove tuple should
-            # contain the best move for the computer. For instance,
-            # if the best move is in the first row and third column
-            # then maxMove would be (0,2).
+            next_move = None
             # TODO: Implement the game logic
             ...
-
-            row, col = maxMove
-            board[row][col] = X(canvas)
+            row, col = next_move
+            board[row][col] = MarkX(canvas)
             self.locked = False
 
         def mouseClick(x, y):
@@ -345,18 +364,18 @@ class TicTacToe(tkinter.Frame):
                 col = int(x // 100)
 
                 if board[row][col].eval() == 0:
-                    board[row][col] = O(canvas)
+                    board[row][col] = MarkO(canvas)
 
                     self.turn = COMPUTER
 
-                    board.drawXOs()
+                    board.draw_marks()
 
                     if not board.full() and not abs(board.eval()) == 1:
                         computerTurn()
 
                         self.turn = HUMAN
 
-                        board.drawXOs()
+                        board.draw_marks()
                     else:
                         self.locked = True
 

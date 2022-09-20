@@ -4,8 +4,8 @@
 Turning in-order and post-order tree traversals into pre-order
 
 
-@authors: Roman Yasinovskyy
-@version: 2021.9
+@authors:
+@version: 2022.9
 """
 
 
