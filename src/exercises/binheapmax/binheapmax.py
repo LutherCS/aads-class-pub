@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Binary Heap implementation"""
+"""
+Binary Heap implementation
 
+@authors:
+@version: 2022.9
+"""
 
 from typing import Any
 
@@ -8,9 +12,9 @@ from typing import Any
 class BinaryHeapMax:
     """Heap class implementation"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initializer"""
-        self._heap = []
+        self._heap: list[Any] = []
         self._size = 0
 
     def _perc_up(self, cur_idx: int) -> None:
@@ -24,7 +28,7 @@ class BinaryHeapMax:
         ...
 
     def add(self, item: Any) -> None:
-        """Add a new item"""
+        """Add a new item to the heap"""
         # TODO: Implement this function
         ...
 

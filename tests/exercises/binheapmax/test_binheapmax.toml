@@ -1,7 +1,7 @@
 [meta]
 authors = "Roman Yasinovskyy"
-version = 2021.10
-comment = "Public test cases for exercises.binheapmax"
+version = "2021.10"
+comment = "Public test cases the exercise binheapmax"
 
 [[test_heapify]]
 data = [1, 2, 3]
@@ -20,28 +20,68 @@ data = [10, 20, 30, 25, 35, 40, 33, 32, 36, 50]
 expected = [50, 36, 40, 32, 35, 30, 33, 10, 25, 20]
 
 [[test_heapify]]
-data = ["Alfred", "Bruce", "Jim", "Harvey", "Lucius", "Rachel", "Robin", "Selina", "Talia"]
-expected = ['Talia', 'Selina', 'Robin', 'Harvey', 'Lucius', 'Rachel', 'Jim', 'Bruce', 'Alfred']
+data = [
+    "Alfred",
+    "Bruce",
+    "Jim",
+    "Harvey",
+    "Lucius",
+    "Rachel",
+    "Robin",
+    "Selina",
+    "Talia",
+]
+expected = [
+    'Talia',
+    'Selina',
+    'Robin',
+    'Harvey',
+    'Lucius',
+    'Rachel',
+    'Jim',
+    'Bruce',
+    'Alfred',
+]
 
-[[test_insert]]
+[[test_add]]
 data = [1, 2, 3]
 expected = [3, 1, 2]
 
-[[test_insert]]
+[[test_add]]
 data = ["A", "B", "C"]
 expected = ["C", "A", "B"]
 
-[[test_insert]]
+[[test_add]]
 data = [11, 48, 3, 55, 20, 71]
 expected = [71, 48, 55, 11, 20, 3]
 
-[[test_insert]]
+[[test_add]]
 data = [10, 20, 30, 25, 35, 40, 33, 32, 36, 50]
 expected = [50, 40, 35, 32, 36, 20, 33, 10, 30, 25]
 
-[[test_insert]]
-data = ["Alfred", "Bruce", "Jim", "Harvey", "Lucius", "Rachel", "Robin", "Selina", "Talia"]
-expected = ['Talia', 'Selina', 'Rachel', 'Robin', 'Harvey', 'Bruce', 'Lucius', 'Alfred', 'Jim']
+[[test_add]]
+data = [
+    "Alfred",
+    "Bruce",
+    "Jim",
+    "Harvey",
+    "Lucius",
+    "Rachel",
+    "Robin",
+    "Selina",
+    "Talia",
+]
+expected = [
+    'Talia',
+    'Selina',
+    'Rachel',
+    'Robin',
+    'Harvey',
+    'Bruce',
+    'Lucius',
+    'Alfred',
+    'Jim',
+]
 
 
 [[test_remove]]
@@ -61,5 +101,24 @@ data = [10, 20, 30, 25, 35, 40, 33, 32, 36, 50]
 expected = [40, 36, 33, 32, 35, 30, 20, 10, 25]
 
 [[test_remove]]
-data = ["Alfred", "Bruce", "Jim", "Harvey", "Lucius", "Rachel", "Robin", "Selina", "Talia"]
-expected = ['Selina', 'Lucius', 'Robin', 'Harvey', 'Alfred', 'Rachel', 'Jim', 'Bruce']
+data = [
+    "Alfred",
+    "Bruce",
+    "Jim",
+    "Harvey",
+    "Lucius",
+    "Rachel",
+    "Robin",
+    "Selina",
+    "Talia",
+]
+expected = [
+    'Selina',
+    'Lucius',
+    'Robin',
+    'Harvey',
+    'Alfred',
+    'Rachel',
+    'Jim',
+    'Bruce',
+]
