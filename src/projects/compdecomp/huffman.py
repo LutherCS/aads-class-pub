@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Huffman coding"""
+"""
+`compdecomp` implementation
 
+@authors:
+@version: 2022.9
+"""
 
 import argparse
 import heapq
@@ -8,7 +12,7 @@ import json
 import logging
 import pathlib
 from collections import Counter
-from typing import List, Tuple, Union
+from typing import Any
 
 DATA_DIR = pathlib.Path("data/projects/compdecomp/")
 
@@ -16,7 +20,7 @@ DATA_DIR = pathlib.Path("data/projects/compdecomp/")
 class Node:
     """Class Node"""
 
-    def __init__(self, value, weight: int, left=None, right=None):
+    def __init__(self, value: Any, weight: int, left=None, right=None) -> None:
         """
         value: letter in the text
         weight: number of times the letter appears in the text
@@ -28,10 +32,14 @@ class Node:
         self.left = left
         self.right = right
 
-    def __lt__(self, other):
+    def __lt__(self, other: "Node") -> bool:
+        """Node comparison"""
+        if not isinstance(other, Node):
+            raise TypeError("Can only compare two nodes")
         return self.weight < other.weight
 
-    def __repr__(self):
+    def __repr__(self) -> str:
+        """Node representation"""
         return f"Node({self.value}, {self.weight}, {self.left}, {self.right})"
 
 
@@ -42,9 +50,10 @@ def build_tree(all_freq: dict) -> Node:
     :param all_freq: frequency table
     :return tuple the tree root
     """
-    heap: List[Node] = []
+    heap: list[Node] = []
+    # NOTE: Use list comprehension to build a list of Nodes and then heapify it
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
 def traverse_tree(root: Node) -> str:
@@ -55,10 +64,10 @@ def traverse_tree(root: Node) -> str:
     :return values of a tree
     """
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
-def follow_tree(tree: Node, code: str) -> Union[str, None]:
+def follow_tree(tree: Node, code: str) -> str | None:
     """
     Follow the code through the tree
 
@@ -67,10 +76,10 @@ def follow_tree(tree: Node, code: str) -> Union[str, None]:
     :return node value or None
     """
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
-def mark_tree(d1: dict, d2: dict, root: Node, path: str) -> Union[None, tuple]:
+def mark_tree(d1: dict, d2: dict, root: Node, path: str) -> tuple[dict, dict] | None:
     """
     Generate code for each letter in the text
 
@@ -81,7 +90,7 @@ def mark_tree(d1: dict, d2: dict, root: Node, path: str) -> Union[None, tuple]:
     :return (d1, d2) tuple
     """
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
 def print_codes(d: dict, weights: dict) -> None:
@@ -93,7 +102,7 @@ def print_codes(d: dict, weights: dict) -> None:
     """
     print(f"{'Letter':10s}{'Weight':^10s}{'Code':^10s}{'Length':^5s}")
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
 def load_codes(codes: dict) -> Node:
@@ -104,10 +113,10 @@ def load_codes(codes: dict) -> Node:
     :return root of the Huffman tree
     """
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
-def compress(text: str, codes: dict) -> Tuple[bytes, int]:
+def compress(text: str, codes: dict) -> tuple[bytes, int]:
     """
     Compress text using Huffman coding
 
@@ -116,7 +125,7 @@ def compress(text: str, codes: dict) -> Tuple[bytes, int]:
     :return (packed text, padding length) tuple
     """
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
 def decompress(bytestream: bytes, padding: int, tree: Node) -> str:
@@ -129,7 +138,7 @@ def decompress(bytestream: bytes, padding: int, tree: Node) -> str:
     :return decompressed (decoded) text
     """
     # TODO: Implement this function
-    raise NotImplementedError
+    ...
 
 
 def main():
@@ -160,7 +169,9 @@ def main():
 
     for filename in input_files:
         logging.info("Building the tree")
-        with open(DATA_DIR / pathlib.Path(f"{filename}.txt"), "r") as text_file:
+        with open(
+            DATA_DIR / pathlib.Path(f"{filename}.txt"), "r", encoding="utf-8"
+        ) as text_file:
             text = text_file.read().strip()
         weights = Counter(text)
         root = build_tree(weights)
@@ -182,7 +193,9 @@ def main():
         logging.debug(archive)
 
         logging.info("Loading codes from the file")
-        with open(DATA_DIR / pathlib.Path(f"{filename}.json"), "r") as code_file:
+        with open(
+            DATA_DIR / pathlib.Path(f"{filename}.json"), "r", encoding="utf-8"
+        ) as code_file:
             metadata = json.load(code_file)
         root = load_codes(metadata)
         padding_length = metadata.get("padding", 0)

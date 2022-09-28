@@ -1,0 +1,73 @@
+
+A_DEAD_DAD_CEDED_A_BAD_BABE_A_BEADED_ABACA_BED
+Letter      Weight     Code   Length
+A             11        10        2
+_             10        01        2
+D             10        00        2
+E             7        110        3
+B             6        1111       4
+C             2        1110       4
+
+AAAAAAAAAAAAAAABBBBBBBCCCCCCDDDDDDEEEEE
+Letter      Weight     Code   Length
+A             15        0         1
+B             7        111        3
+C             6        101        3
+D             6        110        3
+E             5        100        3
+
+this is an example of a huffman tree
+Letter      Weight     Code   Length
+              7        111        3
+a             4        100        3
+e             4        000        3
+f             3        1101       4
+t             2        0110       4
+h             2        1100       4
+i             2        1010       4
+s             2        0101       4
+n             2        0010       4
+m             2        0111       4
+x             1       00110       5
+p             1       10110       5
+l             1       00111       5
+o             1       01001       5
+u             1       01000       5
+r             1       10111       5
+
+We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defense, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America
+Letter      Weight     Code   Length
+              51       110        3
+e             39       011        3
+t             28       1111       4
+o             24       1011       4
+i             20       1000       4
+r             20       1010       4
+s             19       0101       4
+n             17       0011       4
+a             13      11101       5
+d             11      10011       5
+h             9       10010       5
+f             9       01000       5
+l             8       00101       5
+,             7       00010       5
+m             7       00001       5
+u             7       00000       5
+c             6       111001      6
+p             4       010010      6
+U             3      1110000      7
+b             3      1110001      7
+y             3      0100111      7
+W             2      0010010      7
+P             2      0010001      7
+S             2      0001100      7
+v             2      0010000      7
+g             2      0001101      7
+O             1      01001100     8
+J             1      01001101     8
+T             1      00100111     8
+q             1      00011100     8
+B             1      00100110     8
+L             1      00011101     8
+C             1      00011110     8
+A             1      00011111     8
