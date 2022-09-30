@@ -4,6 +4,7 @@ compdecomp import statement
 """
 
 from .huffman import (
+    Node,
     build_tree,
     traverse_tree,
     follow_tree,
@@ -15,6 +16,7 @@ from .huffman import (
 )
 
 __all__ = [
+    "Node",
     "build_tree",
     "traverse_tree",
     "follow_tree",
