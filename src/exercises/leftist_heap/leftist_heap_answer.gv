@@ -1,0 +1,4 @@
+digraph leftist_heap {
+	node [shape=record height=0.1]
+
+}

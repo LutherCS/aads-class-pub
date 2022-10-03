@@ -1,0 +1,24 @@
+digraph g1 {
+	node [shape=record height=0.1]
+	node1 [label="<f0> | <f1> 5 | <f2>"]
+	node2 [label="<f0> | <f1> 29 | <f2>"]
+	node3 [label="<f0> | <f1> 38 | <f2>"]
+	node4 [label="<f0> | <f1> 43 | <f2>"]
+	node5 [label="<f0> | <f1> 55 | <f2>"]
+	node6 [label="<f0> | <f1> 46 | <f2>"]
+	node7 [label="<f0> | <f1> 50 | <f2>"]
+	node8 [label="<f0> | <f1> 45 | <f2>"]
+	node9 [label="<f0> | <f1> 63 | <f2>"]
+	node10 [label="<f0> | <f1> 74 | <f2>"]
+	node11 [label="<f0> | <f1> 101 | <f2>"]
+	node1:f0 -> node2:f1
+	node1:f2 -> node3:f1
+	node2:f0 -> node6:f1
+	node2:f2 -> node5:f1
+	node3:f0 -> node4:f1
+	node3:f2 -> node7:f1
+	node4:f0 -> node8:f1
+	node6:f0 -> node9:f1
+	node6:f2 -> node10:f1
+	node10:f0 -> node11:f1
+}
