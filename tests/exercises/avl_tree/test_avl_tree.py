@@ -1,24 +1,36 @@
 #!/usr/bin/env python3
 """
-Testing the avl tree
+`avl_tree` testing
+
 @authors: Roman Yasinovskyy
-@date: 2021
+@version: 2022.10
 """
 
+import importlib
 import pathlib
+import sys
+from typing import Generator
+
 import pytest
 import toml
-from src.exercises.avl_tree import AVLTree
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.exercises.avl_tree import AVLTree
 
 
 TIME_LIMIT = 1
 
 
-def get_cases(category: str):
-    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
-        all_cases = toml.load(f)
+def get_cases(category: str, *attribs: str) -> Generator:
+    """Get test cases from the TOML file"""
+    with open(pathlib.Path(__file__).with_suffix(".toml"), encoding="utf-8") as file:
+        all_cases = toml.load(file)
         for case in all_cases[category]:
-            yield (case.get("nodes"), case.get("traversal"))
+            yield tuple(case.get(a) for a in attribs)
 
 
 def test_init():
@@ -44,7 +56,7 @@ def test_balance():
     assert avl_tree.root.balance == 0
 
 
-def test_RL_rotation_simple():
+def test_rl_rotation_simple():
     """Testing case 1: RL rotation"""
     avl_tree = AVLTree()
     avl_tree.put(30, "a")
@@ -55,7 +67,7 @@ def test_RL_rotation_simple():
     assert " ".join([str(x) for x in avl_tree]) == "30 40 50"
 
 
-def test_LR_rotation_simple():
+def test_lr_rotation_simple():
     """Testing case 2: LR rotation"""
     avl_tree = AVLTree()
     avl_tree.put(50, "a")
@@ -66,7 +78,7 @@ def test_LR_rotation_simple():
     assert " ".join([str(x) for x in avl_tree]) == "30 40 50"
 
 
-def test_L_rotation():
+def test_l_rotation():
     """Testing case 3: L rotation"""
     avl_tree = AVLTree()
     avl_tree.put(50, "a")
@@ -80,7 +92,7 @@ def test_L_rotation():
     assert " ".join([str(x) for x in avl_tree]) == "30 50 60 70 80 90"
 
 
-def test_R_rotation():
+def test_r_rotation():
     """Testing case 4: R rotation"""
     avl_tree = AVLTree()
     avl_tree.put(50, "a")
@@ -94,7 +106,7 @@ def test_R_rotation():
     assert " ".join([str(x) for x in avl_tree]) == "5 10 20 30 50 70"
 
 
-def test_RL_rotation():
+def test_rl_rotation():
     """Testing case 4: RL rotation"""
     avl_tree = AVLTree()
     avl_tree.put(40, "a")
@@ -105,14 +117,14 @@ def test_RL_rotation():
     avl_tree.put(43, "f")
     assert avl_tree.root.key == 45
     assert avl_tree.root.balance == 0
-    assert avl_tree.root.child_left.key == 40
-    assert avl_tree.root.child_left.balance == 0
-    assert avl_tree.root.child_right.key == 50
-    assert avl_tree.root.child_right.balance == 1
+    assert avl_tree.root.left_child.key == 40
+    assert avl_tree.root.left_child.balance == 0
+    assert avl_tree.root.right_child.key == 50
+    assert avl_tree.root.right_child.balance == 1
     assert " ".join([str(x) for x in avl_tree]) == "30 40 43 45 50 60"
 
 
-def test_LR_rotation():
+def test_lr_rotation():
     """Testing case 6: LR rotation"""
     avl_tree = AVLTree()
     avl_tree.put(40, "a")
@@ -123,22 +135,24 @@ def test_LR_rotation():
     avl_tree.put(37, "f")
     assert avl_tree.root.key == 35
     assert avl_tree.root.balance == 0
-    assert avl_tree.root.child_left.key == 30
-    assert avl_tree.root.child_left.balance == -1
-    assert avl_tree.root.child_right.key == 40
-    assert avl_tree.root.child_right.balance == 0
+    assert avl_tree.root.left_child.key == 30
+    assert avl_tree.root.left_child.balance == -1
+    assert avl_tree.root.right_child.key == 40
+    assert avl_tree.root.right_child.balance == 0
     assert " ".join([str(x) for x in avl_tree]) == "10 30 35 37 40 50"
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("nodes, traversal", get_cases("test_case"))
+@pytest.mark.parametrize(
+    "nodes, traversal", get_cases("test_case", "nodes", "traversal")
+)
 def test_all_rotations(nodes, traversal):
     """Testing the AVL tree rotations"""
     avl_tree = AVLTree()
-    for k, v in nodes:
-        avl_tree.put(int(k), v)
+    for key, value in nodes:
+        avl_tree.put(int(key), value)
     assert " ".join([str(x) for x in avl_tree]) == traversal
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_avl_tree.py"])
+    pytest.main(["-v", __file__])
