@@ -9,6 +9,7 @@ Edge = namedtuple("Edge", ["src", "dst", "weight"])
 
 
 class Partition:
+    """Partition"""
     def __init__(self, size):
         self._forest = [x for x in range(size)]
 
@@ -17,7 +18,7 @@ class Partition:
         """Return the forest"""
         return self._forest
 
-    def add(self, e: Edge):
+    def add(self, edge: Edge):
         """
         Add an edge to the partition
 
@@ -25,7 +26,8 @@ class Partition:
         Find the root of the destination vertex tree
         If they are different, set root of the destination vertex tree to the root of the source vertex tree
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def _find_root(self, node: int) -> int:
         """
@@ -33,7 +35,8 @@ class Partition:
 
         The root of a tree is a node that has its value matching the index in the forest
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def __str__(self) -> str:
         """Stringify the forest"""
@@ -46,8 +49,8 @@ class Partition:
 
 def read_xml(filename: str) -> tuple:
     """Read XML representation of the graph"""
-    vertices = {}  # {int: Vertex}
-    edges = []  # [Edge]
+    vertices: dict[int, Vertex] = {}
+    edges: list[Edge] = []
 
     xml_doc = minidom.parse(filename)
     xml_graph = xml_doc.getElementsByTagName("Graph")[0]
@@ -57,8 +60,10 @@ def read_xml(filename: str) -> tuple:
     xml_edges = xml_graph.getElementsByTagName("Edges")[0].getElementsByTagName("Edge")
 
     # TODO: Add all vertices from the XML file to the dictionary of vertices
+    ...
 
     # TODO: Add all edges from the XML file to the list of edges
+    ...
 
     return vertices, edges
 
