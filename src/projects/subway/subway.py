@@ -3,21 +3,20 @@
 """Torn to pieces"""
 
 from pythonds3.graphs import Graph
-from typing import Tuple
 
 
-def read_file(filename: str) -> Tuple[Graph, str, str]:
+def read_file(filename: str) -> tuple[Graph, str, str]:
     """
     Read graph from file
 
     Return the graph object and two vertices: start and destination
     """
-    raise NotImplementedError
+    pass
 
 
 def find_routes(g: Graph, src: str, dst: str) -> str:
     """Find the path between two stations"""
-    raise NotImplementedError
+    pass
 
 
 def main():
