@@ -8,14 +8,14 @@ Michael Correll. I hope you never see this question outside of the classroom.
 
 Implement a `stack` data structure using *heap* (Priority Queue) data structure as a basis. For the sake of simplicity use the built-in module `heapq`.
 
-See the class and method descriptions in the `stack.py` for implementation details and requirements. Method `__init__` has been implemented and _cannot_ be changed.
+See the class and method descriptions in the `stack.py` for implementation details and requirements. Method `__init__` has been implemented and *cannot* be changed.
 
 ## What to do
 
-`python` should be `python3.9` or newer.
+`python` should be `python3.12` or newer.
 
-- Read _src/projects/interview/stack_description.md_ (this file).
-- Modify _src/projects/interview/stack.py_.
+- Read *src/projects/interview/stack_description.md* (this file).
+- Modify *src/projects/interview/stack.py*.
 
 - Test your implementation.
 
@@ -25,4 +25,4 @@ python -m pytest tests/projects/interview/test_stack.py
 
 ## References
 
-- [heapq — Heap queue algorithm — Python 3.10.0 documentation](https://docs.python.org/3/library/heapq.html)
+- [heapq — Heap queue algorithm — Python 3.12.0 documentation](https://docs.python.org/3/library/heapq.html)

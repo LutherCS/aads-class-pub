@@ -5,11 +5,11 @@
 - Advanced Algorithms and Data Structures class
 - Class notes
 - Code templates
-- Solutions
+- Solutions (haha, no)
 
 ## How do I get set up
 
-**Note**: Windows users may have to use `py -3` instead of `python3` and **\\** instead of **/**.
+**Note**: Windows users may have to use **\\** instead of **/**.
 
 - Clone the repository.
 
@@ -23,11 +23,11 @@ git clone git@github.com:LutherCS/aads-class-pub.git
 git pull origin main
 ```
 
-- Create and activate Python 3.9 virtual environment
+- Create and activate Python virtual environment
 
 ```bash
-sudo apt-get install python3.9-venv
-python3.9 -m venv .venv
+sudo apt-get install python3.12-venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -37,7 +37,7 @@ source .venv/bin/activate
 PYTHONPATH=.
 ```
 
-Note that _.env_ is excluded from version control and has to be added to each copy of the repository
+Note that _.env_ is excluded from version control and has to be added to each copy of the repository. Also, this step may not be necessary.
 
 - Install _pythonds3_ to use textbook implementations of various data structures and algorithms.
 
@@ -45,13 +45,13 @@ Note that _.env_ is excluded from version control and has to be added to each co
 python3 -m pip install -U pythonds3
 ```
 
-- Install linters _pylint_ and _mypy_.
+- **Optional**: Install linters _pylint_ and _mypy_.
 
 ```bash
 python3 -m pip install -U pylint mypy
 ```
 
-- Install formatter _black_.
+- **Optional**: Install formatter _black_.
 
 ```bash
 python3 -m pip install -U black
@@ -98,15 +98,15 @@ pandoc -s -i --slide-level=2 -t revealjs topic.md -o topic.html
 **Note**: module name (_hello_), file name (_hello_main_), and function name (_greet_by_name_) don't have to match.
 
 - Edit _src/exercises/hello/description.md_.
-- Edit _src/exercises/hello/hello_main.py_.
-- Edit _tests/exercises/hello/test_hello.py_.
+- Edit _src/exercises/hello/hello\_main.py_.
+- Edit _tests/exercises/hello/test\_hello.py_.
 
 ## Topics
 
 - Python review
 
   - [GitHub - mattharrison/Tiny-Python-3.8-Notebook: Python 3.8 language and syntax](https://github.com/mattharrison/Tiny-Python-3.8-Notebook)
-  - Tools: black, pylint, pytest
+  - Tools: black, pylint, pytest, ruff
   - Collection data types
   - Exceptions and errors
   - Magic methods
