@@ -1,21 +1,18 @@
 [meta]
 authors = "Roman Yasinovskyy"
-comment = "Public test cases for the project `classy`"
-version = "2021.9"
+version = "2021.10"
+comment = "Public test cases for the project classy"
 
 [[test_case]]
-
+filename = "classy01.txt"
 expected = ["queenelizabeth", "mom", "dad", "unclebob", "chair"]
-filename = "data/projects/classy/classy01.txt"
 
 [[test_case]]
-
+filename = "classy02.txt"
 expected = ["queenelizabeth", "mom", "dad", "daddy", "unclebob", "chair"]
-filename = "data/projects/classy/classy02.txt"
 
 [[test_case]]
-
-filename = "data/projects/classy/classy03.txt"
+filename = "classy03.txt"
 expected = [
     "Catherine",
     "Peter",
@@ -220,7 +217,7 @@ expected = [
 ]
 
 [[test_case]]
-
+filename = "classy11.txt"
 expected = [
     "xjipxpirnhsufwjctpxlk",
     "zdqvqmyaykcrzcdpzgpupgdtyjdgbb",
@@ -262,10 +259,10 @@ expected = [
     "ocepaekxmjsko",
     "nnczojbthadpmrlyhgkadryqwvgexw",
 ]
-filename = "data/projects/classy/classy11.txt"
 
 [[test_case]]
 
+filename = "classy12.txt"
 expected = [
     "cq",
     "vbacqu",
@@ -337,10 +334,9 @@ expected = [
     "goo",
     "nhjhnhkuverxziltyhdivon",
 ]
-filename = "data/projects/classy/classy12.txt"
 
 [[test_case]]
-
+filename = "classy13.txt"
 expected = [
     "rinkjzpyuntveouyifurxhntntwila",
     "evmuzxiabjoyqjzegqbadlwqqgqfcy",
@@ -443,4 +439,3 @@ expected = [
     "wiydpbqovlpgzwzxddxbhyhhymnnqa",
     "docahfvrporiytouvocganhjskbusa",
 ]
-filename = "data/projects/classy/classy13.txt"
