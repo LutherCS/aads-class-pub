@@ -3,15 +3,16 @@
 `hashing` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2024.9
 """
 
 import importlib
 import pathlib
 import sys
+from typing import Generator, Union
 
 import pytest
-import toml
+import tomllib
 
 try:
     importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
@@ -29,44 +30,55 @@ finally:
 TIME_LIMIT = 1
 
 
-def get_cases(category: str):
-    with open(pathlib.Path(__file__).with_suffix(".toml")) as f:
-        all_cases = toml.load(f)
+def get_cases(category: str, *attribs: str) -> Generator:
+    """Get test cases from the TOML file"""
+    with open(pathlib.Path(__file__).with_suffix(".toml"), "rb") as file:
+        all_cases = tomllib.load(file)
         for case in all_cases[category]:
-            yield (case.get("keys"), case.get("size"), case.get("expected"))
+            yield tuple(case.get(a) for a in attribs)
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("keys, size, expected", get_cases("simple_remainder"))
-def test_simple_remainder(keys, size, expected):
+@pytest.mark.parametrize(
+    "keys, size, expected", get_cases("simple_remainder", "keys", "size", "expected")
+)
+def test_simple_remainder(keys: list[Union[int, str]], size: int, expected: list[int]):
     """Testing simple remainder hashing"""
     assert [hash_remainder(x, size) for x in keys] == expected
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("keys, size, expected", get_cases("mid_square"))
-def test_mid_square(keys, size, expected):
+@pytest.mark.parametrize(
+    "keys, size, expected", get_cases("mid_square", "keys", "size", "expected")
+)
+def test_mid_square(keys: list[Union[int, str]], size: int, expected: list[int]):
     """Testing mid-square hashing"""
     assert [hash_mid_sqr(x, size) for x in keys] == expected
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("keys, size, expected", get_cases("folding"))
-def test_hash_folding(keys, size, expected):
+@pytest.mark.parametrize(
+    "keys, size, expected", get_cases("folding", "keys", "size", "expected")
+)
+def test_hash_folding(keys: list[Union[int, str]], size: int, expected: list[int]):
     """Testing folding hashing"""
     assert [hash_folding(x, size) for x in keys] == expected
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("keys, size, expected", get_cases("naive_string"))
-def test_naive_string(keys, size, expected):
+@pytest.mark.parametrize(
+    "keys, size, expected", get_cases("naive_string", "keys", "size", "expected")
+)
+def test_naive_string(keys: list[Union[int, str]], size: int, expected: list[int]):
     """Testing string hashing"""
     assert [hash_str(x, size) for x in keys] == expected
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("keys, size, expected", get_cases("weighted_string"))
-def test_weighted_string(keys, size, expected):
+@pytest.mark.parametrize(
+    "keys, size, expected", get_cases("weighted_string", "keys", "size", "expected")
+)
+def test_weighted_string(keys: list[Union[int, str]], size: int, expected: list[int]):
     """Testing weighted string hashing"""
     assert [hash_str_weighted(x, size) for x in keys] == expected
 
