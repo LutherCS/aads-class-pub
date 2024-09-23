@@ -3,15 +3,16 @@
 `trees` testing
 
 @authors: Roman Yasinovskyy
-@version: 2022.9
+@version: 2024.9
 """
 
 import importlib
 import pathlib
 import sys
+from typing import Generator
 
 import pytest
-import toml
+import tomllib
 
 try:
     importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
@@ -23,16 +24,20 @@ finally:
 TIME_LIMIT = 1
 
 
-def get_cases(category: str):
-    with open(pathlib.Path(__file__).with_suffix(".toml"), encoding="utf-8") as f:
-        all_cases = toml.load(f)
+def get_cases(category: str, *attribs: str) -> Generator:
+    """Get test cases from the TOML file"""
+    with open(pathlib.Path(__file__).with_suffix(".toml"), "rb") as file:
+        all_cases = tomllib.load(file)
         for case in all_cases[category]:
-            yield (case.get("inorder"), case.get("postorder"), case.get("preorder"))
+            yield tuple(case.get(a) for a in attribs)
 
 
 @pytest.mark.timeout(TIME_LIMIT)
-@pytest.mark.parametrize("inorder, postorder, preorder", get_cases("test_case"))
-def test_traversal(inorder, postorder, preorder):
+@pytest.mark.parametrize(
+    "inorder, postorder, preorder",
+    get_cases("test_case", "inorder", "postorder", "preorder"),
+)
+def test_traversal(inorder: str, postorder: str, preorder: str):
     """Testing the output"""
     assert get_preorder(inorder, postorder) == preorder
 
