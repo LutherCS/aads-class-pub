@@ -1,24 +1,49 @@
 [meta]
 authors = "Roman Yasinovskyy"
-version = "2021.10"
-comment = "Public test cases for projects.anomalycounter"
+comment = "Public test cases for the project anomalycounter"
+version = "2024.10"
 
 [[test_case]]
-data = "anomalycounter1.in"
 expected = 5
+filename = "anomalycounter1.in"
+sides    = 4
 
 [[test_case]]
-data = "anomalycounter2.in"
 expected = 1
+filename = "anomalycounter2.in"
+sides    = 4
 
 [[test_case]]
-data = "anomalycounter3.in"
 expected = 0
+filename = "anomalycounter3.in"
+sides    = 4
 
 [[test_case]]
-data = "anomalycounter4.in"
 expected = 1
+filename = "anomalycounter4.in"
+sides    = 4
 
 [[test_case]]
-data = "anomalycounter5.in"
 expected = 11
+filename = "anomalycounter5.in"
+sides    = 4
+
+[[test_case]]
+expected = 18
+filename = "pattern.in"
+sides    = 4
+
+[[test_case]]
+expected = 6
+filename = "pattern.in"
+sides    = 8
+
+[[test_case]]
+expected = 11
+filename = "smiley.in"
+sides    = 4
+
+[[test_case]]
+expected = 4
+filename = "smiley.in"
+sides    = 8
