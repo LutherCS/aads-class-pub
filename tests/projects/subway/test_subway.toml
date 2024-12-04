@@ -1,34 +1,96 @@
-title = "Public test cases"
-
 [meta]
-author = "Roman Yasinovskyy"
-date = 2019
-module = "projects.subway"
+authors = "Roman Yasinovskyy"
+version = "2021.10"
+comment = "Public test cases for the project subway"
 
-[case_public]
+[[test_case]]
+filename = "pieces1.txt"
+expected = "Uptown Midtown Downtown"
 
-    [case_public.success]
+[[test_case]]
+filename = "pieces2.txt"
+expected = "F E D B A"
 
-        [case_public.success.a]
-        data = "pieces1.txt"
-        expected = "Uptown Midtown Downtown"
+[[test_case]]
+filename = "pieces3.txt"
+expected = "no route found"
 
-        [case_public.success.b]
-        data = "pieces2.txt"
-        expected = "F E D B A"
+[[test_case]]
+filename = "pieces4.txt"
+expected = "no route found"
 
-        [case_public.success.c]
-        data = "pieces3.txt"
-        expected = "no route found"
+[[test_case]]
+filename = "pieces5.txt"
+expected = "no route found"
 
-        [case_public.success.d]
-        data = "pieces4.txt"
-        expected = "no route found"
+[[test_case]]
+filename = "pieces6.txt"
+expected = "150 160 330 CSMinor 490 491"
 
-        [case_public.success.e]
-        data = "pieces5.txt"
-        expected = "no route found"
+[[test_case]]
+filename = "test_1.in"
+expected = "downtown midtown uptown"
 
-        [case_public.success.f]
-        data = "pieces6.txt"
-        expected = "150 160 330 CSMinor 490 491"
+[[test_case]]
+filename = "test_2.in"
+expected = "C E F I J"
+
+[[test_case]]
+filename = "test_3.in"
+expected = "M K I G E A B D"
+
+[[test_case]]
+filename = "test_4.in"
+expected = "D B A E G I K M"
+
+[[test_case]]
+filename = "test_5.in"
+expected = "F E G I K M"
+
+[[test_case]]
+filename = "test_6.in"
+expected = "B A"
+
+[[test_case]]
+filename = "test_7.in"
+expected = "a b c d e f g h i j k l m n o p q r s t u v w x y z aa ab ac ad ae af"
+
+[[test_case]]
+filename = "test_8.in"
+expected = "x l f c b d g m y"
+
+[[test_case]]
+filename = "test_9.in"
+expected = "af p h d b c e i q"
+
+[[test_case]]
+filename = "test_10.in"
+expected = "A B C"
+
+[[test_case]]
+filename = "test_11.in"
+expected = "M K I G E A B D"
+
+[[test_case]]
+filename = "test_12.in"
+expected = "q i e c b d h p af"
+
+[[test_case]]
+filename = "test_13.in"
+expected = "no route found"
+
+[[test_case]]
+filename = "test_14.in"
+expected = "no route found"
+
+[[test_case]]
+filename = "test_15.in"
+expected = "no route found"
+
+[[test_case]]
+filename = "test_16.in"
+expected = "A B C"
+
+[[test_case]]
+filename = "test_17.in"
+expected = "C D E"
